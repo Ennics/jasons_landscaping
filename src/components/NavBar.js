@@ -30,7 +30,7 @@ function NavBar() {
     const classes = styles()
     return (
             <Toolbar position="sticky" color="rgba(0, 0, 0, 0.87)" className={classes.bar}>   
-                <img src="j&s_logo.jpg" alt="logo" className={classes.logo}/> 
+                <img src="j_and_s_logo.jpg" alt="logo" className={classes.logo}/> 
                 <Typography variant="h6" className={classes.menuItem}>
                    Home
                 </Typography>
