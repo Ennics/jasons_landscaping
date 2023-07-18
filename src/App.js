@@ -1,4 +1,4 @@
-import { createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
+import { createTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import {Typography} from '@material-ui/core'; 
 import NavBar from './components/NavBar'
 import Grid from './components/Grid'
@@ -12,7 +12,7 @@ import ImportExportIcon from '@material-ui/icons/ImportExport';
 import ComputerIcon from '@material-ui/icons/Computer';
 import HttpIcon from '@material-ui/icons/Http';
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main:"#2e1667",
@@ -64,6 +64,7 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <NavBar/>
+        <img src="cover_img_2.png" width="100%" alt="hero"/> 
         <div className={classes.wrapper}>
           <Typography variant="h4" className={classes.bigSpace} color="primary">
              At Rocket.io we are passionate about software
