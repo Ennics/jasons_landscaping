@@ -1,7 +1,5 @@
 import React from 'react'
 import CustomBtn from './CustomBtn'
-import logo from '../logo.svg'
-import logoMobile from '../logoMobile.svg'
 import {Toolbar, Typography} from '@material-ui/core'
 import {makeStyles} from "@material-ui/core/styles"; 
 
@@ -15,16 +13,7 @@ const styles = makeStyles({
     },
     logo: {
         width: "15%", 
-        ['@media (max-width:780px)']: { 
-           display: "none"
-           }
-    },
-    logoMobile:{
-        width: "100%", 
-        display: "none", 
-        ['@media (max-width:780px)']: { 
-            display: "inline-block"
-            }
+        display: "inline-block"
     },
     menuItem: {
         cursor: "pointer", 
@@ -36,24 +25,26 @@ const styles = makeStyles({
             paddingBottom: "1rem"    }
     }
 })
-
+//<img src={logoMobile} className={classes.logoMobile}/> 
 function NavBar() {
     const classes = styles()
     return (
             <Toolbar position="sticky" color="rgba(0, 0, 0, 0.87)" className={classes.bar}>   
-                <img src={logo} className={classes.logo}/> 
-                <img src={logoMobile} className={classes.logoMobile}/> 
+                <img src="j&s_logo.jpg" alt="logo" className={classes.logo}/> 
                 <Typography variant="h6" className={classes.menuItem}>
-                   About
+                   Home
                 </Typography>
                 <Typography variant="h6" className={classes.menuItem}>
-                    Blog
+                    About Us
                 </Typography>
                 <Typography variant="h6" className={classes.menuItem}>
-                    Careers
+                    Services
                 </Typography>
                 <Typography variant="h6" className={classes.menuItem}>
-                    Demos 
+                    Products 
+                </Typography>
+                <Typography variant="h6" className={classes.menuItem}>
+                    Careers 
                 </Typography>
                 <Typography variant="h6" className={classes.menuItem}>
                     Contact Us 
