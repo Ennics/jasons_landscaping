@@ -55,6 +55,16 @@ const styles = makeStyles({
     alignItems: "center",
     flexWrap: "wrap", 
   },
+  overlay: {
+    position: "absolute",
+    top: "50%", /* Adjust the top value to center the text vertically (optional) */
+    left: "50%", /* Adjust the left value to center the text horizontally (optional) */
+    transform: "translate(-50%, -50%)", /* Center the text using a combination of translate and negative margins */
+    backgroundColor: "rgba(0, 0, 0, 0.7)", /* Optional: Add a background color to the text overlay */
+    padding: "20", /* Optional: Add padding around the text */
+    color: "white", /* Set the text color */
+    textAlign: "center" /* Center the text horizontally (optional) */
+  }
 })
 
 function App() {
