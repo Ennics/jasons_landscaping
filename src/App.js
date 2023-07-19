@@ -11,6 +11,7 @@ import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import ImportExportIcon from '@material-ui/icons/ImportExport';
 import ComputerIcon from '@material-ui/icons/Computer';
 import HttpIcon from '@material-ui/icons/Http';
+import Fade from '@material-ui/core/Fade';
 
 const theme = createTheme({
   palette: {
@@ -57,13 +58,19 @@ const styles = makeStyles({
   },
   overlay: {
     position: "absolute",
-    top: "50%", /* Adjust the top value to center the text vertically (optional) */
-    left: "50%", /* Adjust the left value to center the text horizontally (optional) */
-    transform: "translate(-50%, -50%)", /* Center the text using a combination of translate and negative margins */
-    backgroundColor: "rgba(0, 0, 0, 0.7)", /* Optional: Add a background color to the text overlay */
-    padding: "20", /* Optional: Add padding around the text */
-    color: "white", /* Set the text color */
-    textAlign: "center" /* Center the text horizontally (optional) */
+    top: "50%",
+    left: "50%", 
+    transform: "translate(-50%, -50%)", 
+    padding: "20", 
+    color: "white", 
+    textAlign: "center",
+    width: "50%",
+    fontSize: "2.5vw",
+    fontFamily: 'Georgia',
+    marginTop: "-5vw"
+  },
+  boldWord: {
+    fontWeight: "bold"
   }
 })
 
@@ -74,10 +81,19 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <NavBar/>
-        <img src="cover_img_2.png" width="100%" alt="hero"/> 
+        <div>
+          <img src="cover_img_2.png" width="100%" alt="hero"/>
+          <Fade in={true} timeout={2000}>
+            <div>
+              <div className={classes.overlay}>
+                For All Your Landscape Construction Needs, <span className={classes.boldWord}>We've Got You Covered.</span>
+              </div>
+            </div>
+          </Fade>
+        </div> 
         <div className={classes.wrapper}>
           <Typography variant="h4" className={classes.bigSpace} color="primary">
-             At Rocket.io we are passionate about software
+             Why Chose Jason's & Son Landscaping?
           </Typography>
           <Typography variant="h5" className={classes.littleSpace} color="primary">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sodales congue tristique. Cras non pretium sem. Duis interdum lorem sit amet ligula pretium, sed rutrum urna semper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus egestas gravida ullamcorper.
