@@ -1,19 +1,37 @@
-import React from 'react'
-import {BottomNavigation, BottomNavigationAction} from '@material-ui/core'
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import YouTubeIcon from '@material-ui/icons/YouTube';
+import React from 'react';
+import {Link} from 'react-router-dom';
+import {makeStyles} from "@material-ui/core/styles"; 
+
+const styles = makeStyles({
+  footer: {
+    backgroundColor: '#f0f0f0',
+    padding: '20px',
+    textAlign: 'center',
+    marginTop: 'auto', // Push the footer to the bottom
+  },
+  links: {
+    margin: '0 10px',
+    textDecoration: 'none',
+    color: '#333',
+  },
+});
 
 function Footer() {
-    return (
-        <BottomNavigation >
-          <BottomNavigationAction color="red" label="Facebook" value="recents" icon={<FacebookIcon  style={{fill: "#3b5998"}}/>} />
-          <BottomNavigationAction label="Twitter" value="favorites" icon={<TwitterIcon  style={{fill: "#1DA1F2"}}/>} />
-          <BottomNavigationAction label="Instagram" value="nearby" icon={<InstagramIcon  style={{fill: " #C13584"}}/>} />
-          <BottomNavigationAction label="YouTube" value="folder" icon={<YouTubeIcon  style={{fill: "#c4302b"}}/>} />
-        </BottomNavigation>
-)
-}
+  const classes = styles();
+  return (
+    <div className={classes.footer}>
+      <p>© {new Date().getFullYear()} Your Website Name</p>
+      <div>
+        {/* Replace the Link components with simple text placeholders */}
+        <span className={classes.links}>Home</span>
+        <span className={classes.links}>About Us</span>
+        <span className={classes.links}>Services</span>
+        <span className={classes.links}>Products</span>
+        <span className={classes.links}>Careers</span>
+        <span className={classes.links}>Contact Us</span>
+      </div>
+    </div>
+  );
+};
 
-export default Footer
+export default Footer;

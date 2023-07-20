@@ -1,7 +1,7 @@
 import React from 'react'
-import CustomBtn from './CustomBtn'
 import {AppBar, Typography, Box} from '@material-ui/core'
 import {makeStyles} from "@material-ui/core/styles"; 
+import {Link} from 'react-router-dom';
 
 const styles = makeStyles({
     bar:{
@@ -38,13 +38,14 @@ const styles = makeStyles({
 function NavBar() {
     const classes = styles()
     return (
+        <div>
             <AppBar position="fixed" color="rgba(0, 0, 0, 0.87)" className={classes.bar}>   
                 <Box className={classes.box}>
                     <Box flexGrow={0.25}/>
                     <img src="j_and_s_logo.png" alt="logo" className={classes.logo}/> 
                     <Box flexGrow={1}/>
                     <Typography variant="h8" className={classes.menuItem}>
-                    Home
+                        Home
                     </Typography>
                     <Typography variant="h8" className={classes.menuItem}>
                         About Us
@@ -63,7 +64,8 @@ function NavBar() {
                     </Typography>
                 </Box>
             </AppBar>
+        </div>
     )
 }
 
-export default NavBar
+export default NavBar;
