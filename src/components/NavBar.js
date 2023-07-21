@@ -32,6 +32,10 @@ const styles = makeStyles({
         },
         ['@media (max-width:780px)']: { 
             paddingBottom: "1rem"    }
+    },
+    link: {
+        textDecoration: "none",
+        flexGrow: 0.05
     }
 })
 
@@ -44,24 +48,36 @@ function NavBar() {
                     <Box flexGrow={0.25}/>
                     <img src="j_and_s_logo.png" alt="logo" className={classes.logo}/> 
                     <Box flexGrow={1}/>
-                    <Typography variant="h8" className={classes.menuItem}>
-                        Home
-                    </Typography>
-                    <Typography variant="h8" className={classes.menuItem}>
-                        About Us
-                    </Typography>
-                    <Typography variant="h8" className={classes.menuItem}>
-                        Services
-                    </Typography>
-                    <Typography variant="h8" className={classes.menuItem}>
-                        Products 
-                    </Typography>
-                    <Typography variant="h8" className={classes.menuItem}>
-                        Careers 
-                    </Typography>
-                    <Typography variant="h8" className={classes.menuItem}>
-                        Contact Us 
-                    </Typography>
+                    <Link to="/" className={classes.link}>
+                        <Typography component="span" variant="h8" className={classes.menuItem}>
+                            Home
+                        </Typography>
+                    </Link>
+                    <Link to="/about" className={classes.link}>
+                        <Typography component="span" variant="h8" className={classes.menuItem}>
+                            About Us
+                        </Typography>
+                    </Link>
+                    <Link to="/services" className={classes.link}>
+                        <Typography component="span" variant="h8" className={classes.menuItem}>
+                            Services
+                        </Typography>
+                    </Link>
+                    <Link to="/products" className={classes.link}>
+                        <Typography component="span" variant="h8" className={classes.menuItem}>
+                            Products 
+                        </Typography>
+                    </Link>
+                    <Link to="/careers" className={classes.link}>
+                        <Typography component="span" variant="h8" className={classes.menuItem}>
+                            Careers 
+                        </Typography>
+                    </Link>
+                    <Link to="/contact" className={classes.link}>
+                        <Typography component="span" variant="h8" className={classes.menuItem}>
+                            Contact Us 
+                        </Typography>
+                    </Link>
                 </Box>
             </AppBar>
         </div>

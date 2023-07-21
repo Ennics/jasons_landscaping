@@ -1,17 +1,17 @@
-// AboutUs.js
+// Services.js
 import React from 'react';
 import NavBar from './NavBar'
 import Footer from './Footer'
 
-const AboutUs = () => {
+const Services = () => {
   return (
     <div>
         <NavBar/>
-        <h1>About Us</h1>
-        <p>This is the About Us page content.</p>
+        <h1>Services</h1>
+        <p>This is the Services page content.</p>
         <Footer/>
     </div>
   );
 };
 
-export default AboutUs;
+export default Services;

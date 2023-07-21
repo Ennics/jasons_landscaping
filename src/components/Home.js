@@ -5,7 +5,7 @@ import {Typography} from '@material-ui/core';
 import NavBar from './NavBar'
 import Grid from './Grid'
 import Footer from './Footer'
-import AboutUs from './AboutUs'
+import AboutUs from './About'
 import SecurityIcon from '@material-ui/icons/Security';
 import EventNoteIcon from '@material-ui/icons/EventNote';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
