@@ -46,7 +46,9 @@ function NavBar() {
             <AppBar position="fixed" color="rgba(0, 0, 0, 0.87)" className={classes.bar}>   
                 <Box className={classes.box}>
                     <Box flexGrow={0.25}/>
-                    <img src="j_and_s_logo.png" alt="logo" className={classes.logo}/> 
+                    <Link to="/" className={classes.logo}>
+                        <img src="j_and_s_logo.png" width="100%" display="inline-block" alt="logo"/>
+                    </Link> 
                     <Box flexGrow={1}/>
                     <Link to="/" className={classes.link}>
                         <Typography component="span" variant="h8" className={classes.menuItem}>

@@ -20,15 +20,15 @@ function Footer() {
   const classes = styles();
   return (
     <div className={classes.footer}>
-      <p>© {new Date().getFullYear()} Your Website Name</p>
+      <p>© {new Date().getFullYear()} Jason's Landscaping</p>
       <div>
         {/* Replace the Link components with simple text placeholders */}
-        <span className={classes.links}>Home</span>
-        <span className={classes.links}>About Us</span>
-        <span className={classes.links}>Services</span>
-        <span className={classes.links}>Products</span>
-        <span className={classes.links}>Careers</span>
-        <span className={classes.links}>Contact Us</span>
+        <Link to="/" className={classes.links}>Home</Link>
+        <Link to="/about" className={classes.links}>About Us</Link>
+        <Link to="/services" className={classes.links}>Services</Link>
+        <Link to="/products" className={classes.links}>Products</Link>
+        <Link to="/careers" className={classes.links}>Careers</Link>
+        <Link to="/contact" className={classes.links}>Contact Us</Link>
       </div>
     </div>
   );

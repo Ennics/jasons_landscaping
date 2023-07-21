@@ -1,11 +1,10 @@
 import React from 'react';
 import { createTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import {Typography} from '@material-ui/core'; 
 import NavBar from './NavBar'
 import Grid from './Grid'
 import Footer from './Footer'
-import AboutUs from './About'
+import useScrollToTop from './useScrollToTop';
 import SecurityIcon from '@material-ui/icons/Security';
 import EventNoteIcon from '@material-ui/icons/EventNote';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
@@ -76,6 +75,7 @@ const theme = createTheme({
 })
 
 function Home() {
+    useScrollToTop();
     const classes = styles(); 
     return (
         <div>
@@ -92,10 +92,10 @@ function Home() {
                     </Fade>
                 </div> 
                 <div className={classes.wrapper}>
-                    <Typography variant="h4" className={classes.bigSpace} color="primary">
-                        Why Chose Jason's & Son Landscaping?
+                    <Typography variant="h4" className={classes.bigSpace} color="maroon">
+                        Why Chose Jason's Landscaping?
                     </Typography>
-                    <Typography variant="h5" className={classes.littleSpace} color="primary">
+                    <Typography variant="h5" className={classes.littleSpace} color="maroon">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sodales congue tristique. Cras non pretium sem. Duis interdum lorem sit amet ligula pretium, sed rutrum urna semper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus egestas gravida ullamcorper.
                     </Typography>
                 </div>
