@@ -20,7 +20,7 @@ function Footer() {
   const classes = styles();
   return (
     <div className={classes.footer}>
-      <p>© {new Date().getFullYear()} Jason's Landscaping</p>
+      <p>© {new Date().getFullYear()} JASON'S LANDSCAPING INC.</p>
       <div>
         {/* Replace the Link components with simple text placeholders */}
         <Link to="/" className={classes.links}>Home</Link>

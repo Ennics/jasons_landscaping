@@ -1,17 +1,12 @@
 import React from 'react';
 import { createTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
-import {Typography} from '@material-ui/core'; 
+import {Typography, Box} from '@material-ui/core'; 
 import NavBar from './NavBar'
-import Grid from './Grid'
+import InfoCard from './InfoCard';
 import Footer from './Footer'
 import useScrollToTop from './useScrollToTop';
-import SecurityIcon from '@material-ui/icons/Security';
-import EventNoteIcon from '@material-ui/icons/EventNote';
-import TrendingUpIcon from '@material-ui/icons/TrendingUp';
-import ImportExportIcon from '@material-ui/icons/ImportExport';
-import ComputerIcon from '@material-ui/icons/Computer';
-import HttpIcon from '@material-ui/icons/Http';
 import Fade from '@material-ui/core/Fade';
+import aboutImage from '../components/images/j_and_s_logo.png'
 
 const theme = createTheme({
     palette: {
@@ -45,7 +40,8 @@ const theme = createTheme({
       textAlign: "center"
     },
     bigSpace: {
-      marginTop: "5rem"
+      marginTop: "5rem",
+      color: "#800000"
     },
     littleSpace:{
       marginTop: "2.5rem",
@@ -71,6 +67,10 @@ const theme = createTheme({
     },
     boldWord: {
       fontWeight: "bold"
+    },
+    box:{
+      display: "flex",
+      alignItems: "center"
     }
 })
 
@@ -92,22 +92,59 @@ function Home() {
                     </Fade>
                 </div> 
                 <div className={classes.wrapper}>
-                    <Typography variant="h4" className={classes.bigSpace} color="maroon">
-                        Why Chose Jason's Landscaping?
+                    <Typography variant="h4" className={classes.bigSpace}>
+                        Your Trusted Partner in Construction and Landscaping Services 
                     </Typography>
-                    <Typography variant="h5" className={classes.littleSpace} color="maroon">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sodales congue tristique. Cras non pretium sem. Duis interdum lorem sit amet ligula pretium, sed rutrum urna semper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus egestas gravida ullamcorper.
+                    <Typography variant="h6" className={classes.littleSpace}>
+                      With over 25 years of experience, Jason's Landscaping has been proudly serving the Ottawa Valley 
+                      community with unparalleled expertise in a wide range of construction and landscaping services. As a 
+                      family-owned company, our dedication to quality workmanship and customer satisfaction has earned us a reputation 
+                      as a reliable partner in the industry. From landscaping and site preparation to demolition, septic 
+                      systems, road construction, flatbed, and towing services, we take pride in delivering top-notch 
+                      solutions tailored to meet your unique needs.
+                    </Typography>
+                    <Typography variant="h6" className={classes.littleSpace} color="maroon">
+                      Our team of skilled professionals is committed to 
+                      bringing your vision to life and transforming your projects into reality.
                     </Typography>
                 </div>
-                <div className={`${classes.grid} ${classes.bigSpace}`}>
-                    <Grid icon={<SecurityIcon style={{fill: "#4360A6", height:"125", width:"125"}}/>}  title="Secure" btnTitle="Show me More" />
-                    <Grid icon={<EventNoteIcon style={{fill: "#449A76", height:"125", width:"125"}}/>} title="Reliable" btnTitle="Show me More"/>
-                    <Grid icon={<TrendingUpIcon style={{fill: "#D05B2D", height:"125", width:"125"}}/>}  title="Performant" btnTitle="Show me More"/>
-                </div>
-                <div className={`${classes.grid} ${classes.littleSpace}`}>  
-                    <Grid icon={<ImportExportIcon style={{fill: "#5EA780", height:"125", width:"125"}}/>}  title="Modular" btnTitle="Show me More"/>
-                    <Grid icon={<ComputerIcon style={{fill: "#E69426", height:"125", width:"125"}}/>}  title="Multi-Platform" btnTitle="Show me More"/>
-                    <Grid icon={<HttpIcon style={{fill: "#2EA09D", height:"125", width:"125"}}/>} title="Connected" btnTitle="Show me More"/>
+                <div>
+                  <InfoCard
+                    subtitle="About Us"
+                    title="Who We Are"
+                    description="For the past 25 years, we have earned the trust of municipalities 
+                                and private developers in the region as their reliable partner."
+                    image={aboutImage}
+                    link="/about"
+                    imageOnRight={true}
+                  />
+                  <InfoCard
+                    subtitle="Services"
+                    title="What We Do"
+                    description="For the past 25 years, we have earned the trust of municipalities 
+                                and private developers in the region as their reliable partner."
+                    image={aboutImage}
+                    link="/services"
+                    imageOnRight={false}
+                  />
+                  <InfoCard
+                    subtitle="Products"
+                    title="The Materials You Need"
+                    description="For the past 25 years, we have earned the trust of municipalities 
+                                and private developers in the region as their reliable partner."
+                    image={aboutImage}
+                    link="/products"
+                    imageOnRight={true}
+                  />
+                  <InfoCard
+                    subtitle="Careers"
+                    title="Work With Us"
+                    description="For the past 25 years, we have earned the trust of municipalities 
+                                and private developers in the region as their reliable partner."
+                    image={aboutImage}
+                    link="/careers"
+                    imageOnRight={false}
+                  />
                 </div>
                 <div className={classes.bigSpace}>
                     <Footer/>
