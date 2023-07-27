@@ -4,6 +4,7 @@ import {Typography, Box} from '@material-ui/core';
 import NavBar from './NavBar'
 import InfoCard from './InfoCard';
 import Footer from './Footer'
+import ReviewSection from './ReviewSection';
 import useScrollToTop from './useScrollToTop';
 import Fade from '@material-ui/core/Fade';
 import aboutImage from '../components/images/who_we_are_img.jpeg'
@@ -111,6 +112,7 @@ function Home() {
                       bringing your vision to life and transforming your projects into reality.
                     </Typography>
                 </div>
+                <ReviewSection />
                 <div>
                   <InfoCard
                     subtitle="About Us"
