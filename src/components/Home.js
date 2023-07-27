@@ -6,7 +6,10 @@ import InfoCard from './InfoCard';
 import Footer from './Footer'
 import useScrollToTop from './useScrollToTop';
 import Fade from '@material-ui/core/Fade';
-import aboutImage from '../components/images/j_and_s_logo.png'
+import aboutImage from '../components/images/who_we_are_img.jpeg'
+import whatWeDoImage from '../components/images/what_we_do_img_2.jpeg'
+import theMaterials from '../components/images/the_materials_img.jpeg'
+import workWithUs from '../components/images/work_with_us_img.jpg'
 
 const theme = createTheme({
     palette: {
@@ -113,7 +116,7 @@ function Home() {
                     subtitle="About Us"
                     title="Who We Are"
                     description="For the past 25 years, we have earned the trust of municipalities 
-                                and private developers in the region as their reliable partner."
+                                and private developers across the Ottawa Valley."
                     image={aboutImage}
                     link="/about"
                     imageOnRight={true}
@@ -121,27 +124,28 @@ function Home() {
                   <InfoCard
                     subtitle="Services"
                     title="What We Do"
-                    description="For the past 25 years, we have earned the trust of municipalities 
-                                and private developers in the region as their reliable partner."
-                    image={aboutImage}
+                    description="Whether it's enhancing outdoor spaces or creating captivating 
+                    commercial landscapes, our skilled team strives to exceed expectations, bringing nature's 
+                    allure to life with every project we undertake."
+                    image={whatWeDoImage}
                     link="/services"
                     imageOnRight={false}
                   />
                   <InfoCard
                     subtitle="Products"
                     title="The Materials You Need"
-                    description="For the past 25 years, we have earned the trust of municipalities 
-                                and private developers in the region as their reliable partner."
-                    image={aboutImage}
+                    description="With our comprehensive range of landscaping products, we aim to help you achieve 
+                    your dream outdoor oasis with ease and excellence."
+                    image={theMaterials}
                     link="/products"
                     imageOnRight={true}
                   />
                   <InfoCard
                     subtitle="Careers"
                     title="Work With Us"
-                    description="For the past 25 years, we have earned the trust of municipalities 
-                                and private developers in the region as their reliable partner."
-                    image={aboutImage}
+                    description="Join us in shaping beautiful outdoor spaces and making a positive impact on the communities 
+                    we serve. Discover a fulfilling career path at Jason's Landscaping today."
+                    image={workWithUs}
                     link="/careers"
                     imageOnRight={false}
                   />

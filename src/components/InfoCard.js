@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     width: '50%', // Adjust the width of the image as needed
+    boxShadow: `0px 8px 15px rgba(139, 0, 0, 0.5)`
   },
   content: {
     flex: 1,
@@ -42,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'maroon', // Set the text color to maroon
     backgroundColor: 'transparent', // Make the background transparent
     border: '2px solid maroon', // Add a border around the button
-    width: "30%",
+    width: "125px",
     alignSelf: 'flex-end',
     justifyContent: "center",
     borderRadius: theme.spacing(1), // Add border radius for a rounded look
@@ -68,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: 'maroon', // Change the background color on hover
       color: 'white', // Change the text color on hover
-    }
+    },
   },
   titleBox: {
     display: "flex",
