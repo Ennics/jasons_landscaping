@@ -1,91 +1,125 @@
-// ReviewSection.js
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
+import { Typography, Box } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons//ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons//ArrowForward';
 
-// ReviewSection.js
 const useStyles = makeStyles((theme) => ({
-    reviewSection: {
-      display: 'flex',
-      alignItems: 'center',
-      flexDirection: 'column',
-      position: 'relative',
-      width: '100%',
-      height: '300px', // Adjust the height as per your requirement
-      overflow: 'hidden',
-    },
-    quotationMark: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginTop: theme.spacing(2),
-      marginBottom: theme.spacing(1),
-    },
-    quotationMarkImage: {
-      // Add styles for the quotation mark image
-    },
-    reviewContainer: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      textAlign: 'center',
-      width: '100%',
-    },
-    review: {
-      fontSize: '20px', // Adjust the font size as per your requirement
-    },
-    reviewerName: {
-      fontWeight: 'bold',
-      marginTop: theme.spacing(1),
-    },
-    arrows: {
-      display: 'flex',
-      justifyContent: 'space-between',
-      width: '100%',
-      marginTop: theme.spacing(1),
-    },
-    arrow: {
-      cursor: 'pointer',
-      fontSize: '32px', // Adjust the arrow size as per your requirement
-    },
-    dots: {
-      display: 'flex',
-      justifyContent: 'center',
-      marginTop: theme.spacing(1),
-    },
-    dot: {
-      width: '10px',
-      height: '10px',
-      borderRadius: '50%',
-      backgroundColor: '#ccc',
-      margin: theme.spacing(1),
-      cursor: 'pointer',
-    },
-    activeDot: {
-      width: '10px',
-      height: '10px',
-      borderRadius: '50%',
-      backgroundColor: '#000', // Active dot color
-      margin: theme.spacing(1),
-      cursor: 'pointer',
-    },
+  reviewSection: {
+    width: '45%',
+    marginTop: theme.spacing(3),
+    margin: '0 auto',
+    position: 'relative',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    padding: theme.spacing(2),
+  },
+  reviewText: {
+    fontSize: '0.8rem',
+    color: '#777',
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(-2),
+    textAlign: 'center',
+  },
+  ownerName: {
+    fontWeight: 'bold',
+    color: '#000',
+    textAlign: 'center',
+  },
+  reviewContent: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    textAlign: 'center',
+    marginBottom: theme.spacing(2),
+  },
+  arrows: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: theme.spacing(2),
+  },
+  arrowButton: {
+    backgroundColor: '#fff',
+    color: '#800000',
+    width: theme.spacing(3),
+    height: theme.spacing(3),
+    borderRadius: '50%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s',
+    marginLeft: theme.spacing(5),
+    marginRight: theme.spacing(5),
+  },
+  dots: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  dot: {
+    width: theme.spacing(1),
+    height: theme.spacing(1),
+    borderRadius: '50%',
+    backgroundColor: '#800000',
+    margin: theme.spacing(0, 0.5),
+    transition: 'background-color 0.3s',
+  },
+  activeDot: {
+    backgroundColor: '#fff',
+    border: '2px solid #800000',
+  },
+  reviewContainer: {
+    height: '15vh', 
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    textAlign: 'center',
+    overflow: 'hidden',
+  },
 }));
-  
-  
+
+const reviews = [
+  {
+    text: 'I have known Jason for over 15 years and he has done excellent work for my parent\'s home (stone and grade improvement) and I have just had tree removal, shrub trimming, and a complete front lawn re-sodded. Jason and his team are fast and the work performed is top shelf!',
+    owner: 'Mike',
+  },
+  {
+    text: 'We recently used Jason\'s Landscaping to do our septic bed and foundation excavation. Jason and his crew was very professional and on time.  I would strongly recommend them.',
+    owner: 'Al',
+  },
+  {
+    text: 'I have had Jason\'s do a few Jobs for me. Most recent was landscaping, leveling our lot and installing armour stone. Job was done quickly and price was good as was the job. Only landscaping company I have used and always my first call.',
+    owner: 'Grant',
+  },
+  {
+    text: 'Just had my backyard graded and Jason went above and beyond for us. Wanted to say thank you for your amazing work, definitely would hire you again.',
+    owner: 'Tracy',
+  },
+  {
+    text: 'I have called in Jason a few times and have found they are very reliable and professional every time. I will continue to go with this company and recommend them to anyone who is looking for an experienced company to get the job done right.',
+    owner: 'Jess',
+  },
+  {
+    text: 'This guy just does it all! Reliable and affordable you can count on Jason\'s for all your groundskeeping needs! Highly recommend.',
+    owner: 'Lyse',
+  },
+  {
+    text: 'Excellent service and great quality stuff. Highly recommend for anyone looking for soil, mulch, and stones in the westend.',
+    owner: 'Fawzi',
+  },
+  // Add more reviews as needed
+];
 
 const ReviewSection = () => {
   const classes = useStyles();
-  const reviews = [{ review: 'This website is amazing!', reviewer: 'John Doe' },{ review: 'I love it!', reviewer: 'Yo Yo' },{ review: 'YOU ARE THE BEST!', reviewer: 'Mama Mia' }
-    // Add your review data here (review text and reviewer's name)
-    // Example: { review: 'This website is amazing!', reviewer: 'John Doe' }
-  ];
-
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
 
-  // Auto scroll reviews every 5 seconds
   useEffect(() => {
+    // Code to handle the automatic scroll every 3 seconds
     const interval = setInterval(() => {
       handleNextReview();
     }, 5000);
@@ -107,43 +141,36 @@ const ReviewSection = () => {
 
   return (
     <div className={classes.reviewSection}>
-      {/* Review quotation mark image */}
-      <div className={classes.quotationMark}>
-        <img src="quotes_img.png" width="20%" display="inline-block" alt="quotes"/>
+      <img src="quotation_png.png" width="10%" display="inline-block" alt="quotes"/>
+      <div className={classes.reviewContent}>
+        <Box className={classes.reviewContainer}>
+          <Typography className={classes.reviewText}>
+            {reviews[currentReviewIndex].text}
+          </Typography>
+        </Box>
       </div>
-
-      {/* Centered review and description */}
-      <div className={classes.reviewContainer}>
-        <Typography variant="h6" className={classes.review}>
-          "{reviews[currentReviewIndex].review}"
-        </Typography>
-        <Typography variant="body1" className={classes.reviewerName}>
-          - {reviews[currentReviewIndex].reviewer}
-        </Typography>
-      </div>
-
-      {/* Left and right arrows */}
-      <ArrowBackIcon
-        className={classes.arrow}
-        onClick={handlePrevReview}
-      />
-      <ArrowForwardIcon
-        className={classes.arrow}
-        onClick={handleNextReview}
-      />
-
-      {/* Dots */}
+      <Typography className={classes.ownerName}>
+        {reviews[currentReviewIndex].owner}
+      </Typography>
       <div className={classes.dots}>
+        <div
+          className={classes.arrowButton}
+          onClick={handlePrevReview}
+        >
+          <ArrowBackIcon />
+        </div>
         {reviews.map((_, index) => (
           <div
             key={index}
-            className={
-              index === currentReviewIndex
-                ? classes.activeDot
-                : classes.dot
-            }
+            className={`${classes.dot} ${index === currentReviewIndex ? classes.activeDot : ''}`}
           />
         ))}
+        <div
+          className={classes.arrowButton}
+          onClick={handleNextReview}
+        >
+          <ArrowForwardIcon />
+        </div>
       </div>
     </div>
   );

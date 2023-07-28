@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   card: {
     display: 'flex',
-    width: '65%',
+    width: '70%',
     margin: '0 auto',
     marginBottom: theme.spacing(5),
     marginTop: theme.spacing(5),
@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'maroon', // Set the text color to maroon
     backgroundColor: 'transparent', // Make the background transparent
     border: '2px solid maroon', // Add a border around the button
-    width: "30%",
+    width: "125px",
     justifyContent: "center",
     borderRadius: theme.spacing(1), // Add border radius for a rounded look
     padding: theme.spacing(1, 2), // Add padding to the button
@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
   },
   typography: {
     marginBottom: theme.spacing(-1), // Reduce the margin between Typography elements
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   subtitle: {
     color: "maroon"
@@ -91,23 +91,23 @@ const InfoCard = ({ title, subtitle, description, image, link, imageOnRight }) =
   if (imageOnRight == true) {
     return (
         <Card className={classes.card}>
-        <CardContent className={classes.content}>
-            <Box className={classes.titleBox}>
-                <Typography variant="h6" className={`${classes.typography} ${classes.subtitle}`} gutterBottom>
-                    {subtitle}
-                </Typography>
-                <Typography variant="h5" className={classes.typography} gutterBottom>
-                    {title}
-                </Typography>
-            </Box>
-            <Typography variant="body0" gutterBottom>
-            {description}
-            </Typography>
-            <Button component={Link} to={link} variant="contained" className={classes.learnMoreButton}>
-            Learn More
-            </Button>
-        </CardContent>
-        <CardMedia className={classes.media} image={image}/>
+          <CardContent className={classes.content}>
+              <Box className={classes.titleBox}>
+                  <Typography variant="h6" className={`${classes.typography} ${classes.subtitle}`} gutterBottom>
+                      {subtitle}
+                  </Typography>
+                  <Typography variant="h5" className={classes.typography} gutterBottom>
+                      {title}
+                  </Typography>
+              </Box>
+              <Typography variant="body0" gutterBottom>
+                {description}
+              </Typography>
+              <Button component={Link} to={link} variant="contained" className={classes.learnMoreButton}>
+              Learn More
+              </Button>
+          </CardContent>
+          <CardMedia className={classes.media} image={image}/>
         </Card>
     )
   }
