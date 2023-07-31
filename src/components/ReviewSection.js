@@ -6,7 +6,7 @@ import ArrowForwardIcon from '@material-ui/icons//ArrowForward';
 
 const useStyles = makeStyles((theme) => ({
   reviewSection: {
-    width: '45%',
+    width: '450px',
     marginTop: theme.spacing(3),
     margin: '0 auto',
     position: 'relative',
@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
     border: '2px solid #800000',
   },
   reviewContainer: {
-    height: '15vh', 
+    height: '100px', 
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
