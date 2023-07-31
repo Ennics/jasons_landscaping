@@ -69,6 +69,21 @@ const theme = createTheme({
       fontFamily: 'Georgia',
       marginTop: "-5vw"
     },
+    arrowAnimation: {
+      position: 'absolute',
+      bottom: theme.spacing(4), // Adjust the distance from the bottom as needed
+      left: '50%',
+      transform: 'translateX(-50%)',
+      animation: '$raindrop 2s infinite',
+    },
+    '@keyframes raindrop': {
+      '0%, 100%': {
+        transform: 'translateY(0)',
+      },
+      '50%': {
+        transform: 'translateY(-5px)', // Adjust the raindrop effect height as needed
+      },
+    },
     boldWord: {
       fontWeight: "bold"
     },
