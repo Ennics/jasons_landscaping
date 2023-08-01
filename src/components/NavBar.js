@@ -9,16 +9,13 @@ const styles = makeStyles({
         justifyContent: "space-between",
         paddingTop: "0.5rem",
         backgroundColor: 'rgba(255, 255, 255, 0.9)',
-        ['@media (max-width:780px)']: { 
-           flexDirection: "column"
-          }
     },
     box:{
         display: "flex",
         alignItems: "center"
     },
     logo: {
-        width: "10%", 
+        width: "175px", 
         display: "inline-block"
     },
     menuItem: {

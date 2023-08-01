@@ -50,9 +50,9 @@ const styles = makeStyles({
   },
   arrowAnimation: {
     position: 'absolute',
-    bottom: theme.spacing(4), // Adjust the distance from the bottom as needed
-    left: '50%',
-    transform: 'translateX(-50%)',
+    top: "50%",
+    left: "50%", 
+    transform: "translate(-50%, -50%)", 
     animation: '$raindrop 2s infinite',
   },
   '@keyframes raindrop': {

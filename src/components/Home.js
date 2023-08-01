@@ -1,5 +1,6 @@
 import React from 'react';
 import { createTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
+import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
 import {Typography, Box} from '@material-ui/core'; 
 import NavBar from './NavBar'
 import InfoCard from './InfoCard';
@@ -90,7 +91,34 @@ const theme = createTheme({
     box:{
       display: "flex",
       alignItems: "center"
-    }
+    },
+    arrowAnimation: {
+      position: 'absolute',
+      top: "50%",
+      left: "50%", 
+      transform: "translate(-50%, -50%)", 
+      animation: '$raindrop 2s infinite',
+    },
+    '@keyframes raindrop': {
+      '0%, 100%': {
+        transform: 'translateY(0)',
+      },
+      '50%': {
+        transform: 'translateY(-5px)', // Adjust the raindrop effect height as needed
+      },
+    },
+    buttonContainer: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '32px', // Adjust the width as needed to fit the circle
+      height: '32px', // Adjust the height as needed to fit the circle
+      borderRadius: '50%',
+      border: '2px solid white',
+    },
+    arrowIcon: {
+      color: 'white', // Set the icon color to white
+    },
 })
 
 function Home() {
@@ -106,6 +134,11 @@ function Home() {
                         <div>
                             <div className={classes.overlay}>
                                For All Your Landscape Construction Needs, <span className={classes.boldWord}>We've Got You Covered.</span>
+                            </div>
+                            <div className={classes.arrowAnimation}>
+                              <div className={classes.buttonContainer}>
+                                <ArrowDownwardIcon className={classes.arrowIcon} />
+                              </div>
                             </div>
                         </div>
                     </Fade>
