@@ -5,6 +5,7 @@ import {Typography, Box} from '@material-ui/core';
 import NavBar from './NavBar'
 import InfoCard from './InfoCard';
 import Footer from './Footer'
+import Navigation from './Navigation';
 import ReviewSection from './ReviewSection';
 import useScrollToTop from './useScrollToTop';
 import Fade from '@material-ui/core/Fade';
@@ -127,7 +128,7 @@ function Home() {
     return (
         <div>
             <ThemeProvider theme={theme}>
-                <NavBar/>
+                <Navigation/>
                 <div>
                     <img src="cover_img_2.png" width="100%" alt="hero"/>
                     <Fade in={true} timeout={2000}>
