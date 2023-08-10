@@ -89,8 +89,6 @@ const About = () => {
             ABOUT US
           </div>
           <div className={classes.arrowAnimation}>
-            {/* Replace the following with your arrow icon component */}
-            {/* <YourArrowIconComponent /> */}
             <div className={classes.buttonContainer}>
               <ArrowDownwardIcon className={classes.arrowIcon} />
             </div>
