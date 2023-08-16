@@ -67,7 +67,7 @@ const theme = createTheme({
       color: "white", 
       textAlign: "center",
       width: "50%",
-      fontSize: "2.5vw",
+      fontSize: "2rem",
       fontFamily: 'Georgia',
       marginTop: "-5vw"
     },
@@ -94,10 +94,12 @@ const theme = createTheme({
       alignItems: "center"
     },
     arrowAnimation: {
-      position: 'absolute',
-      top: "50%",
-      left: "50%", 
-      transform: "translate(-50%, -50%)", 
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingTop: "1rem",
+      // top: "50%",
+      // left: "50%", 
+      // transform: "translate(-50%, -50%)", 
       animation: '$raindrop 2s infinite',
     },
     '@keyframes raindrop': {
@@ -120,29 +122,45 @@ const theme = createTheme({
     arrowIcon: {
       color: 'white', // Set the icon color to white
     },
+    coverImageContainer: {
+      position: 'relative',
+      height: '870px', /* Set your desired constant height */
+      overflow: 'hidden', /* Hide any overflow */
+  
+      /* Set the background image */
+      backgroundImage: `url('cover_img_2.png')`,
+      backgroundSize: 'cover', /* Maintain image proportions and cover the container */
+      backgroundPosition: 'center center', /* Center the image */
+    },
 })
-
+// <img src="cover_img_2.png" width="100%" alt="hero"/> <NavBar/>
 function Home() {
     useScrollToTop();
     const classes = styles(); 
     return (
         <div>
+          <NavBar/>
             <ThemeProvider theme={theme}>
-                <Navigation/>
                 <div>
-                    <img src="cover_img_2.png" width="100%" alt="hero"/>
-                    <Fade in={true} timeout={2000}>
-                        <div>
-                            <div className={classes.overlay}>
-                               For All Your Landscape Construction Needs, <span className={classes.boldWord}>We've Got You Covered.</span>
-                            </div>
-                            <div className={classes.arrowAnimation}>
-                              <div className={classes.buttonContainer}>
-                                <ArrowDownwardIcon className={classes.arrowIcon} />
+                    <div className={classes.coverImageContainer}>
+                      <Fade in={true} timeout={2000}>
+                          <div>
+                              <div className={classes.overlay}>
+                                <div>
+                                  For All Your Landscape Construction Needs,
+                                </div>
+                                <div className={classes.boldWord}>
+                                  We've Got You Covered.
+                                </div>
+                                <div className={classes.arrowAnimation}>
+                                  <div className={classes.buttonContainer}>
+                                    <ArrowDownwardIcon className={classes.arrowIcon} />
+                                  </div>
+                                </div>
                               </div>
-                            </div>
-                        </div>
-                    </Fade>
+                          </div>
+                      </Fade>
+                    </div>
                 </div> 
                 <div className={classes.wrapper}>
                     <Typography variant="h4" className={classes.bigSpace}>

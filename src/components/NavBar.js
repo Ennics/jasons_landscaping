@@ -1,9 +1,10 @@
-import React from 'react'
-import {AppBar, Typography, Box} from '@material-ui/core'
+import React, { useState } from 'react';
+import {AppBar, Typography, Box, Toolbar, IconButton, Button, Menu, MenuItem } from '@material-ui/core'
+import MenuIcon from '@material-ui/icons/Menu';
 import {makeStyles} from "@material-ui/core/styles"; 
 import {Link} from 'react-router-dom';
 
-const styles = makeStyles({
+const styles = makeStyles((theme) => ({
     bar:{
         boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)',
         justifyContent: "space-between",
@@ -32,12 +33,32 @@ const styles = makeStyles({
     },
     link: {
         textDecoration: "none",
-        flexGrow: 0.05
-    }
-})
+        paddingRight: "1rem",
+        color: "#000000"
+    },
+    menuButton: {
+        [theme.breakpoints.up('md')]: {
+          display: 'none', // Hide the menu button for larger screens
+        },
+      },
+      navItems: {
+        [theme.breakpoints.down('sm')]: {
+          display: 'none', // Hide the navigation items for smaller screens
+        },
+      },
+}));
 
 function NavBar() {
     const classes = styles()
+    const [anchorEl, setAnchorEl] = useState(null);
+
+    const handleMenuClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleMenuClose = () => {
+        setAnchorEl(null);
+    };
     return (
         <div>
             <AppBar position="fixed" color="rgba(0, 0, 0, 0.87)" className={classes.bar}>   
@@ -47,36 +68,95 @@ function NavBar() {
                         <img src="j_and_s_logo.png" width="100%" display="inline-block" alt="logo"/>
                     </Link> 
                     <Box flexGrow={1}/>
-                    <Link to="/" className={classes.link}>
-                        <Typography component="span" variant="h8" className={classes.menuItem}>
-                            Home
-                        </Typography>
-                    </Link>
-                    <Link to="/about" className={classes.link}>
-                        <Typography component="span" variant="h8" className={classes.menuItem}>
-                            About Us
-                        </Typography>
-                    </Link>
-                    <Link to="/services" className={classes.link}>
-                        <Typography component="span" variant="h8" className={classes.menuItem}>
-                            Services
-                        </Typography>
-                    </Link>
-                    <Link to="/products" className={classes.link}>
-                        <Typography component="span" variant="h8" className={classes.menuItem}>
-                            Products 
-                        </Typography>
-                    </Link>
-                    <Link to="/careers" className={classes.link}>
-                        <Typography component="span" variant="h8" className={classes.menuItem}>
-                            Careers 
-                        </Typography>
-                    </Link>
-                    <Link to="/contact" className={classes.link}>
-                        <Typography component="span" variant="h8" className={classes.menuItem}>
-                            Contact Us 
-                        </Typography>
-                    </Link>
+                    <Toolbar>
+                        {/* Hamburger Menu Icon */}
+                        <IconButton
+                        edge="start"
+                        className={classes.menuButton}
+                        color="inherit"
+                        onClick={handleMenuClick}
+                        >
+                        <MenuIcon />
+                        </IconButton>
+
+                        {/* Navigation Items */}
+                        <div className={classes.navItems}>
+                            {/* Add your navigation buttons here */}
+                            <Link to="/" className={classes.link}>
+                                <Typography component="span" variant="h8" className={classes.menuItem}>
+                                    Home
+                                </Typography>
+                            </Link>
+                            <Link to="/about" className={classes.link}>
+                                <Typography component="span" variant="h8" className={classes.menuItem}>
+                                    About Us
+                                </Typography>
+                            </Link>
+                            <Link to="/services" className={classes.link}>
+                                <Typography component="span" variant="h8" className={classes.menuItem}>
+                                    Services
+                                </Typography>
+                            </Link>
+                            <Link to="/products" className={classes.link}>
+                                <Typography component="span" variant="h8" className={classes.menuItem}>
+                                    Products 
+                                </Typography>
+                            </Link>
+                            <Link to="/careers" className={classes.link}>
+                                <Typography component="span" variant="h8" className={classes.menuItem}>
+                                    Careers 
+                                </Typography>
+                            </Link>
+                            <Link to="/contact" className={classes.link}>
+                                <Typography component="span" variant="h8" className={classes.menuItem}>
+                                    Contact Us 
+                                </Typography>
+                            </Link>
+                        </div>
+                    </Toolbar>
+                    {/* Responsive Menu */}
+                    <Menu
+                        anchorEl={anchorEl}
+                        open={Boolean(anchorEl)}
+                        onClose={handleMenuClose}
+                        PaperProps={{
+                        style: {
+                            marginTop: '48px', // Adjust the distance from the top
+                        },
+                        }}
+                    >
+                        <MenuItem onClick={handleMenuClose}>
+                            <Link to="/" className={classes.link}>
+                                Home
+                            </Link>
+                        </MenuItem>
+                        <MenuItem onClick={handleMenuClose}>
+                            <Link to="/about" className={classes.link}>
+                                About Us
+                            </Link>
+                        </MenuItem>
+                        <MenuItem onClick={handleMenuClose}>
+                            <Link to="/services" className={classes.link}>
+                                Services
+                            </Link>
+                        </MenuItem>
+                        <MenuItem onClick={handleMenuClose}>
+                            <Link to="/products" className={classes.link}>
+                                Products
+                            </Link>
+                        </MenuItem>
+                        <MenuItem onClick={handleMenuClose}>
+                            <Link to="/careers" className={classes.link}>
+                                Careers
+                            </Link>
+                        </MenuItem>
+                        <MenuItem onClick={handleMenuClose}>
+                            <Link to="/contact" className={classes.link}>
+                                Contact Us
+                            </Link>
+                        </MenuItem>
+                        {/* ... Other menu items ... */}
+                    </Menu>
                 </Box>
             </AppBar>
         </div>
