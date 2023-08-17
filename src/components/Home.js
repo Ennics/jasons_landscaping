@@ -41,7 +41,7 @@ const theme = createTheme({
   
   const styles = makeStyles({
     wrapper: {
-      width: "65%",
+      width: "80%",
       margin: "auto",
       textAlign: "center"
     },

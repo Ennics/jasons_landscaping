@@ -6,7 +6,7 @@ import ArrowForwardIcon from '@material-ui/icons//ArrowForward';
 
 const useStyles = makeStyles((theme) => ({
   reviewSection: {
-    width: '450px',
+    width: '65%',
     marginTop: theme.spacing(3),
     margin: '0 auto',
     position: 'relative',
@@ -17,11 +17,23 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   reviewText: {
-    fontSize: '0.8rem',
+    fontSize: '1.2rem', //1.2rem
     color: '#777',
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(-2),
     textAlign: 'center',
+    [theme.breakpoints.down('lg')]: {
+      fontSize: "1.2rem", // Adjust font size for screens less than 'sm' breakpoint
+    },
+    [theme.breakpoints.down('md')]: {
+      fontSize: "1.1rem", // Adjust font size for screens less than 'sm' breakpoint
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: "1rem", // Adjust font size for screens less than 'sm' breakpoint
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: "0.8rem", // Adjust font size for screens less than 'sm' breakpoint
+    },
   },
   ownerName: {
     fontWeight: 'bold',
@@ -73,12 +85,11 @@ const useStyles = makeStyles((theme) => ({
     border: '2px solid #800000',
   },
   reviewContainer: {
-    height: '100px', 
+    height: '150px', 
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     textAlign: 'center',
-    overflow: 'hidden',
   },
 }));
 
@@ -119,7 +130,7 @@ const ReviewSection = () => {
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
 
   useEffect(() => {
-    // Code to handle the automatic scroll every 3 seconds
+    // Code to handle the automatic scroll every 5 seconds
     const interval = setInterval(() => {
       handleNextReview();
     }, 5000);
@@ -141,7 +152,7 @@ const ReviewSection = () => {
 
   return (
     <div className={classes.reviewSection}>
-      <img src="quotation_png.png" width="10%" display="inline-block" alt="quotes"/>
+      <img src="quotation_png.png" width="75rem" display="inline-block" alt="quotes"/>
       <div className={classes.reviewContent}>
         <Box className={classes.reviewContainer}>
           <Typography className={classes.reviewText}>
