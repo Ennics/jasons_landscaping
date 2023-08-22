@@ -11,15 +11,18 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   card: {
     display: 'flex',
-    width: '70%',
+    width: '1000px',
     margin: '0 auto',
     marginBottom: theme.spacing(5),
     marginTop: theme.spacing(5),
-    height: "20vw",
-    boxShadow: 'none'
+    height: "350px",
+    boxShadow: '0px 8px 15px rgba(139, 0, 0, 0.5)', //none
+    [theme.breakpoints.down('sm')]: {
+      fontSize: "1rem", // Adjust font size for screens less than 'sm' breakpoint
+    },
   },
   media: {
-    width: '50%', // Adjust the width of the image as needed
+    width: '550px', // Adjust the width of the image as needed
     boxShadow: `0px 8px 15px rgba(139, 0, 0, 0.5)`
   },
   content: {
