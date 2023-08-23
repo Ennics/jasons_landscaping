@@ -1,5 +1,6 @@
 // InfoCard.js
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card } from '@material-ui/core';
 import { CardMedia } from '@material-ui/core';
@@ -17,9 +18,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(5),
     height: "350px",
     boxShadow: '0px 8px 15px rgba(139, 0, 0, 0.5)', //none
-    [theme.breakpoints.down('sm')]: {
-      fontSize: "1rem", // Adjust font size for screens less than 'sm' breakpoint
-    },
   },
   media: {
     width: '550px', // Adjust the width of the image as needed
@@ -85,11 +83,55 @@ const useStyles = makeStyles((theme) => ({
   },
   subtitle: {
     color: "maroon"
-  }
+  },
+  smallCardContainer: {
+    display: 'flex',
+    width: '500px',
+    flexDirection: 'column',
+    margin: '0 auto',
+    marginBottom: theme.spacing(5),
+    marginTop: theme.spacing(5),
+    height: "350px",
+    boxShadow: '0px 8px 15px rgba(139, 0, 0, 0.5)', //none
+    alignItems: 'center',     // Center horizontally
+    textAlign: 'center',      // Center text content
+  },
+  smallMedia: {
+    width: '550px', // Adjust the width of the image as needed
+    height: '100%',
+    boxShadow: `0px 8px 15px rgba(139, 0, 0, 0.5)`,
+    marginBottom: theme.spacing(2),
+  },
 }));
 
 const InfoCard = ({ title, subtitle, description, image, link, imageOnRight }) => {
   const classes = useStyles();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  if (windowWidth < 950) {
+    return (
+      <Card className={classes.smallCardContainer}>
+        <CardMedia className={classes.smallMedia} image={image}/>
+        <CardContent>
+          <p>
+            Hellooo
+          </p>
+        </CardContent>
+      </Card>
+    )
+  }
   
   if (imageOnRight == true) {
     return (
