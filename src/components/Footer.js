@@ -16,11 +16,11 @@ const useStyles = makeStyles((theme) => ({
   },
   section: {
     margin: theme.spacing(2), // Space between sections
-    textAlign: 'center', // Center the content within each section
+    textAlign: 'left', // Center the content within each section
   },
   title: {
     fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
-    fontSize: '24px', // Replace with the desired font size
+    fontSize: '16px', // Replace with the desired font size
     fontWeight: 'bold', // Replace with the desired font weight
     marginBottom: theme.spacing(1), // Space between title and description
   },
@@ -44,6 +44,13 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(3), // Space between links and footer text
     fontSize: '14px', // Replace with the desired font size
   },
+  underlineImage: {
+    marginTop: theme.spacing(-3),
+    position: "relative",
+    display: "inline-block",
+    width: '25px', // Adjust the width of the underline as needed
+    height: '30px'
+  },
 }));
 
 const Footer = () => {
@@ -58,8 +65,9 @@ const Footer = () => {
       {/* First Section */}
       <Box className={classes.section}>
         <Typography variant="h4" className={classes.title}>
-          Our Company
+          OUR COMPANY
         </Typography>
+        <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
         <Typography variant="body1" className={classes.description}>
           Your local construction company, proudly serving the Ottawa Valley community since 1998.
         </Typography>
@@ -76,8 +84,9 @@ const Footer = () => {
       {/* Second Section */}
       <Box className={classes.section}>
         <Typography variant="h6" className={classes.title}>
-          Helpful Links
+          HELPFUL LINKS
         </Typography>
+        <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
         <Box className={classes.footerText}>
           <Link to="/about" className={classes.link}>
               <Typography component="span" variant="h8" style={{ textDecoration: 'underline' }}>
@@ -107,8 +116,9 @@ const Footer = () => {
       {/* Third Section */}
       <Box className={classes.section}>
         <Typography variant="h6" className={classes.title}>
-          Contact Info
+          CONTACT INFO
         </Typography>
+        <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
         <Typography variant="body1">
           Jasonslandscaping@bell.net
           <br />
