@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(5),
     marginTop: theme.spacing(5),
     height: "350px",
-    boxShadow: '0px 8px 15px rgba(139, 0, 0, 0.5)', //none
+    boxShadow: 'none', //none
   },
   media: {
     width: '550px', // Adjust the width of the image as needed
@@ -86,21 +86,44 @@ const useStyles = makeStyles((theme) => ({
   },
   smallCardContainer: {
     display: 'flex',
-    width: '500px',
+    width: '100%',
     flexDirection: 'column',
     margin: '0 auto',
     marginBottom: theme.spacing(5),
     marginTop: theme.spacing(5),
     height: "350px",
-    boxShadow: '0px 8px 15px rgba(139, 0, 0, 0.5)', //none
+    boxShadow: 'none', //none
     alignItems: 'center',     // Center horizontally
     textAlign: 'center',      // Center text content
   },
   smallMedia: {
-    width: '550px', // Adjust the width of the image as needed
+    width: '50%', // Adjust the width of the image as needed
     height: '100%',
     boxShadow: `0px 8px 15px rgba(139, 0, 0, 0.5)`,
     marginBottom: theme.spacing(2),
+  },
+  smallContent: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    textAlign: 'center',
+    margin: theme.spacing(1, 5)
+  },
+  learnMoreButtonSmall: {
+    fontSize: '0.8rem', // Set the font size to make the button smaller
+    color: 'maroon', // Set the text color to maroon
+    backgroundColor: 'transparent', // Make the background transparent
+    border: '2px solid maroon', // Add a border around the button
+    width: "125px",
+    justifyContent: "center",
+    borderRadius: theme.spacing(1), // Add border radius for a rounded look
+    padding: theme.spacing(1, 2), // Add padding to the button
+    transition: 'background-color 0.2s ease-in-out', // Add a smooth transition on hover
+    '&:hover': {
+      backgroundColor: 'maroon', // Change the background color on hover
+      color: 'white', // Change the text color on hover
+    },
   },
 }));
 
@@ -124,11 +147,22 @@ const InfoCard = ({ title, subtitle, description, image, link, imageOnRight }) =
     return (
       <Card className={classes.smallCardContainer}>
         <CardMedia className={classes.smallMedia} image={image}/>
-        <CardContent>
-          <p>
-            Hellooo
-          </p>
+        <CardContent className={classes.smallContent}>
+          <Box className={classes.titleBox}>
+              <Typography variant="h6" className={`${classes.typography} ${classes.subtitle}`} gutterBottom>
+                  {subtitle}
+              </Typography>
+              <Typography variant="h5" className={classes.typography} gutterBottom>
+                  {title}
+              </Typography>
+          </Box>
+          <Typography variant="body0" gutterBottom>
+            {description}
+          </Typography>
         </CardContent>
+        <Button component={Link} to={link} variant="contained" className={classes.learnMoreButtonSmall}>
+          Learn More
+          </Button>
       </Card>
     )
   }
