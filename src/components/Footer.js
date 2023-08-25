@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(1), // Space between title and description
   },
   description: {
+    fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
     fontSize: '16px', // Replace with the desired font size
     maxWidth: '300px', // Limit the width of the description box
     margin: '0 auto', // Center the description box horizontally
@@ -37,11 +38,12 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1), // Space between each link
   },
   footerText: {
-    marginTop: theme.spacing(1), // Space between links and footer text
-    fontSize: '14px', // Replace with the desired font size
+    fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
+    marginTop: theme.spacing(0), // Space between links and footer text
+    fontSize: '12px', // Replace with the desired font size
   },
   footerText2: {
-    marginTop: theme.spacing(3), // Space between links and footer text
+    marginTop: theme.spacing(8), // Space between links and footer text
     fontSize: '14px', // Replace with the desired font size
   },
   underlineImage: {
@@ -50,6 +52,39 @@ const useStyles = makeStyles((theme) => ({
     display: "inline-block",
     width: '25px', // Adjust the width of the underline as needed
     height: '30px'
+  },
+  bulletPoint: {
+    marginTop: theme.spacing(-3),
+    marginRight: theme.spacing(-0.5),
+    position: "relative",
+    display: "inline-block",
+    width: '7px', // Adjust the width of the underline as needed
+    height: '12px'
+  },
+  bbbLogo: {
+    marginRight: theme.spacing(-0.5),
+    position: "relative",
+    display: "inline-block",
+    width: '125px', // Adjust the width of the underline as needed
+    height: '60px'
+  },
+  stack: {
+    display: "flex",
+    flexDirection: "row"
+  },
+  bbbLink: {
+    textDecoration: "none",
+  },
+  horizontalLine: {
+    content: '""',
+    position: 'absolute',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    bottom: 0,
+    width: '100%',
+    maxWidth: 1200, // Set your desired max width
+    height: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.2)', // Faint horizontal line color
   },
 }));
 
@@ -64,21 +99,13 @@ const Footer = () => {
     <footer className={classes.footer}>
       {/* First Section */}
       <Box className={classes.section}>
-        <Typography variant="h4" className={classes.title}>
+        <Typography variant="h6" className={classes.title}>
           OUR COMPANY
         </Typography>
         <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
         <Typography variant="body1" className={classes.description}>
           Your local construction company, proudly serving the Ottawa Valley community since 1998.
         </Typography>
-        <IconButton
-          component="a"
-          href="https://www.facebook.com/jasonslandscapingandsnowplowing/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FacebookIcon style={{ color: '#fff' }} />
-        </IconButton>
       </Box>
 
       {/* Second Section */}
@@ -88,22 +115,25 @@ const Footer = () => {
         </Typography>
         <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
         <Box className={classes.footerText}>
+          <img src="orange_arrow.png" alt="bullet" className={classes.bulletPoint}/>
           <Link to="/about" className={classes.link}>
-              <Typography component="span" variant="h8" style={{ textDecoration: 'underline' }}>
+              <Typography component="span">
                   About Us
               </Typography>
           </Link>
         </Box>
         <Box className={classes.footerText}>
+          <img src="orange_arrow.png" alt="bullet" className={classes.bulletPoint}/>
           <Link to="/careers" className={classes.link}>
-              <Typography component="span" variant="h8" style={{ textDecoration: 'underline' }}>
+              <Typography component="span">
                   Careers
               </Typography>
           </Link>
         </Box>
         <Box className={classes.footerText}>
+          <img src="orange_arrow.png" alt="bullet" className={classes.bulletPoint}/>
           <Link to="/contact" className={classes.link}>
-              <Typography component="span" variant="h8" style={{ textDecoration: 'underline' }}>
+              <Typography component="span">
                   Contact
               </Typography>
           </Link>
@@ -124,6 +154,19 @@ const Footer = () => {
           <br />
           (613) 229-9977
         </Typography>
+        <div className={classes.stack}>
+          <IconButton
+            component="a"
+            href="https://www.facebook.com/jasonslandscapingandsnowplowing/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FacebookIcon style={{ color: '#fff' }} />
+          </IconButton>
+          <Link to="https://www.bbb.org/ca/on/stittsville/profile/landscape-contractors/jasons-landscaping-and-snowplowing-inc-0117-3855" className={classes.bbbLink}>
+            <img src="bbb_logo.png" alt="BBB Acredited" className={classes.bbbLogo}/>
+          </Link>
+        </div>
       </Box>
     </footer>
   );
