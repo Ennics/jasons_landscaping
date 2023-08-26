@@ -136,6 +136,13 @@ const theme = createTheme({
 // <img src="cover_img_2.png" width="100%" alt="hero"/> <NavBar/>
 function Home() {
     useScrollToTop();
+    function scrollToFirstSection() {
+      const firstSectionOffsetTop = document.getElementById('first-section').offsetTop;
+      window.scrollTo({
+        top: firstSectionOffsetTop,
+        behavior: 'smooth',
+      });
+    }
     const classes = styles(); 
     return (
         <div>
@@ -154,7 +161,7 @@ function Home() {
                                 </div>
                                 <div className={classes.arrowAnimation}>
                                   <div className={classes.buttonContainer}>
-                                    <ArrowDownwardIcon className={classes.arrowIcon} />
+                                    <ArrowDownwardIcon onClick={scrollToFirstSection} className={classes.arrowIcon} />
                                   </div>
                                 </div>
                               </div>
@@ -162,7 +169,7 @@ function Home() {
                       </Fade>
                     </div>
                 </div> 
-                <div className={classes.wrapper}>
+                <div id="first-section" className={classes.wrapper}>
                     <Typography variant="h4" className={classes.bigSpace}>
                         Your Trusted Partner in Construction and Landscaping Services 
                     </Typography>

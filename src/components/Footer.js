@@ -13,9 +13,12 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center', // Center the sections horizontally
     flexDirection: 'row', // Arrange sections horizontally
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column', // If screen is small, stack the footer content
+    },
   },
   section: {
-    margin: theme.spacing(2), // Space between sections
+    margin: theme.spacing(4), // Space between sections
     textAlign: 'left', // Center the content within each section
   },
   title: {
@@ -28,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
     fontSize: '16px', // Replace with the desired font size
     maxWidth: '300px', // Limit the width of the description box
-    margin: '0 auto', // Center the description box horizontally
   },
   link: {
     color: '#ffffff', // Black color for the links
@@ -41,10 +43,14 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
     marginTop: theme.spacing(0), // Space between links and footer text
     fontSize: '12px', // Replace with the desired font size
+
   },
   footerText2: {
-    marginTop: theme.spacing(8), // Space between links and footer text
+    marginTop: theme.spacing(-3), // Space between links and footer text
     fontSize: '14px', // Replace with the desired font size
+    color: '#ffffff',
+    textAlign: "center",
+    justifyContent: 'center', // Center the sections horizontally
   },
   underlineImage: {
     marginTop: theme.spacing(-3),
@@ -96,79 +102,81 @@ const Footer = () => {
   };
 
   return (
-    <footer className={classes.footer}>
-      {/* First Section */}
-      <Box className={classes.section}>
-        <Typography variant="h6" className={classes.title}>
-          OUR COMPANY
-        </Typography>
-        <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
-        <Typography variant="body1" className={classes.description}>
-          Your local construction company, proudly serving the Ottawa Valley community since 1998.
-        </Typography>
-      </Box>
+    <div>
+      <footer className={classes.footer}>
+        {/* First Section */}
+        <Box className={classes.section}>
+          <Typography variant="h6" className={classes.title}>
+            OUR COMPANY
+          </Typography>
+          <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
+          <Typography variant="body1" className={classes.description}>
+            Your local construction company, proudly serving the Ottawa Valley community since 1998.
+          </Typography>
+        </Box>
 
-      {/* Second Section */}
-      <Box className={classes.section}>
-        <Typography variant="h6" className={classes.title}>
-          HELPFUL LINKS
-        </Typography>
-        <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
-        <Box className={classes.footerText}>
-          <img src="orange_arrow.png" alt="bullet" className={classes.bulletPoint}/>
-          <Link to="/about" className={classes.link}>
-              <Typography component="span">
-                  About Us
-              </Typography>
-          </Link>
+        {/* Second Section */}
+        <Box className={classes.section}>
+          <Typography variant="h6" className={classes.title}>
+            HELPFUL LINKS
+          </Typography>
+          <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
+          <Box className={classes.footerText}>
+            <img src="orange_arrow.png" alt="bullet" className={classes.bulletPoint}/>
+            <Link to="/about" className={classes.link}>
+                <Typography component="span">
+                    About Us
+                </Typography>
+            </Link>
+          </Box>
+          <Box className={classes.footerText}>
+            <img src="orange_arrow.png" alt="bullet" className={classes.bulletPoint}/>
+            <Link to="/careers" className={classes.link}>
+                <Typography component="span">
+                    Careers
+                </Typography>
+            </Link>
+          </Box>
+          <Box className={classes.footerText}>
+            <img src="orange_arrow.png" alt="bullet" className={classes.bulletPoint}/>
+            <Link to="/contact" className={classes.link}>
+                <Typography component="span">
+                    Contact
+                </Typography>
+            </Link>
+          </Box>
         </Box>
-        <Box className={classes.footerText}>
-          <img src="orange_arrow.png" alt="bullet" className={classes.bulletPoint}/>
-          <Link to="/careers" className={classes.link}>
-              <Typography component="span">
-                  Careers
-              </Typography>
-          </Link>
-        </Box>
-        <Box className={classes.footerText}>
-          <img src="orange_arrow.png" alt="bullet" className={classes.bulletPoint}/>
-          <Link to="/contact" className={classes.link}>
-              <Typography component="span">
-                  Contact
-              </Typography>
-          </Link>
-        </Box>
-        <Typography variant="body2" className={classes.footerText2}>
-          &copy; {getCurrentYear()} Jason's Landscaping and Snowplowing Inc.
-        </Typography>
-      </Box>
 
-      {/* Third Section */}
-      <Box className={classes.section}>
-        <Typography variant="h6" className={classes.title}>
-          CONTACT INFO
-        </Typography>
-        <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
-        <Typography variant="body1">
-          Jasonslandscaping@bell.net
-          <br />
-          (613) 229-9977
-        </Typography>
-        <div className={classes.stack}>
-          <IconButton
-            component="a"
-            href="https://www.facebook.com/jasonslandscapingandsnowplowing/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FacebookIcon style={{ color: '#fff' }} />
-          </IconButton>
-          <Link to="https://www.bbb.org/ca/on/stittsville/profile/landscape-contractors/jasons-landscaping-and-snowplowing-inc-0117-3855" className={classes.bbbLink}>
-            <img src="bbb_logo.png" alt="BBB Acredited" className={classes.bbbLogo}/>
-          </Link>
-        </div>
-      </Box>
-    </footer>
+        {/* Third Section */}
+        <Box className={classes.section}>
+          <Typography variant="h6" className={classes.title}>
+            CONTACT INFO
+          </Typography>
+          <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
+          <Typography variant="body1">
+            Jasonslandscaping@bell.net
+            <br />
+            (613) 229-9977
+          </Typography>
+          <div className={classes.stack}>
+            <IconButton
+              component="a"
+              href="https://www.facebook.com/jasonslandscapingandsnowplowing/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FacebookIcon style={{ color: '#fff' }} />
+            </IconButton>
+            <Link to="https://www.bbb.org/ca/on/stittsville/profile/landscape-contractors/jasons-landscaping-and-snowplowing-inc-0117-3855" className={classes.bbbLink}>
+              <img src="bbb_logo.png" alt="BBB Acredited" className={classes.bbbLogo}/>
+            </Link>
+          </div>
+        </Box>
+      </footer>
+      <Typography variant="body2" className={classes.footerText2}>
+        &copy; {getCurrentYear()} Jason's Landscaping and Snowplowing Inc.
+      </Typography>
+    </div>
   );
 };
 
