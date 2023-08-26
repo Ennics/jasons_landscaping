@@ -5,28 +5,11 @@ import Footer from './Footer'
 import useScrollToTop from './useScrollToTop';
 import { createTheme, makeStyles } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
+import Fade from '@material-ui/core/Fade';
 
 const theme = createTheme({});
 
 const styles = makeStyles({
-  wrapper: {
-    width: "65%",
-    margin: "auto",
-    textAlign: "center"
-  },
-  bigSpace: {
-    marginTop: "5rem",
-    color: "#800000"
-  },
-  littleSpace:{
-    marginTop: "2.5rem",
-  },
-  grid:{
-    display: "flex", 
-    justifyContent: "center",
-    alignItems: "center",
-    flexWrap: "wrap", 
-  },
   overlay: {
     position: "absolute",
     top: "50%",
@@ -36,10 +19,9 @@ const styles = makeStyles({
     color: "white", 
     textAlign: "center",
     width: "50%",
-    fontSize: "2.5vw",
+    fontSize: "2rem",
     fontFamily: 'Georgia',
-    marginTop: "-5vw",
-    fontWeight: "bold"
+    marginTop: "-5vw"
   },
   boldWord: {
     fontWeight: "bold"
@@ -49,10 +31,12 @@ const styles = makeStyles({
     alignItems: "center"
   },
   arrowAnimation: {
-    position: 'absolute',
-    top: "50%",
-    left: "50%", 
-    transform: "translate(-50%, -50%)", 
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: "1rem",
+    // top: "50%",
+    // left: "50%", 
+    // transform: "translate(-50%, -50%)", 
     animation: '$raindrop 2s infinite',
   },
   '@keyframes raindrop': {
@@ -75,28 +59,47 @@ const styles = makeStyles({
   arrowIcon: {
     color: 'white', // Set the icon color to white
   },
+  coverImageContainer: {
+    position: 'relative',
+    height: '870px', /* Set your desired constant height */
+    overflow: 'hidden', /* Hide any overflow */
+
+    /* Set the background image */
+    backgroundImage: `url('about_page_cover.png')`,
+    backgroundSize: 'cover', /* Maintain image proportions and cover the container */
+    backgroundPosition: 'center center', /* Center the image */
+  },
 })
 
 const About = () => {
   const classes = styles(); 
   useScrollToTop();
+  function scrollToFirstSection() {
+    const firstSectionOffsetTop = document.getElementById('first-section').offsetTop;
+    window.scrollTo({
+      top: firstSectionOffsetTop,
+      behavior: 'smooth',
+    });
+  }
   return (
     <div>
-        <NavBar/>
+      <NavBar/>
+      <div className={classes.coverImageContainer}/>
+      <Fade in={true} timeout={2000}>
         <div>
-          <img src="about_page_cover.png" width="100%" alt="hero"/>
           <div className={classes.overlay}>
-            ABOUT US
-          </div>
-          <div className={classes.arrowAnimation}>
-            <div className={classes.buttonContainer}>
-              <ArrowDownwardIcon className={classes.arrowIcon} />
+            <div className={classes.boldWord}>
+              ABOUT US
+            </div>
+            <div className={classes.arrowAnimation}>
+              <div className={classes.buttonContainer}>
+                <ArrowDownwardIcon onClick={scrollToFirstSection} className={classes.arrowIcon} />
+              </div>
             </div>
           </div>
         </div>
-        <h1>About Us</h1>
-        <p>This is the About Us page content.</p>
-        <Footer/>
+      </Fade>
+      <Footer/>
     </div>
   );
 };
