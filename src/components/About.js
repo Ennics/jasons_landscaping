@@ -6,6 +6,8 @@ import useScrollToTop from './useScrollToTop';
 import { createTheme, makeStyles } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
 import Fade from '@material-ui/core/Fade';
+import InfoCard from './InfoCard';
+import aboutImage from '../components/images/who_we_are_img.jpeg'
 
 const theme = createTheme({});
 
@@ -99,6 +101,17 @@ const About = () => {
           </div>
         </div>
       </Fade>
+      <div id="first-section">
+        <InfoCard
+          title="Who We Are"
+          description="For the past 25 years, we have earned the trust of municipalities 
+                      and private developers across the Ottawa Valley."
+          image={aboutImage}
+          link="/about"
+          imageOnRight={true}
+          hideButton={true}
+        />
+      </div>
       <Footer/>
     </div>
   );

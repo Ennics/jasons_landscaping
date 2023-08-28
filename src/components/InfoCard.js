@@ -8,6 +8,7 @@ import { CardContent } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 import { Button, Box } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { FlashAutoTwoTone } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -125,9 +126,12 @@ const useStyles = makeStyles((theme) => ({
       color: 'white', // Change the text color on hover
     },
   },
+  hiddenButton: {
+    display: "none"
+  },
 }));
 
-const InfoCard = ({ title, subtitle, description, image, link, imageOnRight }) => {
+const InfoCard = ({ title, subtitle, description, image, link, imageOnRight, hideButton }) => {
   const classes = useStyles();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -160,9 +164,11 @@ const InfoCard = ({ title, subtitle, description, image, link, imageOnRight }) =
             {description}
           </Typography>
         </CardContent>
-        <Button component={Link} to={link} variant="contained" className={classes.learnMoreButtonSmall}>
-          Learn More
+        <div className={hideButton ? classes.hiddenButton : ''}>
+          <Button component={Link} to={link} variant="contained" className={classes.learnMoreButtonSmall}>
+            Learn More
           </Button>
+        </div> 
       </Card>
     )
   }
@@ -182,9 +188,11 @@ const InfoCard = ({ title, subtitle, description, image, link, imageOnRight }) =
               <Typography variant="body0" gutterBottom>
                 {description}
               </Typography>
-              <Button component={Link} to={link} variant="contained" className={classes.learnMoreButton}>
-              Learn More
-              </Button>
+              <div className={hideButton ? classes.hiddenButton : ''}>
+                <Button component={Link} to={link} variant="contained" className={classes.learnMoreButton}>
+                Learn More
+                </Button>
+              </div>
           </CardContent>
           <CardMedia className={classes.media} image={image}/>
         </Card>
@@ -206,9 +214,11 @@ const InfoCard = ({ title, subtitle, description, image, link, imageOnRight }) =
         <Typography variant="body0" gutterBottom>
           {description}
         </Typography>
-        <Button component={Link} to={link} variant="contained" className={classes.learnMoreButtonLeft}>
-          Learn More
-        </Button>
+        <div className={hideButton ? classes.hiddenButton : ''}>
+          <Button component={Link} to={link} variant="contained" className={classes.learnMoreButtonLeft}>
+            Learn More
+          </Button>
+        </div>
       </CardContent>
     </Card>
   );
