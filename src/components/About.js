@@ -103,9 +103,13 @@ const About = () => {
       </Fade>
       <div id="first-section">
         <InfoCard
+          subtitle="About Us"
           title="Who We Are"
-          description="For the past 25 years, we have earned the trust of municipalities 
-                      and private developers across the Ottawa Valley."
+          description="Jason's Landscaping, a reputable name in the industry for over 25 years, is your trusted partner for all landscaping needs. With a deep-rooted commitment to quality and craftsmanship, we take pride in transforming outdoor spaces into captivating havens. Our extensive experience spans a quarter of a century, during which we've honed our expertise in various landscaping services.
+
+          At Jason's Landscaping, we're dedicated to the artistry of designing and maintaining outdoor environments that reflect both beauty and functionality. Our passion for sustainable practices drives us to create landscapes that harmonize with nature, enhancing the aesthetic appeal of homes and commercial spaces alike. With a keen focus on customer satisfaction, our knowledgeable team collaborates closely with clients, ensuring that every vision becomes a reality.
+          
+          As a Better Business Bureau accredited business, we uphold the highest standards of professionalism and integrity. Our skilled professionals, licensed and insured, bring years of experience to each project, guaranteeing exceptional results. From lush gardens and vibrant lawns to innovative hardscapes, we're committed to crafting landscapes that stand the test of time. Discover the difference that decades of dedication make with Jason's Landscaping."
           image={aboutImage}
           link="/about"
           imageOnRight={true}
