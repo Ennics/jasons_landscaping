@@ -1,5 +1,7 @@
 // About.js
 import React from 'react';
+import {Link} from 'react-router-dom';
+import {Typography, Box} from '@material-ui/core'; 
 import NavBar from './NavBar'
 import Footer from './Footer'
 import useScrollToTop from './useScrollToTop';
@@ -7,7 +9,7 @@ import { createTheme, makeStyles } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
 import Fade from '@material-ui/core/Fade';
 import InfoCard from './InfoCard';
-import aboutImage from '../components/images/who_we_are_img.jpeg'
+import aboutImage from '../components/images/office_pic.png'
 
 const theme = createTheme({});
 
@@ -71,6 +73,39 @@ const styles = makeStyles({
     backgroundSize: 'cover', /* Maintain image proportions and cover the container */
     backgroundPosition: 'center center', /* Center the image */
   },
+  servicesBrief: {
+    color: '#000000', // Text color
+    padding: theme.spacing(4), // Ample room around the content
+    display: 'flex',
+    justifyContent: 'center', // Center the sections horizontally
+    flexDirection: 'row', // Arrange sections horizontally
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column', // If screen is small, stack the footer content
+    },
+  },
+  section: {
+    margin: theme.spacing(4), // Space between sections
+    textAlign: 'left', // Center the content within each section
+  },
+  title: {
+    fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
+    fontSize: '16px', // Replace with the desired font size
+    fontWeight: 'bold', // Replace with the desired font weight
+    marginBottom: theme.spacing(1), // Space between title and description
+  },
+  description: {
+    fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
+    fontSize: '16px', // Replace with the desired font size
+    maxWidth: '300px', // Limit the width of the description box
+  },
+  underlineImage: {
+    marginTop: theme.spacing(-3),
+    position: "relative",
+    display: "inline-block",
+    width: '25px', // Adjust the width of the underline as needed
+    height: '30px'
+  },
+
 })
 
 const About = () => {
@@ -104,17 +139,51 @@ const About = () => {
       <div id="first-section">
         <InfoCard
           subtitle="About Us"
-          title="Who We Are"
-          description="Jason's Landscaping, a reputable name in the industry for over 25 years, is your trusted partner for all landscaping needs. With a deep-rooted commitment to quality and craftsmanship, we take pride in transforming outdoor spaces into captivating havens. Our extensive experience spans a quarter of a century, during which we've honed our expertise in various landscaping services.
-
-          At Jason's Landscaping, we're dedicated to the artistry of designing and maintaining outdoor environments that reflect both beauty and functionality. Our passion for sustainable practices drives us to create landscapes that harmonize with nature, enhancing the aesthetic appeal of homes and commercial spaces alike. With a keen focus on customer satisfaction, our knowledgeable team collaborates closely with clients, ensuring that every vision becomes a reality.
-          
-          As a Better Business Bureau accredited business, we uphold the highest standards of professionalism and integrity. Our skilled professionals, licensed and insured, bring years of experience to each project, guaranteeing exceptional results. From lush gardens and vibrant lawns to innovative hardscapes, we're committed to crafting landscapes that stand the test of time. Discover the difference that decades of dedication make with Jason's Landscaping."
+          title="A Reputable Name In The Industry For Over 25 Years"
+          description="At Jason's Landscaping, we're dedicated to the artistry of designing and maintaining outdoor 
+          environments that reflect both beauty and functionality. Our passion for sustainable practices 
+          drives us to create landscapes that harmonize with nature, enhancing the aesthetic appeal of 
+          homes and commercial spaces alike. With a keen focus on customer satisfaction, our knowledgeable 
+          team collaborates closely with clients, ensuring that every vision becomes a reality."
           image={aboutImage}
           link="/about"
           imageOnRight={true}
           hideButton={true}
         />
+      </div>
+      <div id="services-brief" className={classes.servicesBrief}>
+        {/* First Section */}
+        <Box className={classes.section}>
+          <Typography variant="h6" className={classes.title}>
+            LANDSCAPING
+          </Typography>
+          <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
+          <Typography variant="body1" className={classes.description}>
+            Your local construction company, proudly serving the Ottawa Valley community since 1998.
+          </Typography>
+        </Box>
+
+        {/* Second Section */}
+        <Box className={classes.section}>
+          <Typography variant="h6" className={classes.title}>
+            SEPTIC SYSTEMS
+          </Typography>
+          <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
+          <Typography variant="body1" className={classes.description}>
+            Your local construction company, proudly serving the Ottawa Valley community since 1998.
+          </Typography>
+        </Box>
+
+        {/* Third Section */}
+        <Box className={classes.section}>
+          <Typography variant="h6" className={classes.title}>
+            TOWING & FLATBED
+          </Typography>
+          <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
+          <Typography variant="body1" className={classes.description}>
+            Your local construction company, proudly serving the Ottawa Valley community since 1998.
+          </Typography>
+        </Box>
       </div>
       <Footer/>
     </div>
