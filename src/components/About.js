@@ -9,7 +9,7 @@ import { createTheme, makeStyles } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
 import Fade from '@material-ui/core/Fade';
 import InfoCard from './InfoCard';
-import aboutImage from '../components/images/office_pic.png'
+import aboutImage from '../components/images/office_pic.png' //#601C1E
 
 const theme = createTheme({});
 
@@ -98,12 +98,26 @@ const styles = makeStyles({
     fontSize: '16px', // Replace with the desired font size
     maxWidth: '300px', // Limit the width of the description box
   },
-  underlineImage: {
-    marginTop: theme.spacing(-3),
+  shovel_icon: {
+    marginTop: theme.spacing(-1.5),
     position: "relative",
     display: "inline-block",
-    width: '25px', // Adjust the width of the underline as needed
-    height: '30px'
+    width: '75px', // Adjust the width of the underline as needed
+    height: '50px'
+  },
+  septic_icon: {
+    marginTop: theme.spacing(-1.5),
+    position: "relative",
+    display: "inline-block",
+    width: '60px', // Adjust the width of the underline as needed
+    height: '55px'
+  },
+  flatbed_icon: {
+    marginTop: theme.spacing(-1.5),
+    position: "relative",
+    display: "inline-block",
+    width: '70px', // Adjust the width of the underline as needed
+    height: '50px'
   },
 
 })
@@ -154,10 +168,10 @@ const About = () => {
       <div id="services-brief" className={classes.servicesBrief}>
         {/* First Section */}
         <Box className={classes.section}>
+          <img src="shovel_icon.png" alt="underline" className={classes.shovel_icon}/>
           <Typography variant="h6" className={classes.title}>
             LANDSCAPING
           </Typography>
-          <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
           <Typography variant="body1" className={classes.description}>
             Your local construction company, proudly serving the Ottawa Valley community since 1998.
           </Typography>
@@ -165,10 +179,10 @@ const About = () => {
 
         {/* Second Section */}
         <Box className={classes.section}>
+          <img src="septic_logo.png" alt="underline" className={classes.septic_icon}/>
           <Typography variant="h6" className={classes.title}>
             SEPTIC SYSTEMS
           </Typography>
-          <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
           <Typography variant="body1" className={classes.description}>
             Your local construction company, proudly serving the Ottawa Valley community since 1998.
           </Typography>
@@ -176,10 +190,10 @@ const About = () => {
 
         {/* Third Section */}
         <Box className={classes.section}>
+          <img src="flatbed_icon.png" alt="underline" className={classes.flatbed_icon}/>
           <Typography variant="h6" className={classes.title}>
             TOWING & FLATBED
           </Typography>
-          <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
           <Typography variant="body1" className={classes.description}>
             Your local construction company, proudly serving the Ottawa Valley community since 1998.
           </Typography>
