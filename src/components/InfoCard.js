@@ -92,7 +92,6 @@ const useStyles = makeStyles((theme) => ({
     margin: '0 auto',
     marginBottom: theme.spacing(5),
     marginTop: theme.spacing(5),
-    height: "350px",
     boxShadow: 'none', //none
     alignItems: 'center',     // Center horizontally
     textAlign: 'center',      // Center text content
@@ -100,6 +99,7 @@ const useStyles = makeStyles((theme) => ({
   smallMedia: {
     width: '50%', // Adjust the width of the image as needed
     height: '100%',
+    minHeight: '200px',
     boxShadow: `0px 8px 15px rgba(139, 0, 0, 0.5)`,
     marginBottom: theme.spacing(2),
   },

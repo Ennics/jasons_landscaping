@@ -154,10 +154,10 @@ function Home() {
                           <div>
                               <div className={classes.overlay}>
                                 <div>
-                                  For All Your Landscape Construction Needs,
+                                  Proudly Serving The Ottawa Valley Area For
                                 </div>
                                 <div className={classes.boldWord}>
-                                  We've Got You Covered.
+                                  Over 25 Years.
                                 </div>
                                 <div className={classes.arrowAnimation}>
                                   <div className={classes.buttonContainer}>

@@ -86,6 +86,9 @@ const styles = makeStyles({
   section: {
     margin: theme.spacing(4), // Space between sections
     textAlign: 'left', // Center the content within each section
+    [theme.breakpoints.down('sm')]: {
+      textAlign: 'center', // If screen is small, stack the footer content
+    },
   },
   title: {
     fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
@@ -97,13 +100,16 @@ const styles = makeStyles({
     fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
     fontSize: '16px', // Replace with the desired font size
     maxWidth: '300px', // Limit the width of the description box
+    [theme.breakpoints.down('sm')]: {
+      display: 'inline-block', // If screen is small, stack the footer content
+    },
   },
-  shovel_icon: {
+  excavator_icon: {
     marginTop: theme.spacing(-1.5),
     position: "relative",
     display: "inline-block",
-    width: '75px', // Adjust the width of the underline as needed
-    height: '50px'
+    width: '60px', // Adjust the width of the underline as needed
+    height: '55px'
   },
   septic_icon: {
     marginTop: theme.spacing(-1.5),
@@ -118,6 +124,13 @@ const styles = makeStyles({
     display: "inline-block",
     width: '70px', // Adjust the width of the underline as needed
     height: '50px'
+  },
+  staticBackground: {
+    backgroundImage: 'url("cover_img_2.png")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    minHeight: '500px', // Adjust as needed
+    position: 'relative',
   },
 
 })
@@ -168,7 +181,7 @@ const About = () => {
       <div id="services-brief" className={classes.servicesBrief}>
         {/* First Section */}
         <Box className={classes.section}>
-          <img src="shovel_icon.png" alt="underline" className={classes.shovel_icon}/>
+          <img src="excavator_icon.png" alt="underline" className={classes.excavator_icon}/>
           <Typography variant="h6" className={classes.title}>
             LANDSCAPING
           </Typography>
@@ -198,6 +211,9 @@ const About = () => {
             Your local construction company, proudly serving the Ottawa Valley community since 1998.
           </Typography>
         </Box>
+      </div>
+      <div className={classes.staticBackground}>
+
       </div>
       <Footer/>
     </div>
