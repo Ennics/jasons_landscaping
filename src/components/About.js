@@ -1,7 +1,7 @@
 // About.js
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Typography, Box} from '@material-ui/core'; 
+import {Typography, Box, Button } from '@material-ui/core'; 
 import NavBar from './NavBar'
 import Footer from './Footer'
 import useScrollToTop from './useScrollToTop';
@@ -38,9 +38,6 @@ const styles = makeStyles({
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: "1rem",
-    // top: "50%",
-    // left: "50%", 
-    // transform: "translate(-50%, -50%)", 
     animation: '$raindrop 2s infinite',
   },
   '@keyframes raindrop': {
@@ -126,13 +123,104 @@ const styles = makeStyles({
     height: '50px'
   },
   staticBackground: {
-    backgroundImage: 'url("cover_img_2.png")',
+    display: 'flex',
+    backgroundImage: 'url("careers_bg.png")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    backgroundAttachment: 'fixed',
     minHeight: '500px', // Adjust as needed
     position: 'relative',
+    justifyContent: 'center'
   },
-
+  careersButton: {
+    fontSize: '0.8rem', // Set the font size to make the button smaller
+    color: 'white', // Set the text color to maroon
+    backgroundColor: 'maroon', // Make the background transparent
+    border: '2px solid maroon', // Add a border around the button
+    width: "125px",
+    justifyContent: "center",
+    borderRadius: theme.spacing(1), // Add border radius for a rounded look
+    padding: theme.spacing(1, 2), // Add padding to the button
+    marginTop: theme.spacing(2),
+    transition: 'background-color 0.2s ease-in-out', // Add a smooth transition on hover
+    '&:hover': {
+      backgroundColor: 'transparent', // Change the background color on hover
+      color: 'white', // Change the text color on hover
+    }
+  },
+  careersSection: {
+    color: '#ffffff', // Text color
+    padding: theme.spacing(4), // Ample room around the content
+    width: '50%',
+    display: 'flex',
+    justifyContent: 'center', // Center the sections horizontally
+    flexDirection: 'column', // Arrange sections horizontally
+  },
+  careersTitle: {
+    fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
+    fontSize: '32px', // Replace with the desired font size
+    fontWeight: 'bold', // Replace with the desired font weight
+    marginBottom: theme.spacing(1), // Space between title and description
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '26px', // If screen is small, stack the footer content
+    },
+  },
+  careersDescription: {
+    fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
+    fontSize: '18px', // Replace with the desired font size
+    maxWidth: '500px', // Limit the width of the description box
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '14px', // If screen is small, stack the footer content
+    },
+  },
+  whyChoseUsSection: {
+    color: '#000000', // Text color
+    padding: theme.spacing(4), // Ample room around the content
+    display: 'flex',
+    justifyContent: 'center', // Center the sections horizontally
+    flexDirection: 'column', // Arrange sections vertically
+  },
+  whyChoseUsHeader: {
+    justifyContent: 'center',
+    maxWidth: '400px'
+  },
+  whyChoseUsTitle: {
+    fontSize: '24px',
+    textAlign: 'center',
+  },
+  whyChoseUsDescription: {
+    fontSize: '16px',
+    textAlign: 'center',
+  },
+  reasonsSection: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column', // If screen is small, stack the footer content
+    },
+  },
+  reasonBox: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    padding: theme.spacing(4), // Ample room around the content
+    [theme.breakpoints.down('sm')]: {
+      textAlign: 'center', // If screen is small, stack the footer content
+    },
+  },
+  centerBox: {
+    display: 'flex',
+    justifyContent: 'center',
+    textAlign: 'center'
+  },
+  attributeDescription: {
+    width: '200px',
+    textAlign: 'center',
+    [theme.breakpoints.down('sm')]: {
+      display: 'inline-block', // If screen is small, stack the footer content
+    },
+  },
 })
 
 const About = () => {
@@ -213,7 +301,79 @@ const About = () => {
         </Box>
       </div>
       <div className={classes.staticBackground}>
-
+        <Box className={classes.careersSection}>
+          <Typography variant="h6" className={classes.careersTitle}>
+            WORK WITH US
+          </Typography>
+          <Typography variant="body1" className={classes.careersDescription}>
+            Join our dynamic team at Jason's Landscaping and embark on a journey to transform your comunity. 
+            We offer exciting opportunities for career development where you'll work with 
+            state-of-the-art equipment, and collaborate with experts who are dedicated to excellence in every project.
+          </Typography>
+          <Button component={Link} to="/careers" variant="contained" className={classes.careersButton}>
+            Careers
+          </Button>
+        </Box>
+      </div>
+      <div className={classes.whyChoseUsSection}>
+        <div className={classes.centerBox}>
+          <Box className={classes.whyChoseUsHeader}>
+            <Typography variant="h6" className={classes.whyChoseUsTitle}>
+              WORK WITH US
+            </Typography>
+            <Typography variant="body1" className={classes.whyChoseUsDescription}>
+              Join our dynamic team at Jason's Landscaping and embark on a journey to transform your comunity. 
+              We offer exciting opportunities for career development where you'll work with 
+              state-of-the-art equipment, and collaborate with experts who are dedicated to excellence in every project.
+            </Typography>
+          </Box>
+        </div>
+        <div className={classes.reasonsSection}>
+          <Box className={classes.reasonBox}>
+            <img src="flatbed_icon.png" alt="underline" className={classes.flatbed_icon}/>
+            <Typography variant="h6" className={classes.whyChoseUsTitle}>
+              WORK WITH US
+            </Typography>
+            <Typography variant="body1" className={classes.attributeDescription}>
+              Join our dynamic team at Jason's Landscaping and embark on a journey to transform your comunity. 
+              We offer exciting opportunities for career development where you'll work with 
+              state-of-the-art equipment, and collaborate with experts who are dedicated to excellence in every project.
+            </Typography>
+          </Box>
+          <Box className={classes.reasonBox}>
+            <img src="flatbed_icon.png" alt="underline" className={classes.flatbed_icon}/>
+            <Typography variant="h6" className={classes.whyChoseUsTitle}>
+              WORK WITH US
+            </Typography>
+            <Typography variant="body1" className={classes.attributeDescription}>
+              Join our dynamic team at Jason's Landscaping and embark on a journey to transform your comunity. 
+              We offer exciting opportunities for career development where you'll work with 
+              state-of-the-art equipment, and collaborate with experts who are dedicated to excellence in every project.
+            </Typography>
+          </Box>
+          <Box className={classes.reasonBox}>
+            <img src="flatbed_icon.png" alt="underline" className={classes.flatbed_icon}/>
+            <Typography variant="h6" className={classes.whyChoseUsTitle}>
+              WORK WITH US
+            </Typography>
+            <Typography variant="body1" className={classes.attributeDescription}>
+              Join our dynamic team at Jason's Landscaping and embark on a journey to transform your comunity. 
+              We offer exciting opportunities for career development where you'll work with 
+              state-of-the-art equipment, and collaborate with experts who are dedicated to excellence in every project.
+            </Typography>
+          </Box>
+          <Box className={classes.reasonBox}>
+            <img src="flatbed_icon.png" alt="underline" className={classes.flatbed_icon}/>
+            <Typography variant="h6" className={classes.whyChoseUsTitle}>
+              WORK WITH US
+            </Typography>
+            <Typography variant="body1" className={classes.attributeDescription}>
+              Join our dynamic team at Jason's Landscaping and embark on a journey to transform your comunity. 
+              We offer exciting opportunities for career development where you'll work with 
+              state-of-the-art equipment, and collaborate with experts who are dedicated to excellence in every project.
+            </Typography>
+          </Box>
+        </div>
       </div>
       <Footer/>
     </div>
