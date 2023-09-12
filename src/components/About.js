@@ -181,8 +181,9 @@ const styles = makeStyles({
     flexDirection: 'column', // Arrange sections vertically
   },
   whyChoseUsHeader: {
-    justifyContent: 'center',
-    maxWidth: '400px'
+    width: '400px',
+    margin: '0 auto',
+    display: 'inline-block',
   },
   whyChoseUsTitle: {
     fontSize: '24px',
@@ -201,9 +202,9 @@ const styles = makeStyles({
     },
   },
   reasonBox: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
+    width: '200px',
+    margin: '0 auto',
+    display: 'inline-block',
     padding: theme.spacing(4), // Ample room around the content
     [theme.breakpoints.down('sm')]: {
       textAlign: 'center', // If screen is small, stack the footer content
@@ -215,7 +216,6 @@ const styles = makeStyles({
     textAlign: 'center'
   },
   attributeDescription: {
-    width: '200px',
     textAlign: 'center',
     [theme.breakpoints.down('sm')]: {
       display: 'inline-block', // If screen is small, stack the footer content
@@ -316,18 +316,16 @@ const About = () => {
         </Box>
       </div>
       <div className={classes.whyChoseUsSection}>
-        <div className={classes.centerBox}>
-          <Box className={classes.whyChoseUsHeader}>
-            <Typography variant="h6" className={classes.whyChoseUsTitle}>
-              WORK WITH US
-            </Typography>
-            <Typography variant="body1" className={classes.whyChoseUsDescription}>
-              Join our dynamic team at Jason's Landscaping and embark on a journey to transform your comunity. 
-              We offer exciting opportunities for career development where you'll work with 
-              state-of-the-art equipment, and collaborate with experts who are dedicated to excellence in every project.
-            </Typography>
-          </Box>
-        </div>
+        <Box className={classes.whyChoseUsHeader}>
+          <Typography variant="h6" className={classes.whyChoseUsTitle}>
+            WORK WITH US
+          </Typography>
+          <Typography variant="body1" className={classes.whyChoseUsDescription}>
+            Join our dynamic team at Jason's Landscaping and embark on a journey to transform your comunity. 
+            We offer exciting opportunities for career development where you'll work with 
+            state-of-the-art equipment, and collaborate with experts who are dedicated to excellence in every project.
+          </Typography>
+        </Box>
         <div className={classes.reasonsSection}>
           <Box className={classes.reasonBox}>
             <img src="flatbed_icon.png" alt="underline" className={classes.flatbed_icon}/>
