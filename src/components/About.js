@@ -117,8 +117,8 @@ const styles = makeStyles({
   },
   flatbed_icon: {
     marginTop: theme.spacing(-1.5),
-    position: "relative",
-    display: "inline-block",
+    display: "flex",
+    margin: '0 auto',
     width: '70px', // Adjust the width of the underline as needed
     height: '50px'
   },
@@ -205,6 +205,7 @@ const styles = makeStyles({
     width: '200px',
     margin: '0 auto',
     display: 'inline-block',
+    justifyContent: 'center',
     padding: theme.spacing(4), // Ample room around the content
     [theme.breakpoints.down('sm')]: {
       textAlign: 'center', // If screen is small, stack the footer content
@@ -221,6 +222,13 @@ const styles = makeStyles({
       display: 'inline-block', // If screen is small, stack the footer content
     },
   },
+  check_icon: {
+    marginTop: theme.spacing(-1.5),
+    display: "flex",
+    margin: '0 auto',
+    width: '50px', // Adjust the width of the underline as needed
+    height: '40px'
+  }
 })
 
 const About = () => {
@@ -328,47 +336,39 @@ const About = () => {
         </Box>
         <div className={classes.reasonsSection}>
           <Box className={classes.reasonBox}>
-            <img src="flatbed_icon.png" alt="underline" className={classes.flatbed_icon}/>
+            <img src="checkmark_pic.png" alt="underline" className={classes.check_icon}/>
             <Typography variant="h6" className={classes.whyChoseUsTitle}>
-              WORK WITH US
+              Expertise
             </Typography>
             <Typography variant="body1" className={classes.attributeDescription}>
-              Join our dynamic team at Jason's Landscaping and embark on a journey to transform your comunity. 
-              We offer exciting opportunities for career development where you'll work with 
-              state-of-the-art equipment, and collaborate with experts who are dedicated to excellence in every project.
+              At Jason's Landscaping, we take pride in our 25 years of experience in the landscaping and construction industry. Joining our team means becoming a part of a company with a rich history of delivering exceptional results. You'll have the opportunity to work alongside seasoned professionals and learn from the best in the field.
             </Typography>
           </Box>
           <Box className={classes.reasonBox}>
-            <img src="flatbed_icon.png" alt="underline" className={classes.flatbed_icon}/>
+            <img src="checkmark_pic.png" alt="underline" className={classes.check_icon}/>
             <Typography variant="h6" className={classes.whyChoseUsTitle}>
-              WORK WITH US
+              Sustainability
             </Typography>
             <Typography variant="body1" className={classes.attributeDescription}>
-              Join our dynamic team at Jason's Landscaping and embark on a journey to transform your comunity. 
-              We offer exciting opportunities for career development where you'll work with 
-              state-of-the-art equipment, and collaborate with experts who are dedicated to excellence in every project.
+              We are dedicated to sustainable landscaping and construction practices. When you join Jason's Landscaping, you become a steward of the environment. Our commitment to eco-friendly methods ensures that your work contributes to a greener and more sustainable future for our communities.
             </Typography>
           </Box>
           <Box className={classes.reasonBox}>
-            <img src="flatbed_icon.png" alt="underline" className={classes.flatbed_icon}/>
+            <img src="checkmark_pic.png" alt="underline" className={classes.check_icon}/>
             <Typography variant="h6" className={classes.whyChoseUsTitle}>
-              WORK WITH US
+              Community
             </Typography>
             <Typography variant="body1" className={classes.attributeDescription}>
-              Join our dynamic team at Jason's Landscaping and embark on a journey to transform your comunity. 
-              We offer exciting opportunities for career development where you'll work with 
-              state-of-the-art equipment, and collaborate with experts who are dedicated to excellence in every project.
+              Our team is our most valuable asset. We foster a culture of care and collaboration, where every team member's voice is heard and valued. When you join us, you'll be part of a close-knit group of experienced professionals who support each other in delivering top-notch services.
             </Typography>
           </Box>
           <Box className={classes.reasonBox}>
-            <img src="flatbed_icon.png" alt="underline" className={classes.flatbed_icon}/>
+            <img src="checkmark_pic.png" alt="underline" className={classes.check_icon}/>
             <Typography variant="h6" className={classes.whyChoseUsTitle}>
-              WORK WITH US
+              Trust
             </Typography>
             <Typography variant="body1" className={classes.attributeDescription}>
-              Join our dynamic team at Jason's Landscaping and embark on a journey to transform your comunity. 
-              We offer exciting opportunities for career development where you'll work with 
-              state-of-the-art equipment, and collaborate with experts who are dedicated to excellence in every project.
+              Jason's Landscaping is a Better Business Bureau (BBB) accredited business. This accreditation reflects our commitment to honesty, integrity, and exceptional service. By joining our team, you'll be associated with a company that is trusted and respected in the industry, providing you with a solid foundation for your career.
             </Typography>
           </Box>
         </div>
