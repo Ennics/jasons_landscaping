@@ -181,13 +181,19 @@ const styles = makeStyles({
     flexDirection: 'column', // Arrange sections vertically
   },
   whyChoseUsHeader: {
-    width: '400px',
+    marginTop: theme.spacing(4),
+    width: '600px',
     margin: '0 auto',
     display: 'inline-block',
+    [theme.breakpoints.down('sm')]: {
+      width: '300px', // If screen is small, stack the footer content
+    },
   },
   whyChoseUsTitle: {
-    fontSize: '24px',
+    fontSize: '32px',
     textAlign: 'center',
+    fontWeight: 'bold',
+    color: 'maroon'
   },
   whyChoseUsDescription: {
     fontSize: '16px',
@@ -326,12 +332,10 @@ const About = () => {
       <div className={classes.whyChoseUsSection}>
         <Box className={classes.whyChoseUsHeader}>
           <Typography variant="h6" className={classes.whyChoseUsTitle}>
-            WORK WITH US
+            Why Chose Us
           </Typography>
           <Typography variant="body1" className={classes.whyChoseUsDescription}>
-            Join our dynamic team at Jason's Landscaping and embark on a journey to transform your comunity. 
-            We offer exciting opportunities for career development where you'll work with 
-            state-of-the-art equipment, and collaborate with experts who are dedicated to excellence in every project.
+            We are more than just a company; we are a community of dedicated professionals at Jason's Landscaping, where our core values drive our commitment to sustainability, teamwork, and excellence.
           </Typography>
         </Box>
         <div className={classes.reasonsSection}>
