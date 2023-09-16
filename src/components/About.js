@@ -24,11 +24,12 @@ const styles = makeStyles({
     textAlign: "center",
     width: "50%",
     fontSize: "2rem",
-    fontFamily: 'Georgia',
+    fontFamily: 'Roboto',
     marginTop: "-5vw"
   },
   boldWord: {
-    fontWeight: "bold"
+    fontWeight: "bold",
+    fontFamily: 'Georgia'
   },
   box:{
     display: "flex",
@@ -190,12 +191,13 @@ const styles = makeStyles({
     },
   },
   whyChoseUsTitle: {
-    fontSize: '32px',
+    fontSize: '26px',
     textAlign: 'center',
     fontWeight: 'bold',
     color: 'maroon'
   },
   whyChoseUsDescription: {
+    color: '#545454',
     fontSize: '16px',
     textAlign: 'center',
   },
@@ -212,9 +214,12 @@ const styles = makeStyles({
     margin: '0 auto',
     display: 'inline-block',
     justifyContent: 'center',
+    marginLeft: theme.spacing(-1),
+    marginRight: theme.spacing(-1),
     padding: theme.spacing(4), // Ample room around the content
     [theme.breakpoints.down('sm')]: {
       textAlign: 'center', // If screen is small, stack the footer content
+      margin: '0 auto'
     },
   },
   centerBox: {
@@ -223,6 +228,7 @@ const styles = makeStyles({
     textAlign: 'center'
   },
   attributeDescription: {
+    color: '#545454',
     textAlign: 'center',
     [theme.breakpoints.down('sm')]: {
       display: 'inline-block', // If screen is small, stack the footer content
@@ -234,6 +240,14 @@ const styles = makeStyles({
     margin: '0 auto',
     width: '50px', // Adjust the width of the underline as needed
     height: '40px'
+  },
+  horizontalLine: {
+    position: 'relative',
+    display: 'flex',
+    margin: '0 auto',       // Center the image horizontally
+    width: '80%', 
+    height: '20px',
+    marginTop: theme.spacing(4)
   }
 })
 
@@ -280,6 +294,7 @@ const About = () => {
           hideButton={true}
         />
       </div>
+      <img src="horizontal_line.png" alt="line" className={classes.horizontalLine}/>
       <div id="services-brief" className={classes.servicesBrief}>
         {/* First Section */}
         <Box className={classes.section}>
@@ -332,10 +347,11 @@ const About = () => {
       <div className={classes.whyChoseUsSection}>
         <Box className={classes.whyChoseUsHeader}>
           <Typography variant="h6" className={classes.whyChoseUsTitle}>
-            Why Chose Us
+            Why Chose Jason's Landscaping
           </Typography>
           <Typography variant="body1" className={classes.whyChoseUsDescription}>
-            We are more than just a company; we are a community of dedicated professionals at Jason's Landscaping, where our core values drive our commitment to sustainability, teamwork, and excellence.
+            We are more than just a company; we are a community of dedicated professionals at Jason's Landscaping, 
+            where our core values drive our commitment to sustainability, teamwork, and excellence.
           </Typography>
         </Box>
         <div className={classes.reasonsSection}>
@@ -345,7 +361,9 @@ const About = () => {
               Expertise
             </Typography>
             <Typography variant="body1" className={classes.attributeDescription}>
-              At Jason's Landscaping, we take pride in our 25 years of experience in the landscaping and construction industry. Joining our team means becoming a part of a company with a rich history of delivering exceptional results. You'll have the opportunity to work alongside seasoned professionals and learn from the best in the field.
+              At Jason's Landscaping, we take pride in our 25 years of experience in the landscaping and construction 
+              industry. Joining our team means becoming a part of a company with a rich history of delivering exceptional 
+              results.
             </Typography>
           </Box>
           <Box className={classes.reasonBox}>
@@ -354,7 +372,8 @@ const About = () => {
               Sustainability
             </Typography>
             <Typography variant="body1" className={classes.attributeDescription}>
-              We are dedicated to sustainable landscaping and construction practices. When you join Jason's Landscaping, you become a steward of the environment. Our commitment to eco-friendly methods ensures that your work contributes to a greener and more sustainable future for our communities.
+              We are dedicated to sustainable landscaping and construction practices. Our commitment to eco-friendly 
+              methods ensures that your work contributes to a greener and more sustainable future for our communities.
             </Typography>
           </Box>
           <Box className={classes.reasonBox}>
@@ -363,7 +382,9 @@ const About = () => {
               Community
             </Typography>
             <Typography variant="body1" className={classes.attributeDescription}>
-              Our team is our most valuable asset. We foster a culture of care and collaboration, where every team member's voice is heard and valued. When you join us, you'll be part of a close-knit group of experienced professionals who support each other in delivering top-notch services.
+              Our team is our most valuable asset. We foster a culture of care and collaboration, where every team 
+              member's voice is heard and valued. When you join us, you'll be part of a close-knit group of experienced 
+              professionals.
             </Typography>
           </Box>
           <Box className={classes.reasonBox}>
@@ -372,7 +393,8 @@ const About = () => {
               Trust
             </Typography>
             <Typography variant="body1" className={classes.attributeDescription}>
-              Jason's Landscaping is a Better Business Bureau (BBB) accredited business. This accreditation reflects our commitment to honesty, integrity, and exceptional service. By joining our team, you'll be associated with a company that is trusted and respected in the industry, providing you with a solid foundation for your career.
+              Jason's Landscaping is a Better Business Bureau (BBB) accredited business. This accreditation reflects our 
+              commitment to honesty, integrity, and exceptional service.
             </Typography>
           </Box>
         </div>

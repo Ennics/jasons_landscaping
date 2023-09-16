@@ -129,6 +129,9 @@ const useStyles = makeStyles((theme) => ({
   hiddenButton: {
     display: "none"
   },
+  boxDescription: {
+    color: '#545454',
+  }
 }));
 
 const InfoCard = ({ title, subtitle, description, image, link, imageOnRight, hideButton }) => {
@@ -160,7 +163,7 @@ const InfoCard = ({ title, subtitle, description, image, link, imageOnRight, hid
                   {title}
               </Typography>
           </Box>
-          <Typography variant="body0" gutterBottom>
+          <Typography variant="body0" gutterBottom className={classes.boxDescription}>
             {description}
           </Typography>
         </CardContent>
@@ -185,7 +188,7 @@ const InfoCard = ({ title, subtitle, description, image, link, imageOnRight, hid
                       {title}
                   </Typography>
               </Box>
-              <Typography variant="body0" gutterBottom>
+              <Typography variant="body0" gutterBottom className={classes.boxDescription}>
                 {description}
               </Typography>
               <div className={hideButton ? classes.hiddenButton : ''}>
@@ -211,7 +214,7 @@ const InfoCard = ({ title, subtitle, description, image, link, imageOnRight, hid
                 {title}
             </Typography>
         </Box>
-        <Typography variant="body0" gutterBottom>
+        <Typography variant="body0" gutterBottom className={classes.boxDescription}>
           {description}
         </Typography>
         <div className={hideButton ? classes.hiddenButton : ''}>

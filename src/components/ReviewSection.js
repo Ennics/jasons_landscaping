@@ -7,7 +7,7 @@ import ArrowForwardIcon from '@material-ui/icons//ArrowForward';
 const useStyles = makeStyles((theme) => ({
   reviewSection: {
     width: '65%',
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(10),
     margin: '0 auto',
     position: 'relative',
     display: 'flex',
@@ -17,13 +17,13 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   reviewText: {
-    fontSize: '1.2rem', //1.2rem
+    fontSize: '1.4rem', //1.2rem
     color: '#777',
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(-2),
     textAlign: 'center',
     [theme.breakpoints.down('lg')]: {
-      fontSize: "1.2rem", // Adjust font size for screens less than 'sm' breakpoint
+      fontSize: "1.4rem", // Adjust font size for screens less than 'sm' breakpoint
     },
     [theme.breakpoints.down('md')]: {
       fontSize: "1.1rem", // Adjust font size for screens less than 'sm' breakpoint
@@ -91,6 +91,40 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     textAlign: 'center',
   },
+  quoteImg: {
+    display: 'inline-block',
+    width: '60px',
+    height: '70px',
+    alignSelf: 'flex-start', // Align the image to the left
+    marginBottom: theme.spacing(5),
+    marginTop: theme.spacing(2),
+    [theme.breakpoints.down('sm')]: {
+      width: '30px',
+      height: '35px',
+      marginBottom: theme.spacing(0),
+    },
+  },
+  quoteImg2: {
+    display: 'inline-block',
+    width: '60px',
+    height: '70px',
+    alignSelf: 'flex-end', // Align the image to the left
+    [theme.breakpoints.down('sm')]: {
+      marginTop: theme.spacing(-4),
+      width: '30px',
+      height: '35px',
+    },
+  },
+  titleText: {
+    marginTop: theme.spacing(-6),
+    fontSize: '2rem',
+    fontWeight: 'bold',
+    color: 'maroon',
+    textAlign: 'center',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: "1.4rem", // Adjust font size for screens less than 'sm' breakpoint
+    },
+  }
 }));
 
 const reviews = [
@@ -152,7 +186,10 @@ const ReviewSection = () => {
 
   return (
     <div className={classes.reviewSection}>
-      <img src="quotation_png.png" width="75rem" display="inline-block" alt="quotes"/>
+      <Typography className={classes.titleText}>
+        Hear From Our Customers
+      </Typography>
+      <img src="quotation_png.png" className={classes.quoteImg} alt="quotes"/>
       <div className={classes.reviewContent}>
         <Box className={classes.reviewContainer}>
           <Typography className={classes.reviewText}>
@@ -160,6 +197,7 @@ const ReviewSection = () => {
           </Typography>
         </Box>
       </div>
+      <img src="quotation_png_2.png" className={classes.quoteImg2} alt="quotes"/>
       <Typography className={classes.ownerName}>
         {reviews[currentReviewIndex].owner}
       </Typography>

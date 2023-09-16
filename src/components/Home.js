@@ -51,6 +51,7 @@ const theme = createTheme({
     },
     littleSpace:{
       marginTop: "2.5rem",
+      color: '#545454',
     },
     grid:{
       display: "flex", 
@@ -132,6 +133,14 @@ const theme = createTheme({
       backgroundSize: 'cover', /* Maintain image proportions and cover the container */
       backgroundPosition: 'center center', /* Center the image */
     },
+    horizontalLine: {
+      position: 'relative',
+      display: 'flex',
+      margin: '0 auto',       // Center the image horizontally
+      width: '80%', 
+      height: '20px',
+      marginTop: theme.spacing(4)
+    }
 })
 // <img src="cover_img_2.png" width="100%" alt="hero"/> <NavBar/>
 function Home() {
@@ -186,7 +195,7 @@ function Home() {
                       bringing your vision to life and transforming your projects into reality.
                     </Typography>
                 </div>
-                <ReviewSection />
+                <img src="horizontal_line.png" alt="line" className={classes.horizontalLine}/>
                 <div>
                   <InfoCard
                     subtitle="About Us"
@@ -226,6 +235,8 @@ function Home() {
                     imageOnRight={false}
                   />
                 </div>
+                <img src="horizontal_line.png" alt="line" className={classes.horizontalLine}/>
+                <ReviewSection />
                 <div className={classes.bigSpace}>
                     <Footer/>
                 </div>

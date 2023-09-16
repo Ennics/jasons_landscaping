@@ -1,3 +1,5 @@
+This project is using the following Node and NPM version respectively: v20.4.0 and 9.8.1
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
