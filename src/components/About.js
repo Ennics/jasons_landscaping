@@ -119,7 +119,7 @@ const styles = makeStyles({
   flatbed_icon: {
     marginTop: theme.spacing(-1.5),
     display: "flex",
-    margin: '0 auto',
+    // margin: '0 auto',
     width: '70px', // Adjust the width of the underline as needed
     height: '50px'
   },

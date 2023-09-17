@@ -3,6 +3,7 @@ import {AppBar, Typography, Box, Toolbar, IconButton, Button, Menu, MenuItem } f
 import MenuIcon from '@material-ui/icons/Menu';
 import {makeStyles} from "@material-ui/core/styles"; 
 import {Link} from 'react-router-dom';
+import Popover from '@material-ui/core/Popover';
 
 const styles = makeStyles((theme) => ({
     bar:{
@@ -34,7 +35,7 @@ const styles = makeStyles((theme) => ({
     link: {
         textDecoration: "none",
         paddingRight: "1rem",
-        color: "#000000"
+        color: "#000000",
     },
     menuButton: {
         [theme.breakpoints.up('md')]: {
@@ -45,6 +46,15 @@ const styles = makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
           display: 'none', // Hide the navigation items for smaller screens
         },
+      },
+      dropdownContent: {
+        display: 'block',
+        position: 'absolute',
+        top: '100%',
+        left: 0,
+        backgroundColor: '#fff', // Customize the background color
+        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.2)', // Customize the shadow
+        zIndex: 1,
       },
 }));
 
@@ -59,6 +69,9 @@ function NavBar() {
     const handleMenuClose = () => {
         setAnchorEl(null);
     };
+
+  const [isHovered, setIsHovered] = useState(false);
+
     return (
         <div>
             <AppBar position="fixed" color="rgba(0, 0, 0, 0.87)" className={classes.bar}>   
@@ -92,10 +105,20 @@ function NavBar() {
                                     About Us
                                 </Typography>
                             </Link>
-                            <Link to="/services" className={classes.link}>
+                            <Link to="/services" className={classes.link} 
+                                onMouseEnter={() => setIsHovered(true)}
+                                onMouseLeave={() => setIsHovered(false)}>
                                 <Typography component="span" variant="h8" className={classes.menuItem}>
                                     Services
                                 </Typography>
+                                {isHovered && (
+                                    <div className={classes.dropdownContent}>
+                                    {/* Your dropdown content here */}
+                                    <Link href="#">Item 1</Link>
+                                    <Link href="#">Item 2</Link>
+                                    {/* Add more items as needed */}
+                                    </div>
+                                )}
                             </Link>
                             <Link to="/products" className={classes.link}>
                                 <Typography component="span" variant="h8" className={classes.menuItem}>
