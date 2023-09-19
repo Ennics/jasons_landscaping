@@ -24,6 +24,7 @@ const styles = makeStyles((theme) => ({
         cursor: "pointer", 
         color:  "#696767",
         flexGrow: 0.05,
+        padding: '0.25rem',
         transition: 'color 0.5s ease-in-out, box-shadow 0.5s ease-in-out',
         "&:hover": {
             color: "#800000",
@@ -33,6 +34,8 @@ const styles = makeStyles((theme) => ({
             paddingBottom: "1rem"    }
     },
     link: {
+        position: 'relative',
+        display: 'inline-block',
         textDecoration: "none",
         paddingRight: "1rem",
         color: "#000000",
@@ -48,14 +51,30 @@ const styles = makeStyles((theme) => ({
         },
       },
       dropdownContent: {
-        display: 'block',
+        display: 'inline-block',
+        flexDirection: 'column',
         position: 'absolute',
         top: '100%',
-        left: 0,
-        backgroundColor: '#fff', // Customize the background color
+        left: '50%', // Center horizontally
+        transform: 'translateX(-50%)', // Center horizontally
+        justifyContent: 'center',
+        width: '150px',
+        backgroundColor: 'rgba(255, 255, 255, 0.9)',
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.2)', // Customize the shadow
         zIndex: 1,
       },
+      linkElement: {
+        display: 'block',
+        textAlign: 'center', // Center text horizontally
+        padding: theme.spacing(1), // Add padding for spacing
+        textDecoration: 'none', // Remove underlines
+        color: '#545454', // Set the link text color
+        transition: 'color 0.5s ease-in-out, background-color 0.5s ease-in-out',
+        "&:hover": {
+            backgroundColor: "#800000",
+            color: 'white'
+        },
+      }
 }));
 
 function NavBar() {
@@ -113,10 +132,10 @@ function NavBar() {
                                 </Typography>
                                 {isHovered && (
                                     <div className={classes.dropdownContent}>
-                                    {/* Your dropdown content here */}
-                                    <Link href="#">Item 1</Link>
-                                    <Link href="#">Item 2</Link>
-                                    {/* Add more items as needed */}
+                                        {/* Your dropdown content here */}
+                                        <Link href="#" className={classes.linkElement}>Item 1</Link>
+                                        <Link href="#" className={classes.linkElement}>Item 2</Link>
+                                        {/* Add more items as needed */}
                                     </div>
                                 )}
                             </Link>
