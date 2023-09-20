@@ -295,11 +295,11 @@ const About = () => {
           hideButton={true}
         />
       </div>
-      <img src="horizontal_line.png" alt="line" className={classes.horizontalLine}/>
+      <img src="/horizontal_line.png" alt="line" className={classes.horizontalLine}/>
       <div id="services-brief" className={classes.servicesBrief}>
         {/* First Section */}
         <Box className={classes.section}>
-          <img src="excavator_icon.png" alt="underline" className={classes.excavator_icon}/>
+          <img src="/excavator_icon.png" alt="underline" className={classes.excavator_icon}/>
           <Typography variant="h6" className={classes.title}>
             LANDSCAPING
           </Typography>
@@ -310,7 +310,7 @@ const About = () => {
 
         {/* Second Section */}
         <Box className={classes.section}>
-          <img src="septic_logo.png" alt="underline" className={classes.septic_icon}/>
+          <img src="/septic_logo.png" alt="underline" className={classes.septic_icon}/>
           <Typography variant="h6" className={classes.title}>
             SEPTIC SYSTEMS
           </Typography>
@@ -321,7 +321,7 @@ const About = () => {
 
         {/* Third Section */}
         <Box className={classes.section}>
-          <img src="flatbed_icon.png" alt="underline" className={classes.flatbed_icon}/>
+          <img src="/flatbed_icon.png" alt="underline" className={classes.flatbed_icon}/>
           <Typography variant="h6" className={classes.title}>
             TOWING & FLATBED
           </Typography>
@@ -357,7 +357,7 @@ const About = () => {
         </Box>
         <div className={classes.reasonsSection}>
           <Box className={classes.reasonBox}>
-            <img src="checkmark_pic.png" alt="underline" className={classes.check_icon}/>
+            <img src="/checkmark_pic.png" alt="underline" className={classes.check_icon}/>
             <Typography variant="h6" className={classes.whyChoseUsTitle}>
               Expertise
             </Typography>
@@ -368,7 +368,7 @@ const About = () => {
             </Typography>
           </Box>
           <Box className={classes.reasonBox}>
-            <img src="checkmark_pic.png" alt="underline" className={classes.check_icon}/>
+            <img src="/checkmark_pic.png" alt="underline" className={classes.check_icon}/>
             <Typography variant="h6" className={classes.whyChoseUsTitle}>
               Sustainability
             </Typography>
@@ -378,7 +378,7 @@ const About = () => {
             </Typography>
           </Box>
           <Box className={classes.reasonBox}>
-            <img src="checkmark_pic.png" alt="underline" className={classes.check_icon}/>
+            <img src="/checkmark_pic.png" alt="underline" className={classes.check_icon}/>
             <Typography variant="h6" className={classes.whyChoseUsTitle}>
               Community
             </Typography>
@@ -389,7 +389,7 @@ const About = () => {
             </Typography>
           </Box>
           <Box className={classes.reasonBox}>
-            <img src="checkmark_pic.png" alt="underline" className={classes.check_icon}/>
+            <img src="/checkmark_pic.png" alt="underline" className={classes.check_icon}/>
             <Typography variant="h6" className={classes.whyChoseUsTitle}>
               Trust
             </Typography>

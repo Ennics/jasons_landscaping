@@ -109,7 +109,7 @@ const Footer = () => {
           <Typography variant="h6" className={classes.title}>
             OUR COMPANY
           </Typography>
-          <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
+          <img src="/red_underline.png" alt="underline" className={classes.underlineImage}/>
           <Typography variant="body1" className={classes.description}>
             Your local construction company, proudly serving the Ottawa Valley community since 1998.
           </Typography>
@@ -120,9 +120,9 @@ const Footer = () => {
           <Typography variant="h6" className={classes.title}>
             HELPFUL LINKS
           </Typography>
-          <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
+          <img src="/red_underline.png" alt="underline" className={classes.underlineImage}/>
           <Box className={classes.footerText}>
-            <img src="orange_arrow.png" alt="bullet" className={classes.bulletPoint}/>
+            <img src="/orange_arrow.png" alt="bullet" className={classes.bulletPoint}/>
             <Link to="/about" className={classes.link}>
                 <Typography component="span">
                     About Us
@@ -130,7 +130,7 @@ const Footer = () => {
             </Link>
           </Box>
           <Box className={classes.footerText}>
-            <img src="orange_arrow.png" alt="bullet" className={classes.bulletPoint}/>
+            <img src="/orange_arrow.png" alt="bullet" className={classes.bulletPoint}/>
             <Link to="/careers" className={classes.link}>
                 <Typography component="span">
                     Careers
@@ -138,7 +138,7 @@ const Footer = () => {
             </Link>
           </Box>
           <Box className={classes.footerText}>
-            <img src="orange_arrow.png" alt="bullet" className={classes.bulletPoint}/>
+            <img src="/orange_arrow.png" alt="bullet" className={classes.bulletPoint}/>
             <Link to="/contact" className={classes.link}>
                 <Typography component="span">
                     Contact
@@ -152,7 +152,7 @@ const Footer = () => {
           <Typography variant="h6" className={classes.title}>
             CONTACT INFO
           </Typography>
-          <img src="red_underline.png" alt="underline" className={classes.underlineImage}/>
+          <img src="/red_underline.png" alt="underline" className={classes.underlineImage}/>
           <Typography variant="body1">
             Jasonslandscaping@bell.net
             <br />
@@ -168,7 +168,7 @@ const Footer = () => {
               <FacebookIcon style={{ color: '#fff' }} />
             </IconButton>
             <Link to="https://www.bbb.org/ca/on/stittsville/profile/landscape-contractors/jasons-landscaping-and-snowplowing-inc-0117-3855" className={classes.bbbLink}>
-              <img src="bbb_logo.png" alt="BBB Acredited" className={classes.bbbLogo}/>
+              <img src="/bbb_logo.png" alt="BBB Acredited" className={classes.bbbLogo}/>
             </Link>
           </div>
         </Box>

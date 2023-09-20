@@ -97,7 +97,7 @@ function NavBar() {
                 <Box className={classes.box}>
                     <Box flexGrow={0.25}/>
                     <Link to="/" className={classes.logo}>
-                        <img src="j_and_s_logo.png" width="100%" display="inline-block" alt="logo"/>
+                        <img src="/j_and_s_logo.png" width="100%" display="inline-block" alt="logo"/>
                     </Link> 
                     <Box flexGrow={1}/>
                     <Toolbar>
@@ -133,8 +133,11 @@ function NavBar() {
                                 {isHovered && (
                                     <div className={classes.dropdownContent}>
                                         {/* Your dropdown content here */}
-                                        <Link href="#" className={classes.linkElement}>Item 1</Link>
-                                        <Link href="#" className={classes.linkElement}>Item 2</Link>
+                                        <Link to="/services/site_prep" className={classes.linkElement}>Site Prep</Link>
+                                        <Link to="/services/demolition" className={classes.linkElement}>Demolition</Link>
+                                        <Link to="/services/septic_systems" className={classes.linkElement}>Septic Systems</Link>
+                                        <Link to="/services/road_construction" className={classes.linkElement}>Road Construction</Link>
+                                        <Link to="/services/flatbed_and_towing" className={classes.linkElement}>Flatbed & Towing</Link>
                                         {/* Add more items as needed */}
                                     </div>
                                 )}
