@@ -304,7 +304,7 @@ const About = () => {
             LANDSCAPING
           </Typography>
           <Typography variant="body1" className={classes.description}>
-            Your local construction company, proudly serving the Ottawa Valley community since 1998.
+            We offer general landscaping services tailored to fit your specific needs.
           </Typography>
         </Box>
 
@@ -315,7 +315,7 @@ const About = () => {
             SEPTIC SYSTEMS
           </Typography>
           <Typography variant="body1" className={classes.description}>
-            Your local construction company, proudly serving the Ottawa Valley community since 1998.
+            Need a septic system installed? Look no further, we will accommodate your specific requirements.
           </Typography>
         </Box>
 
@@ -326,7 +326,7 @@ const About = () => {
             TOWING & FLATBED
           </Typography>
           <Typography variant="body1" className={classes.description}>
-            Your local construction company, proudly serving the Ottawa Valley community since 1998.
+            Jason's Landscaping also provides flatbed and towing services to cater to all your transportation needs.
           </Typography>
         </Box>
       </div>
