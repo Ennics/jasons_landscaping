@@ -67,7 +67,7 @@ const styles = makeStyles({
     overflow: 'hidden', /* Hide any overflow */
 
     /* Set the background image */
-    backgroundImage: `url('about_page_cover.png')`,
+    backgroundImage: `url('/about_hero.jpeg')`,
     backgroundSize: 'cover', /* Maintain image proportions and cover the container */
     backgroundPosition: 'center center', /* Center the image */
   },

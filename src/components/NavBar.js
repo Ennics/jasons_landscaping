@@ -133,11 +133,11 @@ function NavBar() {
                                 {isHovered && (
                                     <div className={classes.dropdownContent}>
                                         {/* Your dropdown content here */}
-                                        <Link to="/services/site_prep" className={classes.linkElement}>Site Prep</Link>
+                                        <Link to="/services/site-prep" className={classes.linkElement}>Site Prep</Link>
                                         <Link to="/services/demolition" className={classes.linkElement}>Demolition</Link>
-                                        <Link to="/services/septic_systems" className={classes.linkElement}>Septic Systems</Link>
-                                        <Link to="/services/road_construction" className={classes.linkElement}>Road Construction</Link>
-                                        <Link to="/services/flatbed_and_towing" className={classes.linkElement}>Flatbed & Towing</Link>
+                                        <Link to="/services/septic-systems" className={classes.linkElement}>Septic Systems</Link>
+                                        <Link to="/services/road-construction" className={classes.linkElement}>Road Construction</Link>
+                                        <Link to="/services/flatbed-and-towing" className={classes.linkElement}>Flatbed & Towing</Link>
                                         {/* Add more items as needed */}
                                     </div>
                                 )}

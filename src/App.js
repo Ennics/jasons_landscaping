@@ -18,11 +18,11 @@ function App() {
             <Routes>
                 <Route path="/about" element={<About/>} />
                 <Route path="/services" element={<Services/>} />
-                <Route path="/services/site_prep" element={<SitePrep/>} />
+                <Route path="/services/site-prep" element={<SitePrep/>} />
                 <Route path="/services/demolition" element={<Demolition/>} />
-                <Route path="/services/septic_systems" element={<SepticSystems/>} />
-                <Route path="/services/road_construction" element={<RoadConstruction/>} />
-                <Route path="/services/flatbed_and_towing" element={<FlatbedAndTowing/>} />
+                <Route path="/services/septic-systems" element={<SepticSystems/>} />
+                <Route path="/services/road-construction" element={<RoadConstruction/>} />
+                <Route path="/services/flatbed-and-towing" element={<FlatbedAndTowing/>} />
                 <Route path="/products" element={<Products/>} />
                 <Route path="/careers" element={<Careers/>} />
                 <Route path="/contact" element={<Contact/>} />
