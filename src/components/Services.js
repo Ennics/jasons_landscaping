@@ -8,6 +8,11 @@ import useScrollToTop from './useScrollToTop';
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
 import Fade from '@material-ui/core/Fade';
+import InfoCard from './InfoCard';
+import sitePrepImg from '../components/images/site_prep.jpeg'
+import whatWeDoImage from '../components/images/what_we_do_img_2.jpeg'
+import theMaterials from '../components/images/the_materials_img.jpeg'
+import workWithUs from '../components/images/work_with_us_img.jpg'
 
 const useStyles = makeStyles((theme) => ({
   coverImageContainer: {
@@ -140,7 +145,45 @@ const Services = () => {
             </Typography>
           </Box>
         </div>
-          <img src="/horizontal_line.png" alt="line" className={classes.horizontalLine}/>
+        <img src="/horizontal_line.png" alt="line" className={classes.horizontalLine}/>
+        <div>
+          <InfoCard
+            title="Site Prep"
+            description="For the past 25 years, we have earned the trust of municipalities 
+                        and private developers across the Ottawa Valley."
+            image={sitePrepImg}
+            link="/services/site-prep"
+            imageOnRight={true}
+          />
+          <InfoCard
+            subtitle="Services"
+            title="What We Do"
+            description="Whether it's enhancing outdoor spaces or creating captivating 
+            commercial landscapes, our skilled team strives to exceed expectations, bringing nature's 
+            allure to life with every project we undertake."
+            image={whatWeDoImage}
+            link="/services"
+            imageOnRight={false}
+          />
+          <InfoCard
+            subtitle="Products"
+            title="The Materials You Need"
+            description="With our comprehensive range of landscaping products, we aim to help you achieve 
+            your dream outdoor oasis with ease and excellence."
+            image={theMaterials}
+            link="/products"
+            imageOnRight={true}
+          />
+          <InfoCard
+            subtitle="Careers"
+            title="Work With Us"
+            description="Join us in shaping beautiful outdoor spaces and making a positive impact on the communities 
+            we serve. Discover a fulfilling career path at Jason's Landscaping today."
+            image={workWithUs}
+            link="/careers"
+            imageOnRight={false}
+          />
+        </div>
         <Footer/>
     </div>
   );
