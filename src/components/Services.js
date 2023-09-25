@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     height: '870px',
     overflow: 'hidden', 
-    backgroundImage: `url('about_page_cover.png')`,
+    backgroundImage: `url('/services_cover.png')`,
     backgroundSize: 'cover', 
     backgroundPosition: 'center center', 
   },
@@ -65,6 +65,39 @@ const useStyles = makeStyles((theme) => ({
   arrowIcon: {
     color: 'white', // Set the icon color to white
   },
+  titleBox: {
+    padding: theme.spacing(4), // Ample room around the content
+    display: 'flex',
+    justifyContent: 'center', // Center the sections horizontally
+  },
+  headerSpace: {
+    width: '600px',
+    margin: '0 auto',
+    display: 'inline-block',
+    justifyContent: 'center',
+    [theme.breakpoints.down('sm')]: {
+      width: '300px', // If screen is small, stack the footer content
+    },
+  },
+  headerTitle: {
+    fontSize: '26px',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    color: 'maroon'
+  },
+  headerDescription: {
+    color: '#545454',
+    fontSize: '16px',
+    textAlign: 'center',
+  },
+  horizontalLine: {
+    position: 'relative',
+    display: 'flex',
+    margin: '0 auto',       // Center the image horizontally
+    width: '80%', 
+    height: '20px',
+    marginTop: theme.spacing(4)
+  }
 }));
 
 const Services = () => {
@@ -96,7 +129,18 @@ const Services = () => {
             </div>
           </div>
         </Fade>
-        
+        <div className={classes.titleBox}>
+          <Box className={classes.headerSpace} id='first-section'>
+            <Typography variant="h6" className={classes.headerTitle}>
+              Why Chose Jason's Landscaping
+            </Typography>
+            <Typography variant="body1" className={classes.headerDescription}>
+              We are more than just a company; we are a community of dedicated professionals at Jason's Landscaping, 
+              where our core values drive our commitment to sustainability, teamwork, and excellence.
+            </Typography>
+          </Box>
+        </div>
+          <img src="/horizontal_line.png" alt="line" className={classes.horizontalLine}/>
         <Footer/>
     </div>
   );

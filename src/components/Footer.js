@@ -38,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
     fontSize: '18px', // Replace with the desired font size
     margin: theme.spacing(1), // Space between each link
+    "&:hover": {
+      color: "orange",
+  },
   },
   footerText: {
     fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
