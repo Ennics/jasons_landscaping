@@ -299,7 +299,9 @@ const About = () => {
       <div id="services-brief" className={classes.servicesBrief}>
         {/* First Section */}
         <Box className={classes.section}>
-          <img src="/excavator_icon.png" alt="underline" className={classes.excavator_icon}/>
+          <Link to="/services/site-prep">
+            <img src="/excavator_icon.png" alt="underline" className={classes.excavator_icon}/>
+          </Link>
           <Typography variant="h6" className={classes.title}>
             LANDSCAPING
           </Typography>
@@ -310,7 +312,9 @@ const About = () => {
 
         {/* Second Section */}
         <Box className={classes.section}>
-          <img src="/septic_logo.png" alt="underline" className={classes.septic_icon}/>
+          <Link to="/services/septic-systems">
+            <img src="/septic_logo.png" alt="underline" className={classes.septic_icon}/>
+          </Link>
           <Typography variant="h6" className={classes.title}>
             SEPTIC SYSTEMS
           </Typography>
@@ -321,7 +325,9 @@ const About = () => {
 
         {/* Third Section */}
         <Box className={classes.section}>
-          <img src="/flatbed_icon.png" alt="underline" className={classes.flatbed_icon}/>
+          <Link to="/services/flatbed-and-towing">
+            <img src="/flatbed_icon.png" alt="underline" className={classes.flatbed_icon}/>
+          </Link>
           <Typography variant="h6" className={classes.title}>
             TOWING & FLATBED
           </Typography>
