@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center', // Center the sections horizontally
   },
   headerSpace: {
-    width: '600px',
+    width: '50%',
     margin: '0 auto',
     display: 'inline-block',
     justifyContent: 'center',
@@ -93,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
   },
   headerDescription: {
     color: '#545454',
-    fontSize: '16px',
+    fontSize: '18px',
     textAlign: 'center',
   },
   horizontalLine: {
