@@ -7,7 +7,7 @@ import SitePrep from './components/SitePrep'
 import SepticSystems from './components/SepticSystems'
 import RoadConstruction from'./components/RoadConstruction'
 import FlatbedAndTowing from './components/FlatbedAndTowing'
-import Products from './components/Products'
+import Depot from './components/Depot'
 import Careers from './components/Careers'
 import Contact from './components/Contact'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -23,7 +23,7 @@ function App() {
                 <Route path="/services/septic-systems" element={<SepticSystems/>} />
                 <Route path="/services/road-construction" element={<RoadConstruction/>} />
                 <Route path="/services/flatbed-and-towing" element={<FlatbedAndTowing/>} />
-                <Route path="/products" element={<Products/>} />
+                <Route path="/depot" element={<Depot/>} />
                 <Route path="/careers" element={<Careers/>} />
                 <Route path="/contact" element={<Contact/>} />
                 <Route exact path="/" element={<Home/>} />

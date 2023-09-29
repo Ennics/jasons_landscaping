@@ -163,7 +163,7 @@ const InfoCard = ({ title, subtitle, description, image, link, imageOnRight, hid
                   {title}
               </Typography>
           </Box>
-          <Typography variant="body0" gutterBottom className={classes.boxDescription}>
+          <Typography variant="body1" gutterBottom className={classes.boxDescription}>
             {description}
           </Typography>
         </CardContent>
@@ -188,7 +188,7 @@ const InfoCard = ({ title, subtitle, description, image, link, imageOnRight, hid
                       {title}
                   </Typography>
               </Box>
-              <Typography variant="body0" gutterBottom className={classes.boxDescription}>
+              <Typography variant="body1" gutterBottom className={classes.boxDescription}>
                 {description}
               </Typography>
               <div className={hideButton ? classes.hiddenButton : ''}>
@@ -214,7 +214,7 @@ const InfoCard = ({ title, subtitle, description, image, link, imageOnRight, hid
                 {title}
             </Typography>
         </Box>
-        <Typography variant="body0" gutterBottom className={classes.boxDescription}>
+        <Typography variant="body1" gutterBottom className={classes.boxDescription}>
           {description}
         </Typography>
         <div className={hideButton ? classes.hiddenButton : ''}>

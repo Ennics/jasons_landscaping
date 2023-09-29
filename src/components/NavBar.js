@@ -11,6 +11,7 @@ const styles = makeStyles((theme) => ({
         justifyContent: "space-between",
         paddingTop: "0.5rem",
         backgroundColor: 'rgba(255, 255, 255, 0.9)',
+        color: 'rgba(0, 0, 0, 0.87)'
     },
     box:{
         display: "flex",
@@ -21,6 +22,7 @@ const styles = makeStyles((theme) => ({
         display: "inline-block"
     },
     menuItem: {
+        fontSize: "16px",
         cursor: "pointer", 
         color:  "#696767",
         flexGrow: 0.05,
@@ -93,7 +95,7 @@ function NavBar() {
 
     return (
         <div>
-            <AppBar position="fixed" color="rgba(0, 0, 0, 0.87)" className={classes.bar}>   
+            <AppBar position="fixed" className={classes.bar}>   
                 <Box className={classes.box}>
                     <Box flexGrow={0.25}/>
                     <Link to="/" className={classes.logo}>
@@ -115,19 +117,19 @@ function NavBar() {
                         <div className={classes.navItems}>
                             {/* Add your navigation buttons here */}
                             <Link to="/" className={classes.link}>
-                                <Typography component="span" variant="h8" className={classes.menuItem}>
+                                <Typography component="span" variant="h6" className={classes.menuItem}>
                                     Home
                                 </Typography>
                             </Link>
                             <Link to="/about" className={classes.link}>
-                                <Typography component="span" variant="h8" className={classes.menuItem}>
+                                <Typography component="span" variant="h6" className={classes.menuItem}>
                                     About Us
                                 </Typography>
                             </Link>
                             <Link to="/services" className={classes.link} 
                                 onMouseEnter={() => setIsHovered(true)}
                                 onMouseLeave={() => setIsHovered(false)}>
-                                <Typography component="span" variant="h8" className={classes.menuItem}>
+                                <Typography component="span" variant="h6" className={classes.menuItem}>
                                     Services
                                 </Typography>
                                 {isHovered && (
@@ -142,18 +144,18 @@ function NavBar() {
                                     </div>
                                 )}
                             </Link>
-                            <Link to="/products" className={classes.link}>
-                                <Typography component="span" variant="h8" className={classes.menuItem}>
-                                    Products 
+                            <Link to="/depot" className={classes.link}>
+                                <Typography component="span" variant="h6" className={classes.menuItem}>
+                                    Depot 
                                 </Typography>
                             </Link>
                             <Link to="/careers" className={classes.link}>
-                                <Typography component="span" variant="h8" className={classes.menuItem}>
+                                <Typography component="span" variant="h6" className={classes.menuItem}>
                                     Careers 
                                 </Typography>
                             </Link>
                             <Link to="/contact" className={classes.link}>
-                                <Typography component="span" variant="h8" className={classes.menuItem}>
+                                <Typography component="span" variant="h6" className={classes.menuItem}>
                                     Contact Us 
                                 </Typography>
                             </Link>
@@ -186,8 +188,8 @@ function NavBar() {
                             </Link>
                         </MenuItem>
                         <MenuItem onClick={handleMenuClose}>
-                            <Link to="/products" className={classes.link}>
-                                Products
+                            <Link to="/depot" className={classes.link}>
+                                Depot
                             </Link>
                         </MenuItem>
                         <MenuItem onClick={handleMenuClose}>

@@ -5,7 +5,6 @@ import {Typography, Box} from '@material-ui/core';
 import NavBar from './NavBar'
 import InfoCard from './InfoCard';
 import Footer from './Footer'
-import Navigation from './Navigation';
 import ReviewSection from './ReviewSection';
 import useScrollToTop from './useScrollToTop';
 import Fade from '@material-ui/core/Fade';
@@ -190,7 +189,7 @@ function Home() {
                       systems, road construction, flatbed, and towing services, we take pride in delivering top-notch 
                       solutions tailored to meet your unique needs.
                     </Typography>
-                    <Typography variant="h6" className={classes.littleSpace} color="maroon">
+                    <Typography variant="h6" className={classes.littleSpace}>
                       Our team of skilled professionals is committed to 
                       bringing your vision to life and transforming your projects into reality.
                     </Typography>
@@ -217,12 +216,12 @@ function Home() {
                     imageOnRight={false}
                   />
                   <InfoCard
-                    subtitle="Products"
+                    subtitle="Depot"
                     title="The Materials You Need"
-                    description="With our comprehensive range of landscaping products, we aim to help you achieve 
+                    description="With our comprehensive range of landscaping materials, we aim to help you achieve 
                     your dream outdoor oasis with ease and excellence."
                     image={theMaterials}
-                    link="/products"
+                    link="/depot"
                     imageOnRight={true}
                   />
                   <InfoCard
