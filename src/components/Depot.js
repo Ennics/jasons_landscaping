@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     height: '870px',
     overflow: 'hidden', 
-    backgroundImage: `url('/site_prep.jpeg')`,
+    backgroundImage: `url('/depot_hero.png')`,
     backgroundSize: 'cover', 
     backgroundPosition: 'center center', 
   },
@@ -84,7 +84,7 @@ const Depot = () => {
           <div>
             <div className={classes.overlay}>
               <div className={classes.boldWord}>
-                SITE PREP
+                DEPOT
               </div>
               <div className={classes.arrowAnimation}>
                 <div className={classes.buttonContainer}>
