@@ -91,7 +91,8 @@ function NavBar() {
         setAnchorEl(null);
     };
 
-  const [isHovered, setIsHovered] = useState(false);
+  const [areSercicesHovered, setServicesHovered] = useState(false);
+  const [isDepotHovered, setDepotHovered] = useState(false);
 
     return (
         <div>
@@ -127,12 +128,12 @@ function NavBar() {
                                 </Typography>
                             </Link>
                             <Link to="/services" className={classes.link} 
-                                onMouseEnter={() => setIsHovered(true)}
-                                onMouseLeave={() => setIsHovered(false)}>
+                                onMouseEnter={() => setServicesHovered(true)}
+                                onMouseLeave={() => setServicesHovered(false)}>
                                 <Typography component="span" variant="h6" className={classes.menuItem}>
                                     Services
                                 </Typography>
-                                {isHovered && (
+                                {areSercicesHovered && (
                                     <div className={classes.dropdownContent}>
                                         {/* Your dropdown content here */}
                                         <Link to="/services/site-prep" className={classes.linkElement}>Site Prep</Link>
@@ -144,10 +145,23 @@ function NavBar() {
                                     </div>
                                 )}
                             </Link>
-                            <Link to="/depot" className={classes.link}>
+                            <Link to="/depot" className={classes.link}
+                                onMouseEnter={() => setDepotHovered(true)}
+                                onMouseLeave={() => setDepotHovered(false)}>
                                 <Typography component="span" variant="h6" className={classes.menuItem}>
                                     Depot 
                                 </Typography>
+                                {isDepotHovered && (
+                                    <div className={classes.dropdownContent}>
+                                        {/* Your dropdown content here */}
+                                        <Link to="/depot/sod" className={classes.linkElement}>Sod</Link>
+                                        <Link to="/depot/top-soil" className={classes.linkElement}>Top Soil</Link>
+                                        <Link to="/depot/interlock" className={classes.linkElement}>Interlock</Link>
+                                        <Link to="/depot/aggregates" className={classes.linkElement}>Aggregates</Link>
+                                        <Link to="/depot/retaining-walls" className={classes.linkElement}>Retaining Walls</Link>
+                                        {/* Add more items as needed */}
+                                    </div>
+                                )}
                             </Link>
                             <Link to="/careers" className={classes.link}>
                                 <Typography component="span" variant="h6" className={classes.menuItem}>

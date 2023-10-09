@@ -24,6 +24,11 @@ function App() {
                 <Route path="/services/road-construction" element={<RoadConstruction/>} />
                 <Route path="/services/flatbed-and-towing" element={<FlatbedAndTowing/>} />
                 <Route path="/depot" element={<Depot/>} />
+                <Route path="/depot/sod" element={<Depot/>} />
+                <Route path="/depot/top-soil" element={<Depot/>} />
+                <Route path="/depot/interlock" element={<Depot/>} />
+                <Route path="/depot/aggregates" element={<Depot/>} />
+                <Route path="/depot/retaining-walls" element={<Depot/>} />
                 <Route path="/careers" element={<Careers/>} />
                 <Route path="/contact" element={<Contact/>} />
                 <Route exact path="/" element={<Home/>} />
