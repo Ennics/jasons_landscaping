@@ -1,8 +1,8 @@
 // Depot.js
 import React from 'react';
-import NavBar from './NavBar'
-import Footer from './Footer'
-import useScrollToTop from './useScrollToTop';
+import NavBar from '../NavBar'
+import Footer from '../Footer'
+import useScrollToTop from '../useScrollToTop';
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
 import Fade from '@material-ui/core/Fade';

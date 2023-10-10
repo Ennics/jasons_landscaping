@@ -1,19 +1,18 @@
 // Services.js
 import React from 'react';
-import NavBar from './NavBar'
-import Footer from './Footer'
-import {Link} from 'react-router-dom';
+import NavBar from '../NavBar';
+import Footer from '../Footer';
 import {Typography, Box, Button } from '@material-ui/core'; 
-import useScrollToTop from './useScrollToTop';
+import useScrollToTop from '../useScrollToTop';
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
 import Fade from '@material-ui/core/Fade';
-import InfoCard from './InfoCard';
-import sitePrepImg from '../components/images/site_prep.jpeg'
-import demolitionImg from '../components/images/demolition.jpeg'
-import septicImg from '../components/images/septic_system.jpeg'
-import roadConstructionImg from '../components/images/road_construction.jpeg'
-import flatbedImg from '../components/images/flatbed_img.jpeg'
+import InfoCard from '../InfoCard';
+import sitePrepImg from '../../components/images/site_prep.jpeg'
+import demolitionImg from '../../components/images/demolition.jpeg'
+import septicImg from '../../components/images/septic_system.jpeg'
+import roadConstructionImg from '../../components/images/road_construction.jpeg'
+import flatbedImg from '../../components/images/flatbed_img.jpeg'
 
 const useStyles = makeStyles((theme) => ({
   coverImageContainer: {

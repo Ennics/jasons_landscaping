@@ -139,8 +139,8 @@ function NavBar() {
                                         <Link to="/services/site-prep" className={classes.linkElement}>Site Prep</Link>
                                         <Link to="/services/demolition" className={classes.linkElement}>Demolition</Link>
                                         <Link to="/services/septic-systems" className={classes.linkElement}>Septic Systems</Link>
-                                        <Link to="/services/road-construction" className={classes.linkElement}>Road Construction</Link>
                                         <Link to="/services/flatbed-and-towing" className={classes.linkElement}>Flatbed & Towing</Link>
+                                        <Link to="/services/road-construction" className={classes.linkElement}>Road Construction</Link>
                                         {/* Add more items as needed */}
                                     </div>
                                 )}

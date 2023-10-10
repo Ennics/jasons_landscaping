@@ -1,8 +1,8 @@
-// RoadConstruction.js
+// RetainingWalls.js
 import React from 'react';
-import NavBar from './NavBar'
-import Footer from './Footer'
-import useScrollToTop from './useScrollToTop';
+import NavBar from '../NavBar'
+import Footer from '../Footer'
+import useScrollToTop from '../useScrollToTop';
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
 import Fade from '@material-ui/core/Fade';
@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const RoadConstruction = () => {
+const RetainingWalls = () => {
   const classes = useStyles();
   useScrollToTop();
   function scrollToFirstSection() {
@@ -84,7 +84,7 @@ const RoadConstruction = () => {
           <div>
             <div className={classes.overlay}>
               <div className={classes.boldWord}>
-                ROAD CONSTRUCTION
+                RETAINING WALLS
               </div>
               <div className={classes.arrowAnimation}>
                 <div className={classes.buttonContainer}>
@@ -100,4 +100,4 @@ const RoadConstruction = () => {
   );
 };
 
-export default RoadConstruction;
+export default RetainingWalls;

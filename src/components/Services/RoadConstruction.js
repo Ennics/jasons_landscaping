@@ -1,8 +1,8 @@
-// SitePrep.js
+// RoadConstruction.js
 import React from 'react';
-import NavBar from './NavBar'
-import Footer from './Footer'
-import useScrollToTop from './useScrollToTop';
+import NavBar from '../NavBar'
+import Footer from '../Footer'
+import useScrollToTop from '../useScrollToTop';
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
 import Fade from '@material-ui/core/Fade';
@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     height: '870px',
     overflow: 'hidden', 
-    backgroundImage: `url('/site_prep.jpeg')`,
+    backgroundImage: `url('/road_construction.jpeg')`,
     backgroundSize: 'cover', 
     backgroundPosition: 'center center', 
   },
@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SitePrep = () => {
+const RoadConstruction = () => {
   const classes = useStyles();
   useScrollToTop();
   function scrollToFirstSection() {
@@ -84,7 +84,7 @@ const SitePrep = () => {
           <div>
             <div className={classes.overlay}>
               <div className={classes.boldWord}>
-                SITE PREP
+                ROAD CONSTRUCTION
               </div>
               <div className={classes.arrowAnimation}>
                 <div className={classes.buttonContainer}>
@@ -100,4 +100,4 @@ const SitePrep = () => {
   );
 };
 
-export default SitePrep;
+export default RoadConstruction;
