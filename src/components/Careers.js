@@ -3,10 +3,12 @@ import React, { useEffect, useState } from 'react';
 import NavBar from './NavBar'
 import Footer from './Footer'
 import useScrollToTop from './useScrollToTop';
-import { makeStyles } from '@material-ui/core/styles';
+import { createTheme, makeStyles } from '@material-ui/core/styles';
 import {Typography, Box, Button } from '@material-ui/core'; 
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
 import Fade from '@material-ui/core/Fade';
+
+const theme = createTheme({});
 
 const useStyles = makeStyles({
   jobContainer: {
@@ -83,6 +85,33 @@ const useStyles = makeStyles({
   arrowIcon: {
     color: 'white', // Set the icon color to white
   },
+  whyChoseUsSection: {
+    color: '#000000', // Text color
+    padding: theme.spacing(4), // Ample room around the content
+    display: 'flex',
+    justifyContent: 'center', // Center the sections horizontally
+    flexDirection: 'column', // Arrange sections vertically
+  },
+  whyChoseUsHeader: {
+    marginTop: theme.spacing(4),
+    width: '600px',
+    margin: '0 auto',
+    display: 'inline-block',
+    [theme.breakpoints.down('sm')]: {
+      width: '300px', // If screen is small, stack the footer content
+    },
+  },
+  whyChoseUsTitle: {
+    fontSize: '26px',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    color: 'maroon'
+  },
+  whyChoseUsDescription: {
+    color: '#545454',
+    fontSize: '16px',
+    textAlign: 'center',
+  },
 });
 
 const Careers = () => {
@@ -135,8 +164,17 @@ const Careers = () => {
             </div>
           </div>
         </Fade>
-        <div>
-          <h1>Job Listings</h1>
+        <div className={classes.whyChoseUsSection}>
+          <Box className={classes.whyChoseUsHeader}>
+            <Typography variant="h6" className={classes.whyChoseUsTitle}>
+              Check Out Our Job Openings
+            </Typography>
+            <Typography variant="body1" className={classes.whyChoseUsDescription}>
+              At Jason's Landscaping, we acknowledge that our employees are our most valuable asset. 
+              We take pride in creating a supportive work environment that encourages ongoing 
+              self-improvement and fosters a sense of togetherness, where our employees are treated like part of our family.
+            </Typography>
+          </Box>
         </div>
         {jobs.map((job, index) => (
         <div key={index} className={classes.jobContainer}>
