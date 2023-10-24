@@ -177,16 +177,16 @@ const Careers = () => {
           </Box>
         </div>
         {jobs.map((job, index) => (
-        <div key={index} className={classes.jobContainer}>
-          <h2 className={classes.jobTitle}>{job.jobName}</h2>
-          <p className={classes.datePosted}>Date Posted: {job['date-posted']}</p>
-          <p className={classes.description}>Description: {job.description}</p>
-          <p className={classes.type}>Type: {job.type}</p>
-          <p className={classes.requirements}>Requirements: {job.requirements.join(', ')}</p>
-          <p className={classes.location}>Location: {job.location}</p>
-          {job.salary && <p className={classes.salary}>Salary: {job.salary}</p>}
-        </div>
-      ))}
+          <div key={index} className={classes.jobContainer}>
+            <h2 className={classes.jobTitle}>{job.jobName}</h2>
+            <p className={classes.datePosted}>Date Posted: {job['date-posted']}</p>
+            <p className={classes.description}>Description: {job.description}</p>
+            <p className={classes.type}>Type: {job.type}</p>
+            <p className={classes.requirements}>Requirements: {job.requirements.join(', ')}</p>
+            <p className={classes.location}>Location: {job.location}</p>
+            {job.salary && <p className={classes.salary}>Salary: {job.salary}</p>}
+          </div>
+        ))}
         <Footer/>
     </div>
   );
