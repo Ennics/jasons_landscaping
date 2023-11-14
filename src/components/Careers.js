@@ -4,9 +4,24 @@ import NavBar from './NavBar'
 import Footer from './Footer'
 import useScrollToTop from './useScrollToTop';
 import { createTheme, makeStyles } from '@material-ui/core/styles';
-import {Typography, Box, Button } from '@material-ui/core'; 
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  Typography,
+  Button,
+  Box,
+  List,
+  ListItem,
+  ListItemText,
+} from '@material-ui/core';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
 import Fade from '@material-ui/core/Fade';
+import jobsData from './jobsData.json'
 
 const theme = createTheme({});
 
@@ -112,6 +127,47 @@ const useStyles = makeStyles({
     fontSize: '16px',
     textAlign: 'center',
   },
+  root: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: '25px',
+  },
+  tableContainer: {
+    borderRadius: 10,
+    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
+    width: '750px',
+  },
+  table: {
+    minWidth: 300,
+    borderRadius: 10,
+    overflow: 'hidden',
+  },
+  tableHeaderCell: {
+    fontWeight: 'bold',
+    backgroundColor: 'maroon',
+    color: 'white',
+  },
+  tableBodyCell: {
+    backgroundColor: theme.palette.background.paper,
+  },
+  detailsContainer: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(2),
+    borderRadius: 10,
+    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
+    marginTop: theme.spacing(1),
+  },
+  dropdownButton: {
+    backgroundColor: 'maroon',
+  },
+  sectionHeader: {
+    fontWeight: 'bold',
+    marginTop: theme.spacing(2),
+  },
+  listItem: {
+    paddingLeft: 0,
+  },
 });
 
 const Careers = () => {
@@ -127,24 +183,21 @@ const Careers = () => {
 
   const classes = useStyles();
   const [jobs, setJobs] = useState([]);
-  
-  const apiUrl = 'https://ddz0uxvooi.execute-api.us-east-2.amazonaws.com/prod';
+  const [selectedJob, setSelectedJob] = useState(null);
 
   useEffect(() => {
-    fetch(apiUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        // Convert the object of jobs into an array of job objects
-        const jobArray = Object.keys(data).map((jobName) => ({
-          jobName,
-          ...data[jobName],
-        }));
-        setJobs(jobArray);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
+    // Convert the object of jobs into an array of job objects
+    const jobArray = Object.keys(jobsData).map((jobName) => ({
+      jobName,
+      ...jobsData[jobName],
+    }));
+    setJobs(jobArray);
   }, []);
+
+  const handleJobClick = (job) => {
+    // Toggle selected job on click
+    setSelectedJob(selectedJob === job ? null : job);
+  };
 
   return (
     <div>
@@ -164,7 +217,7 @@ const Careers = () => {
             </div>
           </div>
         </Fade>
-        <div className={classes.whyChoseUsSection}>
+        <div id="first-section" className={classes.whyChoseUsSection}>
           <Box className={classes.whyChoseUsHeader}>
             <Typography variant="h6" className={classes.whyChoseUsTitle}>
               Check Out Our Job Openings
@@ -176,17 +229,83 @@ const Careers = () => {
             </Typography>
           </Box>
         </div>
-        {jobs.map((job, index) => (
-          <div key={index} className={classes.jobContainer}>
-            <h2 className={classes.jobTitle}>{job.jobName}</h2>
-            <p className={classes.datePosted}>Date Posted: {job['date-posted']}</p>
-            <p className={classes.description}>Description: {job.description}</p>
-            <p className={classes.type}>Type: {job.type}</p>
-            <p className={classes.requirements}>Requirements: {job.requirements.join(', ')}</p>
-            <p className={classes.location}>Location: {job.location}</p>
-            {job.salary && <p className={classes.salary}>Salary: {job.salary}</p>}
-          </div>
-        ))}
+        <div className={classes.root}>
+          <TableContainer component={Paper} className={classes.tableContainer}>
+            <Table className={classes.table}>
+              <TableHead>
+                <TableRow>
+                  <TableCell className={classes.tableHeaderCell}>Job Name</TableCell>
+                  <TableCell className={classes.tableHeaderCell}>Location</TableCell>
+                  <TableCell className={classes.tableHeaderCell}></TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {jobs.map((job, index) => (
+                  <React.Fragment key={index}>
+                    <TableRow
+                      onClick={() => handleJobClick(job)}
+                      className={classes.tableBodyCell}
+                    >
+                      <TableCell>{job.name}</TableCell>
+                      <TableCell>{job.location}</TableCell>
+                      <TableCell>
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          size="small"
+                          className={classes.dropdownButton}
+                          onClick={() => handleJobClick(job)}
+                        >
+                          {selectedJob === job ? 'Hide Details' : 'Show Details'}
+                        </Button>
+                      </TableCell>
+                    </TableRow>
+                    {selectedJob === job && (
+                      <TableRow>
+                        <TableCell colSpan="3">
+                          <div className={classes.detailsContainer}>
+                            <Typography variant="h6" className={classes.sectionHeader}>
+                              Description
+                            </Typography>
+                            <Typography>{job.description}</Typography>
+                            <Typography variant="h6" className={classes.sectionHeader}>
+                              Job Type
+                            </Typography>
+                            <Typography>{job.type}</Typography>
+                            <Typography variant="h6" className={classes.sectionHeader}>
+                              Requirements
+                            </Typography>
+                            <List>
+                              {job.requirements.map((requirement, index) => (
+                                <ListItem key={index} className={classes.listItem}>
+                                  <ListItemText primary={`• ${requirement}`} />
+                                </ListItem>
+                              ))}
+                            </List>
+                            {job.benefits && (
+                              <>
+                                <Typography variant="h6" className={classes.sectionHeader}>
+                                  Benefits
+                                </Typography>
+                                <List>
+                                  {job.benefits.map((benefit, index) => (
+                                    <ListItem key={index} className={classes.listItem}>
+                                      <ListItemText primary={`• ${benefit}`} />
+                                    </ListItem>
+                                  ))}
+                                </List>
+                              </>
+                            )}
+                          </div>
+                        </TableCell>
+                      </TableRow>
+                    )}
+                  </React.Fragment>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </div>
         <Footer/>
     </div>
   );

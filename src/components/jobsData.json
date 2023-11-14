@@ -1,0 +1,84 @@
+{
+    "DZ-Dump-Truck-Driver": {
+        "name": "DZ Dump Truck Driver",
+        "location": "Ashton, ON",
+        "description": "We are currently seeking a self-motivated and experienced DZ Dump Truck Driver to join our team at Jason's Landscaping. This role offers an excellent opportunity for individuals with a strong driving background who are looking to contribute to our ever-expanding portfolio of commercial and residential landscape projects. If you're seeking a rewarding career path in a team environment, this position is ideal for you.",
+        "type": "Full-time",
+        "responsibilities": [
+            "Safely operate and drive DZ class dump trucks to transport materials to and from job sites.",
+            "Perform pre-trip and post-trip inspections of the vehicle to ensure roadworthiness.",
+            "Load and unload materials with precision and in compliance with safety regulations.",
+            "Collaborate with project managers and team members to coordinate delivery schedules.",
+            "Adhere to traffic laws and regulations to maintain a high standard of safety."
+        ],
+        "requirements": [
+            "Valid DZ driver's license with a clean driving record.",
+            "Proven experience as a dump truck driver, demonstrating a strong understanding of vehicle operation and safety protocols.",
+            "Ability to handle and transport materials efficiently and safely.",
+            "Strong communication skills to coordinate effectively with team members.",
+            "Physical fitness to perform loading and unloading tasks as required."
+        ],
+        "benefits": [
+            "Competitive total compensation package.",
+            "Health and dental benefits.",
+            "Opportunities for career advancement.",
+            "A positive and collaborative team environment.",
+            "Join a reputable company with a dedicated team and modern equipment."
+        ]
+    },
+    "AZ-Driver": {
+        "name": "AZ Driver",
+        "location": "Ashton, ON",
+        "description": "We are currently seeking a reliable and experienced AZ Driver to join our team at Jason's Landscaping. This role offers an excellent opportunity for individuals with a strong driving background who are looking to contribute to our ever-expanding portfolio of commercial and residential landscape projects. If you're seeking a rewarding career path in a team environment, this position is ideal for you.",
+        "type": "Full-time",
+        "responsibilities": [
+            "Safely operate and drive AZ class dump trucks to transport materials to and from job sites.",
+            "Perform pre-trip and post-trip inspections of the vehicle to ensure roadworthiness.",
+            "Load and unload materials with precision and in compliance with safety regulations.",
+            "Collaborate with project managers and team members to coordinate delivery schedules.",
+            "Adhere to traffic laws and regulations to maintain a high standard of safety."
+        ],
+        "requirements": [
+            "Valid AZ driver's license with a clean driving record.",
+            "Proven experience as a dump truck driver, demonstrating a strong understanding of vehicle operation and safety protocols.",
+            "Ability to handle and transport materials efficiently and safely.",
+            "Strong communication skills to coordinate effectively with team members.",
+            "Physical fitness to perform loading and unloading tasks as required."
+        ],
+        "benefits": [
+            "Competitive total compensation package.",
+            "Health and dental benefits.",
+            "Opportunities for career advancement.",
+            "A positive and collaborative team environment.",
+            "Join a reputable company with a dedicated team and modern equipment."
+        ]
+    },
+    "General-Labourer": {
+        "name": "General Labourer",
+        "location": "Ashton, ON",
+        "description": "We are currently seeking dedicated and self-motivated General Labourers to join our team at Jason's Landscaping. This position presents an excellent opportunity for individuals eager to contribute to our ever-expanding portfolio of commercial and residential landscape projects. If you're looking to gain valuable experience in the industry and embark on a rewarding career path within a team-oriented environment, this role is ideal for you.",
+        "type": "Full-time, seasonal, or student",
+        "responsibilities": [
+            "Construct walkways, patios, retaining walls, and other landscape features.",
+            "Plant trees, shrubs, perennials, flowers, and other greenery.",
+            "Load and unload materials, tools, and equipment necessary to complete projects.",
+            "Transport materials using shovels, wheelbarrows, and manual lifting/carrying.",
+            "Operate various hand tools, power tools, and small engine equipment, including quick cut, plate packer, chainsaw, etc."
+        ],
+        "requirements": [
+            "Reliable transportation to and from the job site.",
+            "Ability to maintain a professional company image.",
+            "Adherence to health and safety regulations within our profession.",
+            "Strong communication skills.",
+            "Willingness to work 40+ hours a week."
+        ],
+        "benefits": [
+            "Competitive total compensation package.",
+            "Health and dental benefits.",
+            "Opportunities for career advancement.",
+            "A positive and collaborative team environment.",
+            "Join a reputable company with a dedicated team and modern equipment."
+        ]
+    }
+}
+  
