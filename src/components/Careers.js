@@ -18,10 +18,17 @@ import {
   List,
   ListItem,
   ListItemText,
+  TextField,
+  Select,
+  MenuItem,
+  FormControl,
+  InputLabel,
+  InputAdornment
 } from '@material-ui/core';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
 import Fade from '@material-ui/core/Fade';
 import jobsData from './jobsData.json'
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const theme = createTheme({});
 
@@ -168,6 +175,20 @@ const useStyles = makeStyles({
   listItem: {
     paddingLeft: 0,
   },
+  formContainer: {
+    maxWidth: 400,
+    margin: 'auto',
+    padding: theme.spacing(3),
+    borderRadius: 10,
+    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
+  },
+  formControl: {
+    marginBottom: theme.spacing(2),
+    width: '100%',
+  },
+  submitButton: {
+    marginTop: theme.spacing(2),
+  },
 });
 
 const Careers = () => {
@@ -197,6 +218,66 @@ const Careers = () => {
   const handleJobClick = (job) => {
     // Toggle selected job on click
     setSelectedJob(selectedJob === job ? null : job);
+  };
+
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    jobInterest: '',
+    resume: null,
+  });
+  const [recaptchaValue, setRecaptchaValue] = useState(null);
+
+  const handleChange = (field) => (event) => {
+    setFormData({ ...formData, [field]: event.target.value });
+  };
+
+  const handleFileChange = (event) => {
+    setFormData({ ...formData, resume: event.target.files[0] });
+  };
+
+  const handleRecaptchaChange = (value) => {
+    setRecaptchaValue(value);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    // Check if all required fields are filled
+    if (
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.jobInterest ||
+      !formData.resume ||
+      !recaptchaValue
+    ) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    try {
+      // Send data to the server
+      const response = await fetch('http://localhost:3001/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        alert('Application submitted successfully!');
+      } else {
+        alert('Failed to submit application. Please try again later.');
+      }
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      alert('An error occurred. Please try again later.');
+    }
   };
 
   return (
@@ -306,6 +387,68 @@ const Careers = () => {
             </Table>
           </TableContainer>
         </div>
+        <Paper className={classes.formContainer}>
+          <form onSubmit={handleSubmit}>
+            <TextField
+              label="First Name"
+              className={classes.formControl}
+              value={formData.firstName}
+              onChange={handleChange('firstName')}
+              required
+            />
+            <TextField
+              label="Last Name"
+              className={classes.formControl}
+              value={formData.lastName}
+              onChange={handleChange('lastName')}
+              required
+            />
+            <TextField
+              label="Email"
+              type="email"
+              className={classes.formControl}
+              value={formData.email}
+              onChange={handleChange('email')}
+              required
+            />
+            <TextField
+              label="Phone Number"
+              className={classes.formControl}
+              value={formData.phone}
+              onChange={handleChange('phone')}
+              required
+            />
+            <FormControl className={classes.formControl} required>
+              <InputLabel>Job of Interest</InputLabel>
+              <Select
+                value={formData.jobInterest}
+                onChange={handleChange('jobInterest')}
+              >
+                <MenuItem value="DZ-Dump-Truck-Driver">DZ Dump Truck Driver</MenuItem>
+                <MenuItem value="AZ-Driver">AZ Driver</MenuItem>
+                <MenuItem value="General-Labourer">General Labourer</MenuItem>
+              </Select>
+            </FormControl>
+            <input
+              type="file"
+              accept=".pdf,.doc,.docx"
+              onChange={handleFileChange}
+              required
+            />
+            <ReCAPTCHA
+              sitekey="6Ldi2BQpAAAAAJ__lCqeVTzAejXMeQRNS75dwAhr"
+              onChange={handleRecaptchaChange}
+            />
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              className={classes.submitButton}
+            >
+              Submit
+            </Button>
+          </form>
+        </Paper>
         <Footer/>
     </div>
   );
