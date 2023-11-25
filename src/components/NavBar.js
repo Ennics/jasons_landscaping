@@ -27,6 +27,7 @@ const styles = makeStyles((theme) => ({
         color:  "#696767",
         flexGrow: 0.05,
         padding: '0.25rem',
+        borderRadius: '10px',
         transition: 'color 0.5s ease-in-out, box-shadow 0.5s ease-in-out',
         "&:hover": {
             color: "#800000",

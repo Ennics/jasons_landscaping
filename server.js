@@ -16,8 +16,8 @@ const storage = multer.memoryStorage(); // Store the file in memory
 const upload = multer({ storage: storage });
 
 app.post('/send-email', upload.single('resume'), (req, res) => {
-  const { firstName, lastName, email, phone, jobInterest } = req.body;
-
+  const { firstName, lastName, email, phone, jobInterest, additionalInfo } = req.body;
+  
   // Access the uploaded file from req.file.buffer
   const resumeBuffer = req.file ? req.file.buffer : null;
 
@@ -35,7 +35,7 @@ app.post('/send-email', upload.single('resume'), (req, res) => {
     from: 'jasonslandscaping2003@gmail.com', // replace with your email
     to: 'jasonslandscaping2003@gmail.com',
     subject: `Job Application: ${jobInterest}`,
-    text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nJob Interest: ${jobInterest}`,
+    text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nJob Interest: ${jobInterest}\nAdditional Info / Cover Letter: ${additionalInfo}`,
     attachments: [
       {
         filename: 'resume.pdf', // Change the filename as needed

@@ -23,7 +23,6 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
-  InputAdornment
 } from '@material-ui/core';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
 import Fade from '@material-ui/core/Fade';
@@ -38,19 +37,6 @@ const useStyles = makeStyles({
     padding: '16px',
     margin: '16px',
     borderRadius: '4px',
-  },
-  jobTitle: {
-    fontSize: '1.5rem',
-    fontWeight: 'bold',
-  },
-  location: {
-    fontSize: '1rem',
-  },
-  description: {
-    fontSize: '1rem',
-  },
-  requirements: {
-    fontSize: '1rem',
   },
   coverImageContainer: {
     position: 'relative',
@@ -77,10 +63,6 @@ const useStyles = makeStyles({
     fontWeight: "bold",
     fontFamily: 'Georgia'
   },
-  box:{
-    display: "flex",
-    alignItems: "center"
-  },
   arrowAnimation: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -92,27 +74,27 @@ const useStyles = makeStyles({
       transform: 'translateY(0)',
     },
     '50%': {
-      transform: 'translateY(-5px)', // Adjust the raindrop effect height as needed
+      transform: 'translateY(-5px)',
     },
   },
   buttonContainer: {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '32px', // Adjust the width as needed to fit the circle
-    height: '32px', // Adjust the height as needed to fit the circle
+    width: '32px',
+    height: '32px',
     borderRadius: '50%',
     border: '2px solid white',
   },
   arrowIcon: {
-    color: 'white', // Set the icon color to white
+    color: 'white',
   },
   whyChoseUsSection: {
-    color: '#000000', // Text color
-    padding: theme.spacing(4), // Ample room around the content
+    color: '#000000',
+    padding: theme.spacing(4),
     display: 'flex',
-    justifyContent: 'center', // Center the sections horizontally
-    flexDirection: 'column', // Arrange sections vertically
+    justifyContent: 'center',
+    flexDirection: 'column',
   },
   whyChoseUsHeader: {
     marginTop: theme.spacing(4),
@@ -120,7 +102,7 @@ const useStyles = makeStyles({
     margin: '0 auto',
     display: 'inline-block',
     [theme.breakpoints.down('sm')]: {
-      width: '300px', // If screen is small, stack the footer content
+      width: '300px',
     },
   },
   whyChoseUsTitle: {
@@ -172,12 +154,10 @@ const useStyles = makeStyles({
     fontWeight: 'bold',
     marginTop: theme.spacing(2),
   },
-  listItem: {
-    paddingLeft: 0,
-  },
   formContainer: {
-    maxWidth: 400,
+    maxWidth: 700,
     margin: 'auto',
+    marginBottom: theme.spacing(3),
     padding: theme.spacing(3),
     borderRadius: 10,
     boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
@@ -188,7 +168,33 @@ const useStyles = makeStyles({
   },
   submitButton: {
     marginTop: theme.spacing(2),
+    backgroundColor: 'maroon',
   },
+  fileInputLabel: {
+    display: 'inline-block',
+    cursor: 'pointer',
+    margin: theme.spacing(2, 0),
+  },
+  fileInputButton: {
+    width: '100%',
+    backgroundColor: 'maroon',
+  },
+  visuallyHidden: {
+    position: 'absolute',
+    width: '1px',
+    height: '1px',
+    margin: '-1px',
+    padding: '0',
+    overflow: 'hidden',
+    clip: 'rect(0, 0, 0, 0)',
+    border: '0',
+  },
+  selectedFileText: {
+    marginTop: theme.spacing(-1),
+    fontSize: "14px",
+    color: 'green',
+    fontFamily: 'Roboto',
+  }
 });
 
 const Careers = () => {
@@ -204,6 +210,7 @@ const Careers = () => {
 
   const classes = useStyles();
   const [jobs, setJobs] = useState([]);
+  const [fileName, setFileName] = useState('');
   const [selectedJob, setSelectedJob] = useState(null);
 
   useEffect(() => {
@@ -226,6 +233,7 @@ const Careers = () => {
     email: '',
     phone: '',
     jobInterest: '',
+    additionalInfo: '',
     resume: null,
   });
   const [recaptchaValue, setRecaptchaValue] = useState(null);
@@ -235,7 +243,11 @@ const Careers = () => {
   };
 
   const handleFileChange = (event) => {
-    setFormData({ ...formData, resume: event.target.files[0] });
+    const selectedFile = event.target.files[0];
+    setFormData({ ...formData, resume: selectedFile });
+
+    // Update the state to display the file name
+    setFileName(selectedFile ? selectedFile.name : '');
   };
 
   const handleRecaptchaChange = (value) => {
@@ -259,16 +271,23 @@ const Careers = () => {
       return;
     }
 
+    const userData = new FormData();
+
+    userData.append('firstName', formData.firstName);
+    userData.append('lastName', formData.lastName);
+    userData.append('email', formData.email);
+    userData.append('phone', formData.phone);
+    userData.append('jobInterest', formData.jobInterest);
+    userData.append('resume', formData.resume);
+    userData.append('additionalInfo', formData.additionalInfo);
+
     try {
       // Send data to the server
       const response = await fetch('http://localhost:3001/send-email', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: userData,
       });
-  
+    
       if (response.ok) {
         alert('Application submitted successfully!');
       } else {
@@ -434,6 +453,30 @@ const Careers = () => {
               accept=".pdf,.doc,.docx"
               onChange={handleFileChange}
               required
+              className={classes.visuallyHidden}
+              id="resume-input"
+            />
+            <label htmlFor="resume-input" className={classes.fileInputLabel}>
+              <Button
+                variant="contained"
+                color="primary"
+                component="span"
+                className={classes.fileInputButton}
+              >
+                Upload Resume
+              </Button>
+            </label>
+            {/* Display the file name */}
+            {fileName && <p className={classes.selectedFileText}>Selected File: {fileName}</p>}
+            <TextField
+              label="Additional Information / Cover Letter (Optional)"
+              multiline
+              rows={4} // Adjust the number of rows as needed
+              variant="outlined"
+              fullWidth
+              value={formData.additionalInfo}
+              onChange={handleChange('additionalInfo')}
+              className={classes.formControl}
             />
             <ReCAPTCHA
               sitekey="6Ldi2BQpAAAAAJ__lCqeVTzAejXMeQRNS75dwAhr"
