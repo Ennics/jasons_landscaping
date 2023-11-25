@@ -283,7 +283,7 @@ const Careers = () => {
 
     try {
       // Send data to the server
-      const response = await fetch('http://localhost:3001/send-email', {
+      const response = await fetch('http://localhost:3001/send-application', {
         method: 'POST',
         body: userData,
       });

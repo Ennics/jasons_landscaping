@@ -15,7 +15,7 @@ app.use(cors());
 const storage = multer.memoryStorage(); // Store the file in memory
 const upload = multer({ storage: storage });
 
-app.post('/send-email', upload.single('resume'), (req, res) => {
+app.post('/send-application', upload.single('resume'), (req, res) => {
   const { firstName, lastName, email, phone, jobInterest, additionalInfo } = req.body;
   
   // Access the uploaded file from req.file.buffer
@@ -25,17 +25,17 @@ app.post('/send-email', upload.single('resume'), (req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'jasonslandscaping2003@gmail.com', // replace with your email
-      pass: 'jrgs ydhr gtuz lwoi', // replace with your email password
+      user: 'jasonslandscaping2003@gmail.com',
+      pass: 'jrgs ydhr gtuz lwoi',
     },
   });
 
   // Construct the email body
   const mailOptions = {
-    from: 'jasonslandscaping2003@gmail.com', // replace with your email
+    from: 'jasonslandscaping2003@gmail.com',
     to: 'jasonslandscaping2003@gmail.com',
     subject: `Job Application: ${jobInterest}`,
-    text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nJob Interest: ${jobInterest}\nAdditional Info / Cover Letter: ${additionalInfo}`,
+    text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nJob Interest: ${jobInterest}\nAdditional Info / Cover Letter:\n${additionalInfo}`,
     attachments: [
       {
         filename: 'resume.pdf', // Change the filename as needed
@@ -52,6 +52,35 @@ app.post('/send-email', upload.single('resume'), (req, res) => {
     }
     res.status(200).send('Email sent: ' + info.response);
   });
+});
+
+app.post('/send-inquiry', (req, res) => {
+    const { firstName, lastName, email, phone, inquirySubject, inquiryMessage } = req.body;
+  
+    // Create a nodemailer transporter using your email credentials
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'jasonslandscaping2003@gmail.com',
+        pass: 'jrgs ydhr gtuz lwoi',
+      },
+    });
+  
+    // Construct the email body
+    const mailOptions = {
+      from: 'jasonslandscaping2003@gmail.com',
+      to: 'jasonslandscaping2003@gmail.com',
+      subject: `Inquiry: ${inquirySubject}`,
+      text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${inquirySubject}\n\nMessage:\n${inquiryMessage}`,
+    };
+  
+    // Send the email
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return res.status(500).send(error.toString());
+      }
+      res.status(200).send('Email sent: ' + info.response);
+    });
 });
 
 app.listen(PORT, () => {

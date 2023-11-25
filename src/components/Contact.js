@@ -1,5 +1,6 @@
 // Contact.js
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import NavBar from './NavBar'
 import Footer from './Footer'
 import useScrollToTop from './useScrollToTop';
@@ -194,7 +195,24 @@ const useStyles = makeStyles({
     fontSize: "14px",
     color: 'green',
     fontFamily: 'Roboto',
-  }
+  },
+  loadingOverlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    background: 'rgba(0, 0, 0, 0.5)', // Slightly dimmed background color
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 1000, // Ensure it's above other elements
+  },
+  loadingImage: {
+    // Style for the loading image, adjust as needed
+    width: 100,
+    height: 100,
+  },
 });
 
 const Contact = () => {
@@ -209,45 +227,21 @@ const Contact = () => {
   }
 
   const classes = useStyles();
-  const [jobs, setJobs] = useState([]);
-  const [fileName, setFileName] = useState('');
-  const [selectedJob, setSelectedJob] = useState(null);
-
-  useEffect(() => {
-    // Convert the object of jobs into an array of job objects
-    const jobArray = Object.keys(jobsData).map((jobName) => ({
-      jobName,
-      ...jobsData[jobName],
-    }));
-    setJobs(jobArray);
-  }, []);
-
-  const handleJobClick = (job) => {
-    // Toggle selected job on click
-    setSelectedJob(selectedJob === job ? null : job);
-  };
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     phone: '',
-    jobInterest: '',
-    additionalInfo: '',
-    resume: null,
+    inquirySubject: '',
+    inquiryMessage: '',
   });
   const [recaptchaValue, setRecaptchaValue] = useState(null);
 
   const handleChange = (field) => (event) => {
     setFormData({ ...formData, [field]: event.target.value });
-  };
-
-  const handleFileChange = (event) => {
-    const selectedFile = event.target.files[0];
-    setFormData({ ...formData, resume: selectedFile });
-
-    // Update the state to display the file name
-    setFileName(selectedFile ? selectedFile.name : '');
   };
 
   const handleRecaptchaChange = (value) => {
@@ -256,6 +250,7 @@ const Contact = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
 
     // Check if all required fields are filled
     if (
@@ -263,44 +258,47 @@ const Contact = () => {
       !formData.lastName ||
       !formData.email ||
       !formData.phone ||
-      !formData.jobInterest ||
-      !formData.resume ||
+      !formData.inquirySubject ||
+      !formData.inquiryMessage ||
       !recaptchaValue
     ) {
       alert('Please fill in all required fields.');
+      setIsLoading(false);
       return;
     }
 
-    const userData = new FormData();
-
-    userData.append('firstName', formData.firstName);
-    userData.append('lastName', formData.lastName);
-    userData.append('email', formData.email);
-    userData.append('phone', formData.phone);
-    userData.append('jobInterest', formData.jobInterest);
-    userData.append('resume', formData.resume);
-    userData.append('additionalInfo', formData.additionalInfo);
-
     try {
       // Send data to the server
-      const response = await fetch('http://localhost:3001/send-email', {
+      const response = await fetch('http://localhost:3001/send-inquiry', {
         method: 'POST',
-        body: userData,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
     
       if (response.ok) {
-        alert('Application submitted successfully!');
+        alert('Message sent successfully!');
+        setIsLoading(false);
+        navigate('/');
       } else {
-        alert('Failed to submit application. Please try again later.');
+        alert('Failed to send message. Please try again later.');
+        setIsLoading(false);
       }
     } catch (error) {
-      console.error('Error submitting application:', error);
+      console.error('Error sending message:', error);
       alert('An error occurred. Please try again later.');
+      setIsLoading(false);
     }
   };
 
   return (
     <div>
+        {isLoading && (
+          <div className={classes.loadingOverlay}>
+            <img src="/loading.gif" alt="Loading" className={classes.loadingImage} />
+          </div>
+        )}
         <NavBar/>
         <div className={classes.coverImageContainer}/>
         <Fade in={true} timeout={2000}>
@@ -323,83 +321,6 @@ const Contact = () => {
               General Inquiries
             </Typography>
           </Box>
-        </div>
-        <div className={classes.root}>
-          <TableContainer component={Paper} className={classes.tableContainer}>
-            <Table className={classes.table}>
-              <TableHead>
-                <TableRow>
-                  <TableCell className={classes.tableHeaderCell}>Job Name</TableCell>
-                  <TableCell className={classes.tableHeaderCell}>Location</TableCell>
-                  <TableCell className={classes.tableHeaderCell}></TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {jobs.map((job, index) => (
-                  <React.Fragment key={index}>
-                    <TableRow
-                      onClick={() => handleJobClick(job)}
-                      className={classes.tableBodyCell}
-                    >
-                      <TableCell>{job.name}</TableCell>
-                      <TableCell>{job.location}</TableCell>
-                      <TableCell>
-                        <Button
-                          variant="contained"
-                          color="primary"
-                          size="small"
-                          className={classes.dropdownButton}
-                          onClick={() => handleJobClick(job)}
-                        >
-                          {selectedJob === job ? 'Hide Details' : 'Show Details'}
-                        </Button>
-                      </TableCell>
-                    </TableRow>
-                    {selectedJob === job && (
-                      <TableRow>
-                        <TableCell colSpan="3">
-                          <div className={classes.detailsContainer}>
-                            <Typography variant="h6" className={classes.sectionHeader}>
-                              Description
-                            </Typography>
-                            <Typography>{job.description}</Typography>
-                            <Typography variant="h6" className={classes.sectionHeader}>
-                              Job Type
-                            </Typography>
-                            <Typography>{job.type}</Typography>
-                            <Typography variant="h6" className={classes.sectionHeader}>
-                              Requirements
-                            </Typography>
-                            <List>
-                              {job.requirements.map((requirement, index) => (
-                                <ListItem key={index} className={classes.listItem}>
-                                  <ListItemText primary={`• ${requirement}`} />
-                                </ListItem>
-                              ))}
-                            </List>
-                            {job.benefits && (
-                              <>
-                                <Typography variant="h6" className={classes.sectionHeader}>
-                                  Benefits
-                                </Typography>
-                                <List>
-                                  {job.benefits.map((benefit, index) => (
-                                    <ListItem key={index} className={classes.listItem}>
-                                      <ListItemText primary={`• ${benefit}`} />
-                                    </ListItem>
-                                  ))}
-                                </List>
-                              </>
-                            )}
-                          </div>
-                        </TableCell>
-                      </TableRow>
-                    )}
-                  </React.Fragment>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
         </div>
         <Paper className={classes.formContainer}>
           <form onSubmit={handleSubmit}>
@@ -433,45 +354,27 @@ const Contact = () => {
               required
             />
             <FormControl className={classes.formControl} required>
-              <InputLabel>Job of Interest</InputLabel>
+              <InputLabel>Inquiry Subject</InputLabel>
               <Select
-                value={formData.jobInterest}
-                onChange={handleChange('jobInterest')}
+                value={formData.inquirySubject}
+                onChange={handleChange('inquirySubject')}
               >
-                <MenuItem value="DZ-Dump-Truck-Driver">DZ Dump Truck Driver</MenuItem>
-                <MenuItem value="AZ-Driver">AZ Driver</MenuItem>
-                <MenuItem value="General-Labourer">General Labourer</MenuItem>
+                <MenuItem value="Services">Services</MenuItem>
+                <MenuItem value="Depot">Depot</MenuItem>
+                <MenuItem value="Job Application">Job Application</MenuItem>
+                <MenuItem value="Other">Other</MenuItem>
               </Select>
             </FormControl>
-            <input
-              type="file"
-              accept=".pdf,.doc,.docx"
-              onChange={handleFileChange}
-              required
-              className={classes.visuallyHidden}
-              id="resume-input"
-            />
-            <label htmlFor="resume-input" className={classes.fileInputLabel}>
-              <Button
-                variant="contained"
-                color="primary"
-                component="span"
-                className={classes.fileInputButton}
-              >
-                Upload Resume
-              </Button>
-            </label>
-            {/* Display the file name */}
-            {fileName && <p className={classes.selectedFileText}>Selected File: {fileName}</p>}
             <TextField
-              label="Additional Information / Cover Letter (Optional)"
+              label="Message"
               multiline
-              rows={4} // Adjust the number of rows as needed
+              rows={6} // Adjust the number of rows as needed
               variant="outlined"
               fullWidth
-              value={formData.additionalInfo}
-              onChange={handleChange('additionalInfo')}
+              value={formData.inquiryMessage}
+              onChange={handleChange('inquiryMessage')}
               className={classes.formControl}
+              required
             />
             <ReCAPTCHA
               sitekey="6Ldi2BQpAAAAAJ__lCqeVTzAejXMeQRNS75dwAhr"
