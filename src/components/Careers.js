@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import NavBar from './NavBar'
 import Footer from './Footer'
 import useScrollToTop from './useScrollToTop';
+import { useNavigate } from 'react-router-dom';
 import { createTheme, makeStyles } from '@material-ui/core/styles';
 import {
   Table,
@@ -194,7 +195,24 @@ const useStyles = makeStyles({
     fontSize: "14px",
     color: 'green',
     fontFamily: 'Roboto',
-  }
+  },
+  loadingOverlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    background: 'rgba(0, 0, 0, 0.5)', // Slightly dimmed background color
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 1000, // Ensure it's above other elements
+  },
+  loadingImage: {
+    // Style for the loading image, adjust as needed
+    width: 100,
+    height: 100,
+  },
 });
 
 const Careers = () => {
@@ -209,8 +227,10 @@ const Careers = () => {
   }
 
   const classes = useStyles();
+  const navigate = useNavigate();
   const [jobs, setJobs] = useState([]);
   const [fileName, setFileName] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
 
   useEffect(() => {
@@ -256,6 +276,7 @@ const Careers = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
 
     // Check if all required fields are filled
     if (
@@ -268,6 +289,7 @@ const Careers = () => {
       !recaptchaValue
     ) {
       alert('Please fill in all required fields.');
+      setIsLoading(false);
       return;
     }
 
@@ -290,17 +312,26 @@ const Careers = () => {
     
       if (response.ok) {
         alert('Application submitted successfully!');
+        setIsLoading(false);
+        navigate('/');
       } else {
         alert('Failed to submit application. Please try again later.');
+        setIsLoading(false);
       }
     } catch (error) {
       console.error('Error submitting application:', error);
       alert('An error occurred. Please try again later.');
+      setIsLoading(false);
     }
   };
 
   return (
     <div>
+        {isLoading && (
+          <div className={classes.loadingOverlay}>
+            <img src="/loading.gif" alt="Loading" className={classes.loadingImage} />
+          </div>
+        )}
         <NavBar/>
         <div className={classes.coverImageContainer}/>
         <Fade in={true} timeout={2000}>

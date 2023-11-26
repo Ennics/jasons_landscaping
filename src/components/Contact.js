@@ -6,19 +6,10 @@ import Footer from './Footer'
 import useScrollToTop from './useScrollToTop';
 import { createTheme, makeStyles } from '@material-ui/core/styles';
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
   Paper,
   Typography,
   Button,
   Box,
-  List,
-  ListItem,
-  ListItemText,
   TextField,
   Select,
   MenuItem,
@@ -27,7 +18,6 @@ import {
 } from '@material-ui/core';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
 import Fade from '@material-ui/core/Fade';
-import jobsData from './jobsData.json'
 import ReCAPTCHA from 'react-google-recaptcha';
 
 const theme = createTheme({});
@@ -43,7 +33,7 @@ const useStyles = makeStyles({
     position: 'relative',
     height: '870px',
     overflow: 'hidden', 
-    backgroundImage: `url('/careers_cover4.jpeg')`,
+    backgroundImage: `url('/contact_page_cover.jpeg')`,
     backgroundSize: 'cover', 
     backgroundPosition: 'center center', 
   },

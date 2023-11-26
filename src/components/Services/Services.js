@@ -2,7 +2,7 @@
 import React from 'react';
 import NavBar from '../NavBar';
 import Footer from '../Footer';
-import {Typography, Box, Button } from '@material-ui/core'; 
+import {Typography, Box } from '@material-ui/core'; 
 import useScrollToTop from '../useScrollToTop';
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
