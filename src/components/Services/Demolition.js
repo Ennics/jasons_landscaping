@@ -6,6 +6,10 @@ import useScrollToTop from '../useScrollToTop';
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
 import Fade from '@material-ui/core/Fade';
+import demolitionImg from '../../components/images/demolition_img.jpeg'
+import InfoCard from '../InfoCard';
+import {Typography, Button, Link } from '@material-ui/core'; 
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   coverImageContainer: {
@@ -63,17 +67,44 @@ const useStyles = makeStyles((theme) => ({
   arrowIcon: {
     color: 'white', // Set the icon color to white
   },
+  horizontalLine: {
+    position: 'relative',
+    display: 'flex',
+    margin: '0 auto',       // Center the image horizontally
+    width: '80%', 
+    height: '20px',
+  },
+  quoteSection: {
+    padding: theme.spacing(4),
+    textAlign: 'center',
+  },
+  quoteButton: {
+    marginTop: theme.spacing(2),
+    backgroundColor: 'maroon'
+  },
+  quoteSectionText: {
+    color: 'black',
+    fontWeight: 'bold',
+    fontFamily: 'Roboto'
+  }
 }));
 
 const Demolition = () => {
-  const classes = useStyles();
   useScrollToTop();
+
+  const classes = useStyles();
+  const navigate = useNavigate();
+
   function scrollToFirstSection() {
     const firstSectionOffsetTop = document.getElementById('first-section').offsetTop;
     window.scrollTo({
       top: firstSectionOffsetTop,
       behavior: 'smooth',
     });
+  }
+
+  function handleClick() {
+    navigate('/contact');
   }
 
   return (
@@ -94,7 +125,33 @@ const Demolition = () => {
             </div>
           </div>
         </Fade>
-        
+        <InfoCard
+          title="Clearing the Path for Progress"
+          subtitle="Demolition"
+          description="At Jason's, our team specializes in strategic dismantling of structures, removing obstacles,
+          and clearing spaces for your new vision. Beyond basic demolition, we prioritize controlled deconstruction, using advanced techniques
+          for optimal safety and environmental responsibility. Expertly handling hazardous materials, salvaging
+          valuable components when possible. Demolishing old structures or clearing the path for innovation, our commitment to excellence defines every aspect of our demolition services."
+          image={demolitionImg}
+          link="/services/site-prep"
+          imageOnRight={true}
+          hideButton={true}
+        />
+        <img src="/horizontal_line.png" alt="line" className={classes.horizontalLine}/>
+        <div className={classes.quoteSection}>
+          <Typography variant="h5" className={classes.quoteSectionText}>
+            Request a Quote Today!
+          </Typography>
+          <Button
+            component={Link}
+            onClick={handleClick}
+            variant="contained"
+            color="primary"
+            className={classes.quoteButton}
+          >
+            Contact Us
+          </Button>
+        </div>
         <Footer/>
     </div>
   );
