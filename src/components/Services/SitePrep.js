@@ -139,7 +139,7 @@ const SitePrep = () => {
           hideButton={true}
         />
         <img src="/horizontal_line.png" alt="line" className={classes.horizontalLine}/>
-        <div className={classes.quoteSection}>
+        <div className={classes.quoteSection} id="first-section">
           <Typography variant="h5" className={classes.quoteSectionText}>
             Request a Quote Today!
           </Typography>
