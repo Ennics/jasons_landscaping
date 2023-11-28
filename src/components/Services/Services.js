@@ -180,15 +180,6 @@ const Services = () => {
             imageOnRight={true}
           />
           <InfoCard
-            title="Road Construction"
-            description="We offer professional road construction services to help our clients create safe and 
-            functional roadways. Our team has the expertise and equipment necessary to handle all aspects of 
-            road construction, from excavation and grading to paving and striping."
-            image={roadConstructionImg}
-            link="/services/road-construction"
-            imageOnRight={false}
-          />
-          <InfoCard
             title="Flatbed and Towing"
             description="At Jason's Landscaping, we offer reliable flatbed and towing services to assist with 
             the transportation of heavy equipment, vehicles, and other materials. Our team is equipped with 
@@ -196,6 +187,15 @@ const Services = () => {
             your property."
             image={flatbedImg}
             link="/services/flatbed-and-towing"
+            imageOnRight={false}
+          />
+          <InfoCard
+            title="Road Construction"
+            description="We offer professional road construction services to help our clients create safe and 
+            functional roadways. Our team has the expertise and equipment necessary to handle all aspects of 
+            road construction, from excavation and grading to paving and striping."
+            image={roadConstructionImg}
+            link="/services/road-construction"
             imageOnRight={true}
           />
         </div>
