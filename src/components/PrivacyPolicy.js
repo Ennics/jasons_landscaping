@@ -73,27 +73,24 @@ const useStyles = makeStyles((theme) => ({
     width: '80%', 
     height: '20px',
   },
-  quoteSection: {
+  policyText: {
+    maxWidth: '800px',
+    margin: 'auto',
     padding: theme.spacing(4),
-    textAlign: 'center',
+    lineHeight: '1.6',
+    textAlign: 'left',
+    fontFamily: 'Roboto',
+    color: '#333',
   },
-  quoteButton: {
-    marginTop: theme.spacing(2),
-    backgroundColor: 'maroon'
-  },
-  quoteSectionText: {
-    color: 'black',
+  bold: {
     fontWeight: 'bold',
-    fontFamily: 'Roboto'
+    marginTop: '50px',
   },
-  wrapper: {
-    width: "80%",
-    margin: "auto",
-    textAlign: "center"
+  boldText: {
+    fontWeight: 'bold',
   },
-  littleSpace:{
-    marginTop: "2.5rem",
-    color: '#545454',
+  underline: {
+    textDecoration: 'underline',
   },
 }));
 
@@ -127,7 +124,67 @@ const PrivacyPolicy = () => {
             </div>
           </div>
         </Fade>
-        {/* Code goes here */}
+        <div className={classes.policyText} id="first-section">
+            <Typography paragraph>
+            This privacy notice discloses the privacy practices for <span className={classes.underline}>www.jasonslandscape.ca</span>. This privacy notice 
+            applies solely to information collected by this website. It will notify you of the following:
+            </Typography>
+            <Typography paragraph className={classes.bold}>
+            Information Collection, Use, and Sharing
+            </Typography>
+            <Typography paragraph>
+            We only collect information that you voluntarily give us via email, contact forms, or other direct contact from you. We will not sell or rent 
+            this information to anyone.
+            </Typography>
+            <Typography paragraph>
+            We will use your information to respond to you, regarding the reason you contacted us. We will not share your information with any third party 
+            outside of our organization, other than as necessary to fulfill your request, such as responding to inquiries or providing requested services.
+            </Typography>
+            <Typography paragraph>
+            Unless you ask us not to, we may contact you via email in the future to inform you about specials, new products or services, or changes to 
+            this privacy policy.
+            </Typography>
+            <Typography paragraph className={classes.bold}>
+            Your Access to and Control Over Information
+            </Typography>
+            <Typography paragraph>
+            You have the right to:
+            </Typography>
+            <Typography paragraph>
+            <span className={classes.boldText}>Access: </span>See what data we have about you, if any.
+            </Typography>
+            <Typography paragraph>
+            <span className={classes.boldText}>Correction: </span>Correction: Change/correct any data we have about you.
+            </Typography>
+            <Typography paragraph>
+            <span className={classes.boldText}>Deletion: </span>Have us delete any data we have about you.
+            </Typography>
+            <Typography paragraph>
+            <span className={classes.boldText}>Concerns: </span>Express any concern you have about our use of your data.
+            </Typography>
+            <Typography paragraph>
+            You may opt out of any future contacts from us at any time. You can do so by contacting us via the email address or phone number 
+            provided on our website.
+            </Typography>
+            <Typography paragraph className={classes.bold}>
+            Security
+            </Typography>
+            <Typography paragraph>
+            We take precautions to protect your information. When you submit sensitive information via the website, your information is protected 
+            both online and offline.
+            </Typography>
+            <Typography paragraph>
+            Only employees who need the information to perform specific jobs (e.g., billing or customer service) are granted access to personally 
+            identifiable information. The computers/servers in which we store personally identifiable information are kept in a secure environment.
+            </Typography>
+            <Typography paragraph className={classes.bold}>
+            Contact Information
+            </Typography>
+            <Typography paragraph>
+            If you feel that we are not abiding by this privacy policy, please contact us immediately via telephone or email provided on our website.
+            </Typography>
+
+        </div>
         <Footer/>
     </div>
   );
