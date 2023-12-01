@@ -148,6 +148,14 @@ const Footer = () => {
                 </Typography>
             </Link>
           </Box>
+          <Box className={classes.footerText}>
+            <img src="/orange_arrow.png" alt="bullet" className={classes.bulletPoint}/>
+            <Link to="/privacy-policy" className={classes.link}>
+                <Typography component="span">
+                    Privacy Policy
+                </Typography>
+            </Link>
+          </Box>
         </Box>
 
         {/* Third Section */}

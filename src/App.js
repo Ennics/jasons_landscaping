@@ -7,6 +7,7 @@ import SitePrep from './components/Services/SitePrep'
 import SepticSystems from './components/Services/SepticSystems'
 import RoadConstruction from'./components/Services/RoadConstruction'
 import FlatbedAndTowing from './components/Services/FlatbedAndTowing'
+import PrivacyPolicy from './components/PrivacyPolicy'
 import Depot from './components/Depot'
 import Careers from './components/Careers'
 import Contact from './components/Contact'
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/depot" element={<Depot/>} />
                 <Route path="/careers" element={<Careers/>} />
                 <Route path="/contact" element={<Contact/>} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
                 <Route exact path="/" element={<Home/>} />
             </Routes>
         </BrowserRouter>
