@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const multer = require('multer');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -10,10 +11,15 @@ const PORT = process.env.PORT || 3001;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
+app.use(express.static(path.join(__dirname, '/build')));
 
 // Configure multer to handle file uploads
 const storage = multer.memoryStorage(); // Store the file in memory
 const upload = multer({ storage: storage });
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/build/index.html'));
+});
 
 app.post('/send-application', upload.single('resume'), (req, res) => {
   const { firstName, lastName, email, phone, jobInterest, additionalInfo } = req.body;

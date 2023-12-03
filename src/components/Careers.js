@@ -305,7 +305,7 @@ const Careers = () => {
 
     try {
       // Send data to the server
-      const response = await fetch('http://localhost:3001/send-application', {
+      const response = await fetch('/send-application', {
         method: 'POST',
         body: userData,
       });

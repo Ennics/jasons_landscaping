@@ -259,7 +259,7 @@ const Contact = () => {
 
     try {
       // Send data to the server
-      const response = await fetch('http://localhost:3001/send-inquiry', {
+      const response = await fetch('/send-inquiry', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
