@@ -4,8 +4,11 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
+var https = require('https');
+var http = require('http');
+var fs = require('fs');
 
-const app = express();
+var app = express();
 const PORT = process.env.PORT || 80;
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -89,6 +92,15 @@ app.post('/send-inquiry', (req, res) => {
     });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+var options = {
+  key: fs.readFileSync('client-key.pem'),
+  cert: fs.readFileSync('client-cert.pem')
+};
+
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`);
+// });
+// Create an HTTP service.
+http.createServer(app).listen(80);
+// Create an HTTPS service identical to the HTTP service.
+https.createServer(options, app).listen(443);
