@@ -155,7 +155,6 @@ function NavBar() {
                                 {isDepotHovered && (
                                     <div className={classes.dropdownContent}>
                                         {/* Your dropdown content here */}
-                                        <Link to="/depot#sod" className={classes.linkElement}>Sod</Link>
                                         <Link to="/depot#top-soil" className={classes.linkElement}>Top Soil</Link>
                                         <Link to="/depot#interlock" className={classes.linkElement}>Interlock</Link>
                                         <Link to="/depot#aggregates" className={classes.linkElement}>Aggregates</Link>

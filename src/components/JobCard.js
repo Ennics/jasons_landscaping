@@ -1,13 +1,6 @@
 // JobCard.js
 import React from 'react';
-import { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card } from '@material-ui/core';
-import { CardMedia } from '@material-ui/core';
-import { CardContent } from '@material-ui/core';
-import { Typography } from '@material-ui/core';
-import { Button, Box } from '@material-ui/core';
-import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   card: {

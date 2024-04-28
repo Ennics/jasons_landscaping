@@ -8,7 +8,6 @@ import {Typography, Box, Button, Link } from '@material-ui/core';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
 import Fade from '@material-ui/core/Fade';
 import InfoCard from './InfoCard';
-import sodImage from './images/sod_img.jpeg'
 import topSoilImage from './images/top_soil_img.png'
 import interlockImage from './images/interlock_img.jpeg'
 import retainingWallsImage from './images/retaining_walls_img.jpeg'
@@ -133,7 +132,6 @@ const Depot = () => {
   }
 
   const location = useLocation();
-  const sodRef = useRef(null);
   const topSoilRef = useRef(null);
   const interlockRef = useRef(null);
   const aggregatesRef = useRef(null);
@@ -151,9 +149,6 @@ const Depot = () => {
     let offset = 120; 
 
     switch (sectionId) {
-      case 'sod':
-        sectionRef = sodRef;
-        break;
       case 'top-soil':
         sectionRef = topSoilRef;
         break;
@@ -208,7 +203,7 @@ const Depot = () => {
             </Typography>
             <Typography variant="body1" className={classes.headerDescription}>
               Welcome to our outdoor depot, your destination for quality landscape materials and expert advice. 
-              As a your local landscape construction company, we take pride in offering an extensive selection of premium sod, 
+              As a your local landscape construction company, we take pride in offering an extensive selection of premium
               topsoil, interlock, retaining walls, and aggregates. Whether you're transforming your backyard oasis or embarking 
               on a large-scale project, our depot is stocked with everything you need to elevate your outdoor space. 
               With a commitment to excellence and a passion for helping our customers bring their visions to life, we're here 
@@ -218,20 +213,6 @@ const Depot = () => {
         </div>
         <img src="/horizontal_line.png" alt="line" className={classes.horizontalLine}/>
         <div>
-          <div ref={sodRef}>
-            <InfoCard
-              title="Effortless Greenery"
-              subtitle="Sod"
-              description="At Jason's, our premium sod offers an instant transformation to your landscape, providing lush, 
-              vibrant greenery that instantly enhances the appeal of any project.Whether you're aiming to create a picturesque 
-              lawn for a residential property, establish a welcoming outdoor space for a commercial area, or seeking erosion 
-              control for a larger development, our sod is the perfect solution."
-              image={sodImage}
-              link="/services/site-prep"
-              imageOnRight={true}
-              hideButton={true}
-            />
-          </div>
           <div ref={topSoilRef}>
             <InfoCard
               title="Foundation for Growth"

@@ -477,6 +477,7 @@ const Careers = () => {
                 <MenuItem value="DZ-Dump-Truck-Driver">DZ Dump Truck Driver</MenuItem>
                 <MenuItem value="AZ-Driver">AZ Driver</MenuItem>
                 <MenuItem value="General-Labourer">General Labourer</MenuItem>
+                <MenuItem value="General-Application">General Application</MenuItem>
               </Select>
             </FormControl>
             <input

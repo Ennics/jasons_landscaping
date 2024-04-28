@@ -1,6 +1,6 @@
 {
     "DZ-Dump-Truck-Driver": {
-        "name": "DZ Dump Truck Driver",
+        "name": "(currently unavailable) DZ Dump Truck Driver",
         "location": "Ashton, ON",
         "description": "We are currently seeking a self-motivated and experienced DZ Dump Truck Driver to join our team at Jason's Landscaping. This role offers an excellent opportunity for individuals with a strong driving background who are looking to contribute to our ever-expanding portfolio of commercial and residential landscape projects. If you're seeking a rewarding career path in a team environment, this position is ideal for you.",
         "type": "Full-time",
@@ -20,14 +20,13 @@
         ],
         "benefits": [
             "Competitive total compensation package.",
-            "Health and dental benefits.",
             "Opportunities for career advancement.",
             "A positive and collaborative team environment.",
             "Join a reputable company with a dedicated team and modern equipment."
         ]
     },
     "AZ-Driver": {
-        "name": "AZ Driver",
+        "name": "(currently unavailable) AZ Driver",
         "location": "Ashton, ON",
         "description": "We are currently seeking a reliable and experienced AZ Driver to join our team at Jason's Landscaping. This role offers an excellent opportunity for individuals with a strong driving background who are looking to contribute to our ever-expanding portfolio of commercial and residential landscape projects. If you're seeking a rewarding career path in a team environment, this position is ideal for you.",
         "type": "Full-time",
@@ -47,14 +46,13 @@
         ],
         "benefits": [
             "Competitive total compensation package.",
-            "Health and dental benefits.",
             "Opportunities for career advancement.",
             "A positive and collaborative team environment.",
             "Join a reputable company with a dedicated team and modern equipment."
         ]
     },
     "General-Labourer": {
-        "name": "General Labourer",
+        "name": "(currently unavailable) General Labourer",
         "location": "Ashton, ON",
         "description": "We are currently seeking dedicated and self-motivated General Labourers to join our team at Jason's Landscaping. This position presents an excellent opportunity for individuals eager to contribute to our ever-expanding portfolio of commercial and residential landscape projects. If you're looking to gain valuable experience in the industry and embark on a rewarding career path within a team-oriented environment, this role is ideal for you.",
         "type": "Full-time, seasonal, or student",
@@ -74,7 +72,32 @@
         ],
         "benefits": [
             "Competitive total compensation package.",
-            "Health and dental benefits.",
+            "Opportunities for career advancement.",
+            "A positive and collaborative team environment.",
+            "Join a reputable company with a dedicated team and modern equipment."
+        ]
+    },
+    "General-Application": {
+        "name": "General Application",
+        "location": "Ashton, ON",
+        "description": "This is a general application. Make sure to include your areas of interest in your job application. If an opportunity arises, you will receive an email with details for scheduling an interview.",
+        "type": "Full-time, part-time, seasonal, or student",
+        "responsibilities": [
+            "Safely transport construction materials, equipment, and debris between job sites, warehouses, or disposal areas.",
+            "Ensure timely delivery and communicate any delays or issues to the appropriate parties.",
+            "Conduct pre-trip and post-trip inspections to ensure the truck is in good working condition and compliant with all regulations.",
+            "Perform basic maintenance tasks and report any mechanical issues to ensure vehicle safety and reliability.",
+            "Complete and submit all required documentation, including delivery tickets, inspection reports, and maintenance records."
+        ],
+        "requirements": [
+            "Experience driving heavy trucks and familiarity with construction equipment transport.",
+            "Ability to perform physically demanding tasks, including loading and unloading heavy construction materials and securing cargo for transport.",
+            "Familiarity with construction site safety protocols and the ability to wear protective gear as needed.",
+            "Strong communication skills to coordinate with dispatchers, construction site managers, and other workers.",
+            "Willingness to work 40+ hours a week."
+        ],
+        "benefits": [
+            "Competitive total compensation package.",
             "Opportunities for career advancement.",
             "A positive and collaborative team environment.",
             "Join a reputable company with a dedicated team and modern equipment."
