@@ -126,7 +126,7 @@ const PrivacyPolicy = () => {
         </Fade>
         <div className={classes.policyText} id="first-section">
             <Typography paragraph>
-            This privacy notice discloses the privacy practices for <span className={classes.underline}>www.jasonslandscape.ca</span>. This privacy notice 
+            This privacy notice discloses the privacy practices for <span className={classes.underline}>www.jasonsconstruction.ca</span>. This privacy notice 
             applies solely to information collected by this website. It will notify you of the following:
             </Typography>
             <Typography paragraph className={classes.bold}>

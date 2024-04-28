@@ -4,12 +4,8 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
-var https = require('https');
-var http = require('http');
-var fs = require('fs');
 
 var app = express();
-const PORT = process.env.PORT || 80;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -30,25 +26,29 @@ app.post('/send-application', upload.single('resume'), (req, res) => {
   // Access the uploaded file from req.file.buffer
   const resumeBuffer = req.file ? req.file.buffer : null;
 
-  // Create a nodemailer transporter using your email credentials
+  /* 
+  Create a nodemailer transporter using your email credentials
+  RMTAT-8JTSX-SVD5R-W7YPX-UNCUC
+  Setup two factor authentication
+  Add an app password
+  */
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: 'Outlook365',
     auth: {
-      user: 'jasonslandscaping2003@gmail.com',
-      pass: 'jrgs ydhr gtuz lwoi',
+      user: 'ennics@gmail.com',
+      pass: 'vwkxhngstyaworuf',
     },
   });
 
-  // Construct the email body
   const mailOptions = {
-    from: 'jasonslandscaping2003@gmail.com',
-    to: 'jasonslandscaping2003@gmail.com',
+    from: 'ennics@gmail.com',
+    to: 'nicholasnicolaev@cmail.carleton.ca',
     subject: `Job Application: ${jobInterest}`,
     text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nJob Interest: ${jobInterest}\nAdditional Info / Cover Letter:\n${additionalInfo}`,
     attachments: [
       {
-        filename: 'resume.pdf', // Change the filename as needed
-        content: resumeBuffer ? resumeBuffer.toString('base64') : null, // Convert Buffer to base64
+        filename: 'resume.pdf',
+        content: resumeBuffer ? resumeBuffer.toString('base64') : null,
         encoding: 'base64',
       },
     ],
@@ -68,17 +68,17 @@ app.post('/send-inquiry', (req, res) => {
   
     // Create a nodemailer transporter using your email credentials
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      service: 'Outlook365',
       auth: {
-        user: 'jasonslandscaping2003@gmail.com',
-        pass: 'jrgs ydhr gtuz lwoi',
+        user: 'ennics@gmail.com',
+        pass: 'vwkxhngstyaworuf',
       },
     });
   
     // Construct the email body
     const mailOptions = {
-      from: 'jasonslandscaping2003@gmail.com',
-      to: 'jasonslandscaping2003@gmail.com',
+      from: 'ennics@gmail.com',
+      to: 'nicholasnicolaev@cmail.carleton.ca',
       subject: `Inquiry: ${inquirySubject}`,
       text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${inquirySubject}\n\nMessage:\n${inquiryMessage}`,
     };
@@ -92,15 +92,8 @@ app.post('/send-inquiry', (req, res) => {
     });
 });
 
-var options = {
-  key: fs.readFileSync('client-key.pem'),
-  cert: fs.readFileSync('client-cert.pem')
-};
 
-// app.listen(PORT, () => {
-//   console.log(`Server is running on port ${PORT}`);
-// });
-// Create an HTTP service.
-http.createServer(app).listen(80);
-// Create an HTTPS service identical to the HTTP service.
-https.createServer(options, app).listen(443);
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
