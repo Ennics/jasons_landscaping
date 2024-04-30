@@ -202,14 +202,13 @@ const useStyles = makeStyles({
     left: 0,
     width: '100%',
     height: '100%',
-    background: 'rgba(0, 0, 0, 0.5)', // Slightly dimmed background color
+    background: 'rgba(0, 0, 0, 0.5)',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    zIndex: 1000, // Ensure it's above other elements
+    zIndex: 1000,
   },
   loadingImage: {
-    // Style for the loading image, adjust as needed
     width: 100,
     height: 100,
   },
@@ -234,7 +233,6 @@ const Careers = () => {
   const [selectedJob, setSelectedJob] = useState(null);
 
   useEffect(() => {
-    // Convert the object of jobs into an array of job objects
     const jobArray = Object.keys(jobsData).map((jobName) => ({
       jobName,
       ...jobsData[jobName],
@@ -243,7 +241,6 @@ const Careers = () => {
   }, []);
 
   const handleJobClick = (job) => {
-    // Toggle selected job on click
     setSelectedJob(selectedJob === job ? null : job);
   };
 
@@ -265,8 +262,6 @@ const Careers = () => {
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
     setFormData({ ...formData, resume: selectedFile });
-
-    // Update the state to display the file name
     setFileName(selectedFile ? selectedFile.name : '');
   };
 
@@ -277,8 +272,6 @@ const Careers = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
-
-    // Check if all required fields are filled
     if (
       !formData.firstName ||
       !formData.lastName ||
@@ -304,7 +297,6 @@ const Careers = () => {
     userData.append('additionalInfo', formData.additionalInfo);
 
     try {
-      // Send data to the server
       const response = await fetch('/send-application', {
         method: 'POST',
         body: userData,
