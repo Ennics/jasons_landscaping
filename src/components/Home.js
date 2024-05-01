@@ -1,7 +1,7 @@
 import React from 'react';
 import { createTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
-import {Typography, Box} from '@material-ui/core'; 
+import {Typography} from '@material-ui/core'; 
 import NavBar from './NavBar'
 import InfoCard from './InfoCard';
 import Footer from './Footer'
@@ -73,7 +73,7 @@ const theme = createTheme({
     },
     arrowAnimation: {
       position: 'absolute',
-      bottom: theme.spacing(4), // Adjust the distance from the bottom as needed
+      bottom: theme.spacing(4),
       left: '50%',
       transform: 'translateX(-50%)',
       animation: '$raindrop 2s infinite',
@@ -83,7 +83,7 @@ const theme = createTheme({
         transform: 'translateY(0)',
       },
       '50%': {
-        transform: 'translateY(-5px)', // Adjust the raindrop effect height as needed
+        transform: 'translateY(-5px)',
       },
     },
     boldWord: {
@@ -97,9 +97,6 @@ const theme = createTheme({
       alignItems: 'center',
       justifyContent: 'center',
       paddingTop: "1rem",
-      // top: "50%",
-      // left: "50%", 
-      // transform: "translate(-50%, -50%)", 
       animation: '$raindrop 2s infinite',
     },
     '@keyframes raindrop': {
@@ -107,41 +104,38 @@ const theme = createTheme({
         transform: 'translateY(0)',
       },
       '50%': {
-        transform: 'translateY(-5px)', // Adjust the raindrop effect height as needed
+        transform: 'translateY(-5px)',
       },
     },
     buttonContainer: {
       display: 'inline-flex',
       alignItems: 'center',
       justifyContent: 'center',
-      width: '32px', // Adjust the width as needed to fit the circle
-      height: '32px', // Adjust the height as needed to fit the circle
+      width: '32px',
+      height: '32px',
       borderRadius: '50%',
       border: '2px solid white',
     },
     arrowIcon: {
-      color: 'white', // Set the icon color to white
+      color: 'white',
     },
     coverImageContainer: {
       position: 'relative',
-      height: '870px', /* Set your desired constant height */
-      overflow: 'hidden', /* Hide any overflow */
-  
-      /* Set the background image */
+      height: '870px',
+      overflow: 'hidden',
       backgroundImage: `url('cover_img_2.png')`,
-      backgroundSize: 'cover', /* Maintain image proportions and cover the container */
-      backgroundPosition: 'center center', /* Center the image */
+      backgroundSize: 'cover',
+      backgroundPosition: 'center center',
     },
     horizontalLine: {
       position: 'relative',
       display: 'flex',
-      margin: '0 auto',       // Center the image horizontally
+      margin: '0 auto',
       width: '80%', 
       height: '20px',
       marginTop: theme.spacing(4)
     }
 })
-// <img src="cover_img_2.png" width="100%" alt="hero"/> <NavBar/>
 function Home() {
     useScrollToTop();
     function scrollToFirstSection() {
