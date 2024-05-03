@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import {AppBar, Typography, Box, Toolbar, IconButton, Button, Menu, MenuItem } from '@material-ui/core'
+import {AppBar, Typography, Box, Toolbar, IconButton, Menu, MenuItem } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu';
 import {makeStyles} from "@material-ui/core/styles"; 
 import {Link} from 'react-router-dom';
-import Popover from '@material-ui/core/Popover';
 
 const styles = makeStyles((theme) => ({
     bar:{
@@ -45,12 +44,12 @@ const styles = makeStyles((theme) => ({
     },
     menuButton: {
         [theme.breakpoints.up('md')]: {
-          display: 'none', // Hide the menu button for larger screens
+          display: 'none',
         },
       },
       navItems: {
         [theme.breakpoints.down('sm')]: {
-          display: 'none', // Hide the navigation items for smaller screens
+          display: 'none',
         },
       },
       dropdownContent: {
@@ -58,20 +57,20 @@ const styles = makeStyles((theme) => ({
         flexDirection: 'column',
         position: 'absolute',
         top: '100%',
-        left: '50%', // Center horizontally
-        transform: 'translateX(-50%)', // Center horizontally
+        left: '50%',
+        transform: 'translateX(-50%)',
         justifyContent: 'center',
         width: '150px',
         backgroundColor: 'rgba(255, 255, 255, 0.9)',
-        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.2)', // Customize the shadow
+        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.2)',
         zIndex: 1,
       },
       linkElement: {
         display: 'block',
-        textAlign: 'center', // Center text horizontally
-        padding: theme.spacing(1), // Add padding for spacing
-        textDecoration: 'none', // Remove underlines
-        color: '#545454', // Set the link text color
+        textAlign: 'center',
+        padding: theme.spacing(1),
+        textDecoration: 'none',
+        color: '#545454',
         transition: 'color 0.5s ease-in-out, background-color 0.5s ease-in-out',
         "&:hover": {
             backgroundColor: "#800000",
@@ -105,7 +104,6 @@ function NavBar() {
                     </Link> 
                     <Box flexGrow={1}/>
                     <Toolbar>
-                        {/* Hamburger Menu Icon */}
                         <IconButton
                         edge="start"
                         className={classes.menuButton}
@@ -114,10 +112,7 @@ function NavBar() {
                         >
                         <MenuIcon />
                         </IconButton>
-
-                        {/* Navigation Items */}
                         <div className={classes.navItems}>
-                            {/* Add your navigation buttons here */}
                             <Link to="/" className={classes.link}>
                                 <Typography component="span" variant="h6" className={classes.menuItem}>
                                     Home
@@ -136,13 +131,11 @@ function NavBar() {
                                 </Typography>
                                 {areSercicesHovered && (
                                     <div className={classes.dropdownContent}>
-                                        {/* Your dropdown content here */}
                                         <Link to="/services/site-prep" className={classes.linkElement}>Site Prep</Link>
                                         <Link to="/services/demolition" className={classes.linkElement}>Demolition</Link>
                                         <Link to="/services/septic-systems" className={classes.linkElement}>Septic Systems</Link>
                                         <Link to="/services/flatbed-and-towing" className={classes.linkElement}>Flatbed & Towing</Link>
                                         <Link to="/services/road-construction" className={classes.linkElement}>Road Construction</Link>
-                                        {/* Add more items as needed */}
                                     </div>
                                 )}
                             </Link>
@@ -154,12 +147,10 @@ function NavBar() {
                                 </Typography>
                                 {isDepotHovered && (
                                     <div className={classes.dropdownContent}>
-                                        {/* Your dropdown content here */}
                                         <Link to="/depot#top-soil" className={classes.linkElement}>Top Soil</Link>
                                         <Link to="/depot#interlock" className={classes.linkElement}>Interlock</Link>
                                         <Link to="/depot#aggregates" className={classes.linkElement}>Aggregates</Link>
                                         <Link to="/depot#retaining-walls" className={classes.linkElement}>Retaining Walls</Link>
-                                        {/* Add more items as needed */}
                                     </div>
                                 )}
                             </Link>
@@ -175,14 +166,13 @@ function NavBar() {
                             </Link>
                         </div>
                     </Toolbar>
-                    {/* Responsive Menu */}
                     <Menu
                         anchorEl={anchorEl}
                         open={Boolean(anchorEl)}
                         onClose={handleMenuClose}
                         PaperProps={{
                         style: {
-                            marginTop: '48px', // Adjust the distance from the top
+                            marginTop: '48px',
                         },
                         }}
                     >
@@ -216,7 +206,6 @@ function NavBar() {
                                 Contact Us
                             </Link>
                         </MenuItem>
-                        {/* ... Other menu items ... */}
                     </Menu>
                 </Box>
             </AppBar>
