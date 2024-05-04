@@ -6,8 +6,6 @@ import useScrollToTop from './useScrollToTop';
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
 import Fade from '@material-ui/core/Fade';
-import InfoCard from './InfoCard';
-import sitePrepImg from './images/siteprep_img.jpeg'
 import {Typography, Button, Link } from '@material-ui/core'; 
 
 const useStyles = makeStyles((theme) => ({
