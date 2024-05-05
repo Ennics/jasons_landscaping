@@ -17,22 +17,22 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   reviewText: {
-    fontSize: '1.4rem', //1.2rem
+    fontSize: '1.4rem',
     color: '#777',
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(-2),
     textAlign: 'center',
     [theme.breakpoints.down('lg')]: {
-      fontSize: "1.4rem", // Adjust font size for screens less than 'sm' breakpoint
+      fontSize: "1.4rem",
     },
     [theme.breakpoints.down('md')]: {
-      fontSize: "1.1rem", // Adjust font size for screens less than 'sm' breakpoint
+      fontSize: "1.1rem",
     },
     [theme.breakpoints.down('sm')]: {
-      fontSize: "1rem", // Adjust font size for screens less than 'sm' breakpoint
+      fontSize: "1rem",
     },
     [theme.breakpoints.down('xs')]: {
-      fontSize: "0.8rem", // Adjust font size for screens less than 'sm' breakpoint
+      fontSize: "0.8rem",
     },
   },
   ownerName: {
@@ -95,7 +95,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'inline-block',
     width: '60px',
     height: '70px',
-    alignSelf: 'flex-start', // Align the image to the left
+    alignSelf: 'flex-start',
     marginBottom: theme.spacing(5),
     marginTop: theme.spacing(2),
     [theme.breakpoints.down('sm')]: {
@@ -108,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'inline-block',
     width: '60px',
     height: '70px',
-    alignSelf: 'flex-end', // Align the image to the left
+    alignSelf: 'flex-end',
     [theme.breakpoints.down('sm')]: {
       marginTop: theme.spacing(-4),
       width: '30px',
@@ -122,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'maroon',
     textAlign: 'center',
     [theme.breakpoints.down('sm')]: {
-      fontSize: "1.4rem", // Adjust font size for screens less than 'sm' breakpoint
+      fontSize: "1.4rem",
     },
   }
 }));
@@ -156,7 +156,6 @@ const reviews = [
     text: 'Excellent service and great quality stuff. Highly recommend for anyone looking for soil, mulch, and stones in the westend.',
     owner: 'Fawzi',
   },
-  // Add more reviews as needed
 ];
 
 const ReviewSection = () => {
@@ -164,7 +163,6 @@ const ReviewSection = () => {
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
 
   useEffect(() => {
-    // Code to handle the automatic scroll every 5 seconds
     const interval = setInterval(() => {
       handleNextReview();
     }, 5000);
