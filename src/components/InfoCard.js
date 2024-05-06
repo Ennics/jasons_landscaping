@@ -18,10 +18,10 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(5),
     marginTop: theme.spacing(5),
     height: "350px",
-    boxShadow: 'none', //none
+    boxShadow: 'none',
   },
   media: {
-    width: '550px', // Adjust the width of the image as needed
+    width: '550px',
     boxShadow: `0px 8px 15px rgba(139, 0, 0, 0.5)`
   },
   content: {
@@ -41,36 +41,36 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1, 5)
   },
   learnMoreButton: {
-    fontSize: '0.8rem', // Set the font size to make the button smaller
-    color: 'maroon', // Set the text color to maroon
-    backgroundColor: 'transparent', // Make the background transparent
-    border: '2px solid maroon', // Add a border around the button
+    fontSize: '0.8rem',
+    color: 'maroon',
+    backgroundColor: 'transparent',
+    border: '2px solid maroon',
     width: "125px",
     alignSelf: 'flex-end',
     justifyContent: "center",
-    borderRadius: theme.spacing(1), // Add border radius for a rounded look
-    padding: theme.spacing(1, 2), // Add padding to the button
+    borderRadius: theme.spacing(1),
+    padding: theme.spacing(1, 2),
     marginTop: theme.spacing(2),
-    transition: 'background-color 0.2s ease-in-out', // Add a smooth transition on hover
+    transition: 'background-color 0.2s ease-in-out',
     '&:hover': {
-      backgroundColor: 'maroon', // Change the background color on hover
-      color: 'white', // Change the text color on hover
+      backgroundColor: 'maroon',
+      color: 'white',
     }
   },
   learnMoreButtonLeft: {
-    fontSize: '0.8rem', // Set the font size to make the button smaller
-    color: 'maroon', // Set the text color to maroon
-    backgroundColor: 'transparent', // Make the background transparent
-    border: '2px solid maroon', // Add a border around the button
+    fontSize: '0.8rem',
+    color: 'maroon',
+    backgroundColor: 'transparent',
+    border: '2px solid maroon',
     width: "125px",
     justifyContent: "center",
-    borderRadius: theme.spacing(1), // Add border radius for a rounded look
-    padding: theme.spacing(1, 2), // Add padding to the button
+    borderRadius: theme.spacing(1),
+    padding: theme.spacing(1, 2),
     marginTop: theme.spacing(2),
-    transition: 'background-color 0.2s ease-in-out', // Add a smooth transition on hover
+    transition: 'background-color 0.2s ease-in-out',
     '&:hover': {
-      backgroundColor: 'maroon', // Change the background color on hover
-      color: 'white', // Change the text color on hover
+      backgroundColor: 'maroon',
+      color: 'white',
     },
   },
   titleBox: {
@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2)
   },
   typography: {
-    marginBottom: theme.spacing(-1), // Reduce the margin between Typography elements
+    marginBottom: theme.spacing(-1),
     fontWeight: "bold",
   },
   subtitle: {
@@ -92,12 +92,12 @@ const useStyles = makeStyles((theme) => ({
     margin: '0 auto',
     marginBottom: theme.spacing(5),
     marginTop: theme.spacing(5),
-    boxShadow: 'none', //none
-    alignItems: 'center',     // Center horizontally
-    textAlign: 'center',      // Center text content
+    boxShadow: 'none',
+    alignItems: 'center',
+    textAlign: 'center',
   },
   smallMedia: {
-    width: '50%', // Adjust the width of the image as needed
+    width: '50%',
     height: '100%',
     minHeight: '200px',
     boxShadow: `0px 8px 15px rgba(139, 0, 0, 0.5)`,
@@ -112,18 +112,18 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1, 5)
   },
   learnMoreButtonSmall: {
-    fontSize: '0.8rem', // Set the font size to make the button smaller
-    color: 'maroon', // Set the text color to maroon
-    backgroundColor: 'transparent', // Make the background transparent
-    border: '2px solid maroon', // Add a border around the button
+    fontSize: '0.8rem',
+    color: 'maroon',
+    backgroundColor: 'transparent',
+    border: '2px solid maroon',
     width: "125px",
     justifyContent: "center",
-    borderRadius: theme.spacing(1), // Add border radius for a rounded look
-    padding: theme.spacing(1, 2), // Add padding to the button
-    transition: 'background-color 0.2s ease-in-out', // Add a smooth transition on hover
+    borderRadius: theme.spacing(1),
+    padding: theme.spacing(1, 2),
+    transition: 'background-color 0.2s ease-in-out',
     '&:hover': {
-      backgroundColor: 'maroon', // Change the background color on hover
-      color: 'white', // Change the text color on hover
+      backgroundColor: 'maroon',
+      color: 'white',
     },
   },
   hiddenButton: {
