@@ -7,59 +7,59 @@ import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: '#a34d4b', // Grey background color
-    color: '#fff', // Text color
-    padding: theme.spacing(4), // Ample room around the content
+    backgroundColor: '#a34d4b',
+    color: '#fff',
+    padding: theme.spacing(4),
     display: 'flex',
-    justifyContent: 'center', // Center the sections horizontally
-    flexDirection: 'row', // Arrange sections horizontally
+    justifyContent: 'center',
+    flexDirection: 'row',
     [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column', // If screen is small, stack the footer content
+      flexDirection: 'column',
     },
   },
   section: {
-    margin: theme.spacing(4), // Space between sections
-    textAlign: 'left', // Center the content within each section
+    margin: theme.spacing(4),
+    textAlign: 'left',
   },
   title: {
-    fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
-    fontSize: '16px', // Replace with the desired font size
-    fontWeight: 'bold', // Replace with the desired font weight
-    marginBottom: theme.spacing(1), // Space between title and description
+    fontFamily: 'Arial, sans-serif',
+    fontSize: '16px',
+    fontWeight: 'bold',
+    marginBottom: theme.spacing(1),
   },
   description: {
-    fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
-    fontSize: '16px', // Replace with the desired font size
-    maxWidth: '300px', // Limit the width of the description box
+    fontFamily: 'Arial, sans-serif',
+    fontSize: '16px',
+    maxWidth: '300px',
   },
   link: {
-    color: '#ffffff', // Black color for the links
-    textDecoration: 'none', // Remove underline
-    fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
-    fontSize: '18px', // Replace with the desired font size
-    margin: theme.spacing(1), // Space between each link
+    color: '#ffffff',
+    textDecoration: 'none',
+    fontFamily: 'Arial, sans-serif',
+    fontSize: '18px',
+    margin: theme.spacing(1),
     "&:hover": {
       color: "orange",
   },
   },
   footerText: {
-    fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
-    marginTop: theme.spacing(0), // Space between links and footer text
-    fontSize: '12px', // Replace with the desired font size
+    fontFamily: 'Arial, sans-serif',
+    marginTop: theme.spacing(0),
+    fontSize: '12px',
 
   },
   footerText2: {
-    marginTop: theme.spacing(-3), // Space between links and footer text
-    fontSize: '14px', // Replace with the desired font size
+    marginTop: theme.spacing(-3),
+    fontSize: '14px',
     color: '#ffffff',
     textAlign: "center",
-    justifyContent: 'center', // Center the sections horizontally
+    justifyContent: 'center',
   },
   underlineImage: {
     marginTop: theme.spacing(-3),
     position: "relative",
     display: "inline-block",
-    width: '25px', // Adjust the width of the underline as needed
+    width: '25px',
     height: '30px'
   },
   bulletPoint: {
@@ -67,14 +67,14 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(-0.5),
     position: "relative",
     display: "inline-block",
-    width: '7px', // Adjust the width of the underline as needed
+    width: '7px',
     height: '12px'
   },
   bbbLogo: {
     marginRight: theme.spacing(-0.5),
     position: "relative",
     display: "inline-block",
-    width: '125px', // Adjust the width of the underline as needed
+    width: '125px',
     height: '60px'
   },
   stack: {
@@ -91,9 +91,9 @@ const useStyles = makeStyles((theme) => ({
     transform: 'translateX(-50%)',
     bottom: 0,
     width: '100%',
-    maxWidth: 1200, // Set your desired max width
+    maxWidth: 1200,
     height: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.2)', // Faint horizontal line color
+    backgroundColor: 'rgba(0, 0, 0, 0.2)',
   },
 }));
 
@@ -107,7 +107,6 @@ const Footer = () => {
   return (
     <div>
       <footer className={classes.footer}>
-        {/* First Section */}
         <Box className={classes.section}>
           <Typography variant="h6" className={classes.title}>
             OUR COMPANY
@@ -117,8 +116,6 @@ const Footer = () => {
             Your local construction company, proudly serving the Ottawa Valley community since 1998.
           </Typography>
         </Box>
-
-        {/* Second Section */}
         <Box className={classes.section}>
           <Typography variant="h6" className={classes.title}>
             HELPFUL LINKS
@@ -157,8 +154,6 @@ const Footer = () => {
             </Link>
           </Box>
         </Box>
-
-        {/* Third Section */}
         <Box className={classes.section}>
           <Typography variant="h6" className={classes.title}>
             CONTACT INFO
