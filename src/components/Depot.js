@@ -56,25 +56,25 @@ const useStyles = makeStyles((theme) => ({
       transform: 'translateY(0)',
     },
     '50%': {
-      transform: 'translateY(-5px)', // Adjust the raindrop effect height as needed
+      transform: 'translateY(-5px)',
     },
   },
   buttonContainer: {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '32px', // Adjust the width as needed to fit the circle
-    height: '32px', // Adjust the height as needed to fit the circle
+    width: '32px',
+    height: '32px',
     borderRadius: '50%',
     border: '2px solid white',
   },
   arrowIcon: {
-    color: 'white', // Set the icon color to white
+    color: 'white',
   },
   titleBox: {
-    padding: theme.spacing(4), // Ample room around the content
+    padding: theme.spacing(4),
     display: 'flex',
-    justifyContent: 'center', // Center the sections horizontally
+    justifyContent: 'center',
   },
   headerSpace: {
     width: '50%',
@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'inline-block',
     justifyContent: 'center',
     [theme.breakpoints.down('sm')]: {
-      width: '300px', // If screen is small, stack the footer content
+      width: '300px',
     },
   },
   headerTitle: {
@@ -99,7 +99,7 @@ const useStyles = makeStyles((theme) => ({
   horizontalLine: {
     position: 'relative',
     display: 'flex',
-    margin: '0 auto',       // Center the image horizontally
+    margin: '0 auto',
     width: '80%', 
     height: '20px',
   },
