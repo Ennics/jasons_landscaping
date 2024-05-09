@@ -1,5 +1,5 @@
 // Contact.js
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from './NavBar'
 import Footer from './Footer'
@@ -192,14 +192,13 @@ const useStyles = makeStyles({
     left: 0,
     width: '100%',
     height: '100%',
-    background: 'rgba(0, 0, 0, 0.5)', // Slightly dimmed background color
+    background: 'rgba(0, 0, 0, 0.5)',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    zIndex: 1000, // Ensure it's above other elements
+    zIndex: 1000,
   },
   loadingImage: {
-    // Style for the loading image, adjust as needed
     width: 100,
     height: 100,
   },
@@ -242,7 +241,6 @@ const Contact = () => {
     event.preventDefault();
     setIsLoading(true);
 
-    // Check if all required fields are filled
     if (
       !formData.firstName ||
       !formData.lastName ||
@@ -258,7 +256,6 @@ const Contact = () => {
     }
 
     try {
-      // Send data to the server
       const response = await fetch('/send-inquiry', {
         method: 'POST',
         headers: {
@@ -358,7 +355,7 @@ const Contact = () => {
             <TextField
               label="Message"
               multiline
-              rows={6} // Adjust the number of rows as needed
+              rows={6}
               variant="outlined"
               fullWidth
               value={formData.inquiryMessage}
