@@ -9,7 +9,7 @@ import { createTheme, makeStyles } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons//ArrowDownward';
 import Fade from '@material-ui/core/Fade';
 import InfoCard from './InfoCard';
-import aboutImage from '../components/images/office_pic.png' //#601C1E
+import aboutImage from '../components/images/office_pic.png'
 
 const theme = createTheme({});
 
@@ -46,82 +46,80 @@ const styles = makeStyles({
       transform: 'translateY(0)',
     },
     '50%': {
-      transform: 'translateY(-5px)', // Adjust the raindrop effect height as needed
+      transform: 'translateY(-5px)',
     },
   },
   buttonContainer: {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '32px', // Adjust the width as needed to fit the circle
-    height: '32px', // Adjust the height as needed to fit the circle
+    width: '32px',
+    height: '32px',
     borderRadius: '50%',
     border: '2px solid white',
   },
   arrowIcon: {
-    color: 'white', // Set the icon color to white
+    color: 'white',
   },
   coverImageContainer: {
     position: 'relative',
-    height: '870px', /* Set your desired constant height */
-    overflow: 'hidden', /* Hide any overflow */
+    height: '870px',
+    overflow: 'hidden',
 
-    /* Set the background image */
     backgroundImage: `url('/about_hero.jpeg')`,
-    backgroundSize: 'cover', /* Maintain image proportions and cover the container */
-    backgroundPosition: 'center center', /* Center the image */
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center',
   },
   servicesBrief: {
-    color: '#000000', // Text color
-    padding: theme.spacing(4), // Ample room around the content
+    color: '#000000',
+    padding: theme.spacing(4),
     display: 'flex',
-    justifyContent: 'center', // Center the sections horizontally
-    flexDirection: 'row', // Arrange sections horizontally
+    justifyContent: 'center',
+    flexDirection: 'row',
     [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column', // If screen is small, stack the footer content
+      flexDirection: 'column',
     },
   },
   section: {
-    margin: theme.spacing(4), // Space between sections
-    textAlign: 'left', // Center the content within each section
+    margin: theme.spacing(4),
+    textAlign: 'left',
     [theme.breakpoints.down('sm')]: {
-      textAlign: 'center', // If screen is small, stack the footer content
+      textAlign: 'center',
     },
   },
   title: {
-    fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
-    fontSize: '16px', // Replace with the desired font size
-    fontWeight: 'bold', // Replace with the desired font weight
-    marginBottom: theme.spacing(1), // Space between title and description
+    fontFamily: 'Arial, sans-serif',
+    fontSize: '16px',
+    fontWeight: 'bold',
+    marginBottom: theme.spacing(1),
   },
   description: {
-    fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
-    fontSize: '16px', // Replace with the desired font size
-    maxWidth: '300px', // Limit the width of the description box
+    fontFamily: 'Arial, sans-serif',
+    fontSize: '16px',
+    maxWidth: '300px',
     [theme.breakpoints.down('sm')]: {
-      display: 'inline-block', // If screen is small, stack the footer content
+      display: 'inline-block',
     },
   },
   excavator_icon: {
     marginTop: theme.spacing(-1.5),
     position: "relative",
     display: "inline-block",
-    width: '60px', // Adjust the width of the underline as needed
+    width: '60px',
     height: '55px'
   },
   septic_icon: {
     marginTop: theme.spacing(-1.5),
     position: "relative",
     display: "inline-block",
-    width: '60px', // Adjust the width of the underline as needed
+    width: '60px',
     height: '55px'
   },
   flatbed_icon: {
     marginTop: theme.spacing(-1.5),
     position: 'relative',
     display: "inline-block",
-    // margin: '0 auto',
-    width: '70px', // Adjust the width of the underline as needed
+    width: '70px',
     height: '50px'
   },
   staticBackground: {
@@ -130,57 +128,57 @@ const styles = makeStyles({
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundAttachment: 'fixed',
-    minHeight: '500px', // Adjust as needed
+    minHeight: '500px',
     position: 'relative',
     justifyContent: 'center'
   },
   careersButton: {
-    fontSize: '0.8rem', // Set the font size to make the button smaller
-    color: 'white', // Set the text color to maroon
-    backgroundColor: 'maroon', // Make the background transparent
-    border: '2px solid maroon', // Add a border around the button
+    fontSize: '0.8rem',
+    color: 'white',
+    backgroundColor: 'maroon',
+    border: '2px solid maroon',
     width: "125px",
     justifyContent: "center",
-    borderRadius: theme.spacing(1), // Add border radius for a rounded look
-    padding: theme.spacing(1, 2), // Add padding to the button
+    borderRadius: theme.spacing(1),
+    padding: theme.spacing(1, 2),
     marginTop: theme.spacing(2),
-    transition: 'background-color 0.2s ease-in-out', // Add a smooth transition on hover
+    transition: 'background-color 0.2s ease-in-out',
     '&:hover': {
-      backgroundColor: 'transparent', // Change the background color on hover
-      color: 'white', // Change the text color on hover
+      backgroundColor: 'transparent',
+      color: 'white',
     }
   },
   careersSection: {
-    color: '#ffffff', // Text color
-    padding: theme.spacing(4), // Ample room around the content
+    color: '#ffffff',
+    padding: theme.spacing(4),
     width: '50%',
     display: 'flex',
-    justifyContent: 'center', // Center the sections horizontally
-    flexDirection: 'column', // Arrange sections horizontally
+    justifyContent: 'center',
+    flexDirection: 'column',
   },
   careersTitle: {
-    fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
-    fontSize: '32px', // Replace with the desired font size
-    fontWeight: 'bold', // Replace with the desired font weight
-    marginBottom: theme.spacing(1), // Space between title and description
+    fontFamily: 'Arial, sans-serif',
+    fontSize: '32px',
+    fontWeight: 'bold',
+    marginBottom: theme.spacing(1),
     [theme.breakpoints.down('sm')]: {
-      fontSize: '26px', // If screen is small, stack the footer content
+      fontSize: '26px',
     },
   },
   careersDescription: {
-    fontFamily: 'Arial, sans-serif', // Replace with the desired font-family
-    fontSize: '18px', // Replace with the desired font size
-    maxWidth: '500px', // Limit the width of the description box
+    fontFamily: 'Arial, sans-serif',
+    fontSize: '18px',
+    maxWidth: '500px',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '14px', // If screen is small, stack the footer content
+      fontSize: '14px',
     },
   },
   whyChoseUsSection: {
-    color: '#000000', // Text color
-    padding: theme.spacing(4), // Ample room around the content
+    color: '#000000',
+    padding: theme.spacing(4),
     display: 'flex',
-    justifyContent: 'center', // Center the sections horizontally
-    flexDirection: 'column', // Arrange sections vertically
+    justifyContent: 'center',
+    flexDirection: 'column',
   },
   whyChoseUsHeader: {
     marginTop: theme.spacing(4),
@@ -188,7 +186,7 @@ const styles = makeStyles({
     margin: '0 auto',
     display: 'inline-block',
     [theme.breakpoints.down('sm')]: {
-      width: '300px', // If screen is small, stack the footer content
+      width: '300px',
     },
   },
   whyChoseUsTitle: {
@@ -207,7 +205,7 @@ const styles = makeStyles({
     flexDirection: 'row',
     justifyContent: 'center',
     [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column', // If screen is small, stack the footer content
+      flexDirection: 'column',
     },
   },
   reasonBox: {
@@ -217,9 +215,9 @@ const styles = makeStyles({
     justifyContent: 'center',
     marginLeft: theme.spacing(-1),
     marginRight: theme.spacing(-1),
-    padding: theme.spacing(4), // Ample room around the content
+    padding: theme.spacing(4),
     [theme.breakpoints.down('sm')]: {
-      textAlign: 'center', // If screen is small, stack the footer content
+      textAlign: 'center',
       margin: '0 auto'
     },
   },
@@ -232,20 +230,20 @@ const styles = makeStyles({
     color: '#545454',
     textAlign: 'center',
     [theme.breakpoints.down('sm')]: {
-      display: 'inline-block', // If screen is small, stack the footer content
+      display: 'inline-block',
     },
   },
   check_icon: {
     marginTop: theme.spacing(-1.5),
     display: "flex",
     margin: '0 auto',
-    width: '50px', // Adjust the width of the underline as needed
+    width: '50px',
     height: '40px'
   },
   horizontalLine: {
     position: 'relative',
     display: 'flex',
-    margin: '0 auto',       // Center the image horizontally
+    margin: '0 auto',
     width: '80%', 
     height: '20px',
     marginTop: theme.spacing(4)
