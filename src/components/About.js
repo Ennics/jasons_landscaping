@@ -295,7 +295,6 @@ const About = () => {
       </div>
       <img src="/horizontal_line.png" alt="line" className={classes.horizontalLine}/>
       <div id="services-brief" className={classes.servicesBrief}>
-        {/* First Section */}
         <Box className={classes.section}>
           <Link to="/services/site-prep">
             <img src="/excavator_icon.png" alt="underline" className={classes.excavator_icon}/>
@@ -308,7 +307,6 @@ const About = () => {
           </Typography>
         </Box>
 
-        {/* Second Section */}
         <Box className={classes.section}>
           <Link to="/services/septic-systems">
             <img src="/septic_logo.png" alt="underline" className={classes.septic_icon}/>
@@ -321,7 +319,6 @@ const About = () => {
           </Typography>
         </Box>
 
-        {/* Third Section */}
         <Box className={classes.section}>
           <Link to="/services/flatbed-and-towing">
             <img src="/flatbed_icon.png" alt="underline" className={classes.flatbed_icon}/>
