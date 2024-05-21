@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, '/build')));
 
 // Configure multer to handle file uploads
-const storage = multer.memoryStorage(); // Store the file in memory
+const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 app.get('*', (req, res) => {
@@ -22,8 +22,6 @@ app.get('*', (req, res) => {
 
 app.post('/send-application', upload.single('resume'), (req, res) => {
   const { firstName, lastName, email, phone, jobInterest, additionalInfo } = req.body;
-  
-  // Access the uploaded file from req.file.buffer
   const resumeBuffer = req.file ? req.file.buffer : null;
 
   /* 

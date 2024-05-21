@@ -352,7 +352,7 @@ const About = () => {
       <div className={classes.whyChoseUsSection}>
         <Box className={classes.whyChoseUsHeader}>
           <Typography variant="h6" className={classes.whyChoseUsTitle}>
-            Why Chose Jason's Landscaping
+            Why Choose Jason's Landscaping
           </Typography>
           <Typography variant="body1" className={classes.whyChoseUsDescription}>
             We are more than just a company; we are a community of dedicated professionals at Jason's Landscaping, 
