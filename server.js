@@ -81,7 +81,6 @@ app.post('/send-inquiry', (req, res) => {
       text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${inquirySubject}\n\nMessage:\n${inquiryMessage}`,
     };
   
-    // Send the email
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         return res.status(500).send(error.toString());
