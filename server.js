@@ -73,7 +73,6 @@ app.post('/send-inquiry', (req, res) => {
       },
     });
   
-    // Construct the email body
     const mailOptions = {
       from: 'ennics@gmail.com',
       to: 'nicholasnicolaev@cmail.carleton.ca',
