@@ -64,7 +64,6 @@ app.post('/send-application', upload.single('resume'), (req, res) => {
 app.post('/send-inquiry', (req, res) => {
     const { firstName, lastName, email, phone, inquirySubject, inquiryMessage } = req.body;
   
-    // Create a nodemailer transporter using your email credentials
     const transporter = nodemailer.createTransport({
       service: 'Outlook365',
       auth: {
