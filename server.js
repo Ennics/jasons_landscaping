@@ -52,7 +52,6 @@ app.post('/send-application', upload.single('resume'), (req, res) => {
     ],
   };
 
-  // Send the email
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       return res.status(500).send(error.toString());
