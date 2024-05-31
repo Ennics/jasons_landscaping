@@ -28,7 +28,6 @@ app.post('/send-application', upload.single('resume'), (req, res) => {
   Create a nodemailer transporter using your email credentials
   RMTAT-8JTSX-SVD5R-W7YPX-UNCUC
   Setup two factor authentication
-  Add an app password
   */
   const transporter = nodemailer.createTransport({
     service: 'Outlook365',
