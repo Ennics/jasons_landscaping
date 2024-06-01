@@ -12,7 +12,6 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, '/build')));
 
-// Configure multer to handle file uploads
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
