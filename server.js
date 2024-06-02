@@ -24,7 +24,6 @@ app.post('/send-application', upload.single('resume'), (req, res) => {
   const resumeBuffer = req.file ? req.file.buffer : null;
 
   /* 
-  Create a nodemailer transporter using your email credentials
   RMTAT-8JTSX-SVD5R-W7YPX-UNCUC
   Setup two factor authentication
   */
