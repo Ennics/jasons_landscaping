@@ -26,7 +26,7 @@ app.post('/send-application', upload.single('resume'), (req, res) => {
 
   /* 
   RMTAT-8JTSX-SVD5R-W7YPX-UNCUC
-  Need two factor authentication for this to work
+  Need two factor authentication for this to function.
   */
   const transporter = nodemailer.createTransport({
     service: 'Outlook365',
