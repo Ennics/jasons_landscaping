@@ -252,6 +252,7 @@ const styles = makeStyles({
 
 const About = () => {
   const classes = styles(); 
+
   useScrollToTop();
   function scrollToFirstSection() {
     const firstSectionOffsetTop = document.getElementById('first-section').offsetTop;
@@ -260,6 +261,7 @@ const About = () => {
       behavior: 'smooth',
     });
   }
+
   return (
     <div>
       <NavBar/>
@@ -306,7 +308,6 @@ const About = () => {
             We offer general landscaping services tailored to fit your specific needs.
           </Typography>
         </Box>
-
         <Box className={classes.section}>
           <Link to="/services/septic-systems">
             <img src="/septic_logo.png" alt="underline" className={classes.septic_icon}/>
@@ -318,7 +319,6 @@ const About = () => {
             Need a septic system installed? Look no further, we will accommodate your specific requirements.
           </Typography>
         </Box>
-
         <Box className={classes.section}>
           <Link to="/services/flatbed-and-towing">
             <img src="/flatbed_icon.png" alt="underline" className={classes.flatbed_icon}/>
