@@ -61,10 +61,10 @@ app.post('/send-inquiry', (req, res) => {
     const { firstName, lastName, email, phone, inquirySubject, inquiryMessage } = req.body;
   
     const transporter = nodemailer.createTransport({
-      service: 'Outlook365',
+      service: 'gmail',
       auth: {
         user: 'ennics@gmail.com',
-        pass: 'vwkxhngstyaworuf',
+        pass: 'hogc ysnx mcrv zjgo',
       },
     });
   
