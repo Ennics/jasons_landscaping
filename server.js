@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, '/build')));
 
+// Configure multer to handle file uploads
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
@@ -25,7 +26,7 @@ app.post('/send-application', upload.single('resume'), (req, res) => {
 
   /* 
   RMTAT-8JTSX-SVD5R-W7YPX-UNCUC
-  Setup two factor authentication
+  Need two factor authentication for this to function.
   */
   const transporter = nodemailer.createTransport({
     service: 'Outlook365',

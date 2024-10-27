@@ -301,7 +301,6 @@ const Careers = () => {
         method: 'POST',
         body: userData,
       });
-    
       if (response.ok) {
         alert('Application submitted successfully!');
         setIsLoading(false);

@@ -105,8 +105,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Services = () => {
-  const classes = useStyles();
   useScrollToTop();
+  
+  const classes = useStyles();
+
   function scrollToFirstSection() {
     const firstSectionOffsetTop = document.getElementById('first-section').offsetTop;
     window.scrollTo({
