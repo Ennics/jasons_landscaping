@@ -29,10 +29,10 @@ app.post('/send-application', upload.single('resume'), (req, res) => {
   Need two factor authentication for this to function.
   */
   const transporter = nodemailer.createTransport({
-    service: 'Outlook365',
+    service: 'gmail',
     auth: {
       user: 'ennics@gmail.com',
-      pass: 'vwkxhngstyaworuf',
+      pass: 'hogc ysnx mcrv zjgo',
     },
   });
 
